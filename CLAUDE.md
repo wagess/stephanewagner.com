@@ -18,6 +18,18 @@ npm run build    # Build production → ./dist/
 npm run preview  # Prévisualiser le build local
 ```
 
+## Déploiement
+
+Le déploiement est automatique via GitHub Actions à chaque push sur `main` :
+
+```bash
+git add .
+git commit -m "description des changements"
+git push
+```
+
+Le workflow build Astro et rsync vers `pdx1-shared-a1-34.dreamhost.com:/home/wagess/stephanewagner.com/public/`.
+
 ## Structure cible (multilingue)
 
 Le site sera disponible en **français** (langue par défaut) et en **anglais**.
