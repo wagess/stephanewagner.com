@@ -33,7 +33,7 @@ jobs:
         with:
           switches: -avz --delete
           path: dist/
-          remote_path: /home/wagess/stephanewagner.com/
+          remote_path: /home/wagess/stephanewagner.com/public/
           remote_host: pdx1-shared-a1-34.dreamhost.com
           remote_user: wagess
           remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
