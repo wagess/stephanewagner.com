@@ -1,0 +1,32 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd /Users/stephanewagner/astro && npm run dev",
+            "async": true,
+            "statusMessage": "Démarrage du serveur Astro..."
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "mcp__figma-desktop__get_screenshot",
+      "mcp__figma-desktop__get_design_context",
+      "Bash(rm /Users/stephanewagner/astro/src/content/projects/projet-xyz.md)",
+      "Bash(rmdir /Users/stephanewagner/astro/src/content/projects)",
+      "Bash(rm \"/Users/stephanewagner/astro/src/pages/projects/[slug].astro\")",
+      "Bash(rmdir /Users/stephanewagner/astro/src/pages/projects)",
+      "Bash(rm /Users/stephanewagner/astro/src/components/Projects.astro)",
+      "Bash(mv \"Creat ean outline.svg\" \"create-an-outline.svg\")",
+      "Bash(mv \"Grid view.svg\" \"grid-view.svg\")",
+      "Bash(mv \"Live interaction.svg\" \"live-interaction.svg\")",
+      "Bash(mv \"Remove.svg\" \"remove.svg\")",
+      "Bash(mv \"Shapes.svg\" \"shapes.svg\")"
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+---
+import Navigation from '../components/Navigation.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Concepteur Produit — Portfolio" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Libre+Franklin:wght@300;400;500;600&family=Nunito:wght@700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <Navigation />
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Libre Franklin', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+
+    --color-accent: #392108;
+    --color-bg: #FAFAFA;
+    --color-surface: #ffffff;
+    --color-text-primary: #0A0A0A;
+    --color-text-secondary: #666666;
+    --color-text-muted: #999999;
+    --color-border: #E5E5E5;
+
+    --spacing-container: 4.5rem;
+    --section-spacing: 6rem;
+    --card-border: 1px solid var(--color-border);
+    --card-radius: 10px;
+    --border-strong: 1px solid var(--color-text-primary);
+  }
+
+  @media (max-width: 768px) {
+    :root {
+      --spacing-container: 1.25rem;
+      --section-spacing: 3rem;
+    }
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  .animated-accent {
+    background: linear-gradient(135deg, #8619e0, #e040fb, #3d0aad, #c44de8);
+    background-size: 300% 300%;
+    animation: accentShift 9s ease infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  @keyframes accentShift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+</style>

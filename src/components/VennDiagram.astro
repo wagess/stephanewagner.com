@@ -1,0 +1,271 @@
+---
+interface Props {
+  label?: string;
+  title?: string;
+  circles?: string[];
+  center?: string;
+  caption?: string;
+}
+const {
+  label = 'Approche',
+  title = 'Des compétences multiples en synergie',
+  circles = ['Visualisation', 'Rédaction', 'Scénarisation'],
+  center = 'CLARTÉ & FIABILITÉ',
+  caption = "L'intersection de ces trois disciplines — visualisation, rédaction et scénarisation — permet de concevoir des expériences qui rendent l'information complexe accessible et actionnable.",
+} = Astro.props;
+
+// Split center label on "&" for two SVG text lines
+const [centerLine1, centerLine2] = center.split('&').map(s => s.trim());
+---
+<section id="approche" class="venn">
+  <div class="venn__grid-bg"></div>
+
+  <div class="venn__container">
+    <div class="venn__header" data-animate-venn>
+      <p class="venn__label">{label}</p>
+      <h2 class="venn__title">{title}</h2>
+    </div>
+
+    <div class="venn__diagram" data-animate-venn data-delay="0.3">
+      <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 600 500"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="venn__svg"
+      >
+        <circle class="venn-circle c1-stroke" cx="250" cy="250" r="140" stroke="#0A0A0A" stroke-width="1" fill="transparent" />
+        <circle class="venn-fill c1-fill" cx="250" cy="250" r="140" fill="#0A0A0A" />
+
+        <circle class="venn-circle c2-stroke" cx="350" cy="250" r="140" stroke="#0A0A0A" stroke-width="1" fill="transparent" />
+        <circle class="venn-fill c2-fill" cx="350" cy="250" r="140" fill="#0A0A0A" />
+
+        <circle class="venn-circle c3-stroke" cx="300" cy="160" r="140" stroke="#0A0A0A" stroke-width="1" fill="transparent" />
+        <circle class="venn-fill c3-fill" cx="300" cy="160" r="140" fill="#0A0A0A" />
+
+        <circle class="venn-center" cx="300" cy="220" r="35" fill="#0A0A0A" />
+
+        <text class="venn-label" x="180" y="320" text-anchor="middle" font-family="var(--font-body)" font-size="14" font-weight="400" fill="#0A0A0A">{circles[0]}</text>
+        <text class="venn-label" x="420" y="320" text-anchor="middle" font-family="var(--font-body)" font-size="14" font-weight="400" fill="#0A0A0A">{circles[1]}</text>
+        <text class="venn-label" x="300" y="80" text-anchor="middle" font-family="var(--font-body)" font-size="14" font-weight="400" fill="#0A0A0A">{circles[2]}</text>
+
+        <text class="venn-center-label" x="300" y="215" text-anchor="middle" font-family="var(--font-mono)" font-size="10" letter-spacing="2.4" fill="#0A0A0A">{centerLine1}</text>
+        <text class="venn-center-label" x="300" y="230" text-anchor="middle" font-family="var(--font-mono)" font-size="10" letter-spacing="2.4" fill="#0A0A0A">&amp; {centerLine2}</text>
+      </svg>
+    </div>
+
+    <p class="venn__caption" data-animate-venn data-delay="0.5">{caption}</p>
+
+    <div class="venn__line" data-animate-venn data-delay="0.6"></div>
+  </div>
+</section>
+
+<script>
+  const section = document.querySelector('.venn') as HTMLElement;
+
+  const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      observer.disconnect();
+
+      // Animate header / caption / line
+      document.querySelectorAll('[data-animate-venn]').forEach(el => {
+        const htmlEl = el as HTMLElement;
+        const delay = parseFloat(htmlEl.dataset.delay || '0');
+        setTimeout(() => htmlEl.classList.add('visible'), delay * 1000);
+      });
+
+      // Animate SVG circles (stroke-dashoffset)
+      const strokes = document.querySelectorAll('.venn-circle');
+      const delays = [500, 700, 900]; // ms
+      strokes.forEach((circle, i) => {
+        setTimeout(() => circle.classList.add('drawn'), delays[i]);
+      });
+
+      // Animate SVG fills
+      const fills = document.querySelectorAll('.venn-fill');
+      const fillDelays = [1000, 1200, 1400];
+      fills.forEach((fill, i) => {
+        setTimeout(() => fill.classList.add('shown'), fillDelays[i]);
+      });
+
+      // Animate center highlight
+      setTimeout(() => {
+        document.querySelector('.venn-center')?.classList.add('shown');
+      }, 1800);
+
+      // Animate labels
+      const labels = document.querySelectorAll('.venn-label');
+      const labelDelays = [2000, 2100, 2200];
+      labels.forEach((label, i) => {
+        setTimeout(() => label.classList.add('shown'), labelDelays[i]);
+      });
+
+      // Animate center labels
+      const centerLabels = document.querySelectorAll('.venn-center-label');
+      centerLabels.forEach((label, i) => {
+        setTimeout(() => label.classList.add('shown'), 2400 + i * 100);
+      });
+    }
+  }, { threshold: 0.1 });
+
+  if (section) observer.observe(section);
+</script>
+
+<style>
+  .venn {
+    padding: var(--section-spacing) var(--spacing-container);
+    background: var(--color-bg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  @media (max-width: 768px) {
+    .venn {
+      padding: var(--section-spacing) var(--spacing-container);
+    }
+  }
+
+  .venn__grid-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0.02;
+    background-image:
+      linear-gradient(var(--color-text-primary) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-text-primary) 1px, transparent 1px);
+    background-size: 80px 80px;
+    pointer-events: none;
+  }
+
+  .venn__container {
+    padding-top: var(--spacing-container);
+    border: 1px solid var(--color-border);
+    background-color: var(--color-surface);
+    border-radius: 10px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+  }
+
+  /* --- scroll-triggered fade-in --- */
+  [data-animate-venn] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  [data-animate-venn].visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .venn__header {
+    text-align: center;
+    margin-bottom: 5rem;
+    padding-bottom: 2rem;
+    position: relative;
+  }
+
+  .venn__header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--color-text-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .venn__header.visible::after {
+    transform: scaleX(1);
+  }
+
+  .venn__label {
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 11px;
+    color: var(--color-text-secondary);
+    font-family: var(--font-mono);
+    margin-bottom: 1.5rem;
+  }
+
+  .venn__title {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.2;
+    color: var(--color-text-primary);
+    font-family: var(--font-heading);
+    font-weight: 400;
+  }
+
+  .venn__svg {
+    max-width: 48rem;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* SVG circle draw animation */
+  .venn-circle {
+    stroke-dasharray: 880;
+    stroke-dashoffset: 880;
+    transition: stroke-dashoffset 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .venn-circle.drawn {
+    stroke-dashoffset: 0;
+  }
+
+  /* SVG fill fade */
+  .venn-fill {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+  .venn-fill.shown {
+    opacity: 0.03;
+  }
+
+  /* Center highlight scale in */
+  .venn-center {
+    opacity: 0;
+    transform-origin: 300px 220px;
+    transform: scale(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .venn-center.shown {
+    opacity: 0.08;
+    transform: scale(1);
+  }
+
+  /* SVG text fade in */
+  .venn-label,
+  .venn-center-label {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+  .venn-label.shown,
+  .venn-center-label.shown {
+    opacity: 1;
+  }
+
+  .venn__caption {
+    text-align: center;
+    margin-top: 4rem;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: var(--font-body);
+    font-weight: 300;
+  }
+
+  .venn__line {
+    height: 1px;
+    background: var(--color-border);
+    margin-top: 5rem;
+    transform-origin: center;
+    /* transitions handled by data-animate-venn */
+  }
+</style>

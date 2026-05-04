@@ -1,0 +1,47 @@
+---
+import { getEntry } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import Cases from '../components/Cases.astro';
+import VennDiagram from '../components/VennDiagram.astro';
+import ToolsBanner from '../components/ToolsBanner.astro';
+import SideProjects from '../components/SideProjects.astro';
+import Footer from '../components/Footer.astro';
+
+const home = await getEntry('home', 'fr');
+const t = home.data;
+---
+
+<Layout
+  title="Concepteur Produit"
+  description={t.hero_headline.replace(/\*\*/g, '')}
+>
+  <main>
+    <Hero
+      label={t.hero_label}
+      headline={t.hero_headline}
+      pillars={t.hero_pillars}
+    />
+    <ToolsBanner tools={t.tools} clients={t.clients} />
+    <Services
+      label={t.services_label}
+      title={t.services_title}
+      services={t.services}
+    />
+    <Cases limit={3} />
+    <SideProjects
+      label={t.side_projects_label}
+      title={t.side_projects_title}
+      projects={t.side_projects}
+    />
+    <VennDiagram
+      label={t.venn_label}
+      title={t.venn_title}
+      circles={t.venn_circles}
+      center={t.venn_center}
+      caption={t.venn_caption}
+    />
+    <Footer />
+  </main>
+</Layout>

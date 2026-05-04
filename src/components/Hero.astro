@@ -1,0 +1,181 @@
+---
+import HeroPillar from './HeroPillar.astro';
+
+interface Pillar { label: string; title: string; desc: string; back_title?: string; back_href?: string; }
+interface Props {
+  label: string;
+  headline: string;
+  pillars: Pillar[];
+}
+const { label, headline, pillars } = Astro.props;
+---
+<section class="hero">
+  <div class="hero__grid-bg"></div>
+
+  <div class="hero__content">
+    <div class="hero__line-top"></div>
+
+    <div class="hero__text">
+      <p class="hero__label">{label}</p>
+      <div class="hero__headline-wrap">
+        <img class="hero__avatar" src="/avatar.webp" alt="Stéphane Wagner" />
+        <h1 class="hero__headline" set:html={headline.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')} />
+      </div>
+    </div>
+
+    <div class="hero__pillars">
+      {pillars.map(p => (
+        <HeroPillar label={p.label} title={p.title} desc={p.desc} backTitle={p.back_title} backHref={p.back_href} />
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 var(--spacing-container) var(--section-spacing);
+    position: relative;
+    overflow: hidden;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 1.5rem 0;
+    }
+  }
+
+  .hero__grid-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image:
+      linear-gradient(var(--color-text-primary) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-text-primary) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+
+  .hero__content {
+    
+    width: 100%;
+    position: relative;
+    z-index: 10;
+  }
+
+  .hero__logo {
+    margin-bottom: 2rem;
+  }
+
+  .hero__line-top {
+    height: 1px;
+    background: var(--color-text-primary);
+    margin-bottom: 3rem;
+    transform-origin: left;
+    animation: scaleFromLeft 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .hero__text {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    animation: fadeInUp 0.8s ease 0.3s both;
+  }
+
+  .hero__headline-wrap {
+    overflow: hidden;
+  }
+
+  .hero__avatar {
+    float: left;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1.5rem;
+    margin-top: 0.5rem;
+    shape-outside: circle();
+  }
+
+  .hero__label {
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 11px;
+    color: var(--color-text-secondary);
+    font-family: var(--font-mono);
+  }
+
+  .hero__headline {
+    font-size: clamp(2rem, 5vw, 4.5rem);
+    line-height: 1.15;
+    color: var(--color-text-primary);
+    font-family: var(--font-heading);
+    font-weight: 400;
+  }
+
+  .hero__highlight {
+    color: var(--color-accent);
+    font-weight: 700;
+  }
+
+  .hero__headline strong {
+    font-weight: 700;
+    color: var(--color-text-primary);
+  }
+
+  .hero__body {
+    padding-top: 1.5rem;
+    max-width: 48rem;
+  }
+
+  .hero__description {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--color-text-primary);
+    font-family: var(--font-body);
+    font-weight: 300;
+  }
+
+  /* --- Pillars --- */
+  .hero__pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+    animation: fadeInUp 0.8s ease 0.5s both;
+  }
+
+  @media (max-width: 768px) {
+    .hero__pillars {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .hero__line-bottom {
+    height: 1px;
+    background: var(--color-border);
+    margin-top: 4rem;
+    transform-origin: left;
+    animation: scaleFromLeft 1s cubic-bezier(0.22, 1, 0.36, 1) 0.8s both;
+  }
+
+  @keyframes scaleFromLeft {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

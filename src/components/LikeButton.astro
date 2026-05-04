@@ -1,0 +1,138 @@
+---
+interface Props {
+  slug: string;
+}
+const { slug } = Astro.props;
+---
+
+<button
+  class="like-btn"
+  data-slug={slug}
+  aria-label="J'aime ce projet"
+  aria-pressed="false"
+  disabled
+>
+  <span class="like-btn__label">j'aime ce projet</span>
+  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+  </svg>
+  <span class="like-btn__count">—</span>
+</button>
+
+<script>
+  const BASE_URL = import.meta.env.PUBLIC_UPSTASH_REDIS_REST_URL;
+  const TOKEN    = import.meta.env.PUBLIC_UPSTASH_REDIS_REST_TOKEN;
+  const STORAGE_KEY = 'liked_cases';
+
+  async function redisCmd(path: string): Promise<number> {
+    const res = await fetch(`${BASE_URL}/${path}`, {
+      headers: { Authorization: `Bearer ${TOKEN}` },
+    });
+    const { result } = await res.json();
+    return Number(result) || 0;
+  }
+
+  function getLiked(): Set<string> {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      return new Set(raw ? JSON.parse(raw) : []);
+    } catch {
+      return new Set();
+    }
+  }
+
+  function saveLiked(liked: Set<string>): void {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify([...liked]));
+  }
+
+  async function initButton(btn: HTMLButtonElement): Promise<void> {
+    const slug = btn.dataset.slug ?? '';
+    const countEl = btn.querySelector<HTMLElement>('.like-btn__count');
+    const key = `like:${slug}`;
+
+    // Charger le compteur global
+    const count = await redisCmd(`get/${key}`);
+    if (countEl) countEl.textContent = String(count);
+
+    // Restaurer l'état local
+    const liked = getLiked();
+    const isLiked = liked.has(slug);
+    btn.setAttribute('aria-pressed', String(isLiked));
+    btn.classList.toggle('like-btn--active', isLiked);
+    btn.disabled = false;
+
+    btn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      btn.disabled = true;
+      const current = getLiked();
+      const wasLiked = current.has(slug);
+
+      let newCount: number;
+      if (wasLiked) {
+        current.delete(slug);
+        newCount = await redisCmd(`decrby/${key}/1`);
+        newCount = Math.max(0, newCount);
+      } else {
+        current.add(slug);
+        newCount = await redisCmd(`incr/${key}`);
+      }
+
+      saveLiked(current);
+      if (countEl) countEl.textContent = String(newCount);
+      btn.setAttribute('aria-pressed', String(!wasLiked));
+      btn.classList.toggle('like-btn--active', !wasLiked);
+      btn.disabled = false;
+    });
+  }
+
+  document.querySelectorAll<HTMLButtonElement>('.like-btn[data-slug]').forEach(initButton);
+</script>
+
+<style>
+  .like-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--color-text-secondary);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  }
+
+  .like-btn:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+
+  .like-btn:not(:disabled):hover {
+    border-color: var(--color-text-primary);
+    color: var(--color-text-primary);
+  }
+
+  .like-btn--active {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: white;
+  }
+
+  .like-btn--active:not(:disabled):hover {
+    opacity: 0.85;
+  }
+
+  .like-btn svg {
+    flex-shrink: 0;
+    transition: fill 0.2s ease;
+  }
+
+  .like-btn--active svg {
+    fill: white;
+  }
+</style>

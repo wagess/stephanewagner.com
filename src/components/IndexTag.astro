@@ -1,0 +1,37 @@
+---
+interface Props {
+  count: number;
+  label?: string;
+}
+const { count, label = "PROJETS" } = Astro.props;
+---
+
+<div class="index-tag">
+  <p class="index-tag__text"><b>{count}</b> {label}</p>
+</div>
+
+<style>
+  .index-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-border);
+    border-radius: 2px;
+    padding: 2px 4px;
+    overflow: hidden;
+    opacity: 0.6;
+  }
+
+  .index-tag__text {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.16px;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+    text-align: center;
+    margin: 0;
+  }
+</style>

@@ -1,0 +1,155 @@
+---
+import { getCollection } from 'astro:content';
+const { pathname } = Astro.url;
+const cases = (await getCollection('cases')).filter(c => !c.id.startsWith('_'));
+const caseCount = cases.length;
+---
+<header class="nav">
+  <a href="/" class="nav__logo">
+    <img src="/logo-nav.svg" alt="S." width="41" height="34" />
+  </a>
+
+  <div class="nav__links">
+    <a href="/services" class:list={['nav__link', { 'nav__link--active': pathname.startsWith('/services') }]}>
+      Services
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </a>
+    <a href="/cases" class:list={['nav__link', { 'nav__link--active': pathname.startsWith('/cases') }]}>
+      Études de cas
+      <span class="nav__count">{caseCount}</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </a>
+    <a href="#approche" class="nav__link">
+      Approche
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="5" x2="12" y2="19"></line>
+        <polyline points="5 12 12 19 19 12"></polyline>
+      </svg>
+    </a>
+    <a href="/manifeste" class:list={['nav__link', { 'nav__link--active': pathname.startsWith('/manifeste') }]}>
+      Manifeste
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </a>
+  </div>
+
+  <a href="https://calendly.com/wagess/30min" target="_blank" rel="noopener noreferrer" class="nav__cta">
+    I have a dream
+  </a>
+</header>
+
+<style>
+  .nav {
+    width: 100%;
+    background: var(--color-surface);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem var(--spacing-container);
+  }
+
+  .nav__logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .nav__links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .nav__links {
+      gap: 1.25rem;
+    }
+  }
+
+  .nav__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    color: var(--color-text-primary);
+    font-family: var(--font-body);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    white-space: nowrap;
+    transition: opacity 0.2s ease;
+  }
+
+  .nav__link:hover {
+    opacity: 0.5;
+  }
+
+  .nav__count {
+    font-size: 10px;
+    font-family: var(--font-mono);
+    color: var(--color-text-muted);
+    background: var(--color-border);
+    border-radius: 999px;
+    padding: 0.1rem 0.45rem;
+    line-height: 1.6;
+  }
+
+  .nav__link--active svg {
+    transform: rotate(90deg);
+  }
+
+  .nav__link--active {
+    color: var(--color-accent);
+    text-decoration: none;
+    outline: 1px solid var(--color-accent);
+    border-radius: 999px;
+    padding: 0.2rem 0.6rem;
+    animation: frameIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  @keyframes frameIn {
+    from {
+      outline-color: transparent;
+      padding: 0.2rem 0;
+    }
+    to {
+      outline-color: var(--color-accent);
+      padding: 0.2rem 0.6rem;
+    }
+  }
+
+  .nav__cta {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4rem 1rem;
+    background: var(--color-accent);
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    transition: opacity 0.2s ease;
+  }
+
+  .nav__cta:hover {
+    opacity: 0.85;
+  }
+
+  @media (max-width: 768px) {
+    .nav__cta {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,129 @@
+---
+import ServiceCard from './ServiceCard.astro';
+
+interface Service { number: string; title: string; desc: string; count: number; }
+interface Props {
+  label: string;
+  title: string;
+  services: Service[];
+}
+const { label, title, services } = Astro.props;
+---
+
+<section class="services" id="services">
+  <div class="services__container">
+    <div class="services__header" data-animate>
+      <p class="services__label">{label}</p>
+      <h2 class="services__title">{title}</h2>
+    </div>
+
+    <div class="services__grid">
+      {services.map((service, i) => (
+        <ServiceCard
+          number={service.number}
+          title={service.title}
+          description={service.desc}
+          count={service.count}
+          data-animate
+          style={`transition-delay: ${i * 0.1}s`}
+        />
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.services [data-animate]').forEach(el => observer.observe(el));
+</script>
+
+<style>
+  .services {
+    padding: var(--section-spacing) var(--spacing-container);
+    background: var(--color-bg);
+  }
+
+  .services__container {
+    margin: 0 auto;
+  }
+
+  /* --- animate in --- */
+  [data-animate] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  [data-animate].visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .services__header {
+    margin-bottom: 5rem;
+    padding-bottom: 2rem;
+    position: relative;
+    transition-duration: 0.8s;
+  }
+
+  .services__header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--color-text-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .services__header.visible::after {
+    transform: scaleX(1);
+  }
+
+  .services__label {
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 11px;
+    color: var(--color-text-secondary);
+    font-family: var(--font-mono);
+    margin-bottom: 1.5rem;
+  }
+
+  .services__title {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.2;
+    color: var(--color-text-primary);
+    font-family: var(--font-heading);
+    font-weight: 400;
+    max-width: 48rem;
+  }
+
+  .services__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .services__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .services__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+</style>

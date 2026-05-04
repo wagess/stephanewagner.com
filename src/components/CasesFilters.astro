@@ -1,0 +1,153 @@
+---
+interface Props {
+  years: number[];
+}
+
+const { years } = Astro.props;
+---
+
+<div class="filters">
+  <div class="filters__group">
+    <button class="filters__pill filters__pill--active" data-filter-year="all">Tous</button>
+    {years.map(year => (
+      <button class="filters__pill" data-filter-year={year}>{year}</button>
+    ))}
+  </div>
+
+  <span class="filters__sep">+</span>
+
+  <button class="filters__featured" data-filter-featured="false" aria-pressed="false">
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+    </svg>
+    Coups de cœur
+  </button>
+</div>
+
+<script>
+  const yearPills = document.querySelectorAll<HTMLButtonElement>('[data-filter-year]');
+  const featuredBtn = document.querySelector<HTMLButtonElement>('[data-filter-featured]');
+  // Cibler directement les wrappers qui portent les data attributes
+  const wrappers = document.querySelectorAll<HTMLElement>('.cases__list-wrapper [data-animate][data-year]');
+  const listWrapper = document.querySelector<HTMLElement>('.cases__list-wrapper');
+
+  let activeYear = 'all';
+  let featuredOnly = false;
+  let isFiltering = false;
+
+  async function applyFilters() {
+    if (isFiltering) return;
+    isFiltering = true;
+
+    listWrapper?.classList.add('is-loading');
+    await new Promise(r => setTimeout(r, 200));
+
+    wrappers.forEach(wrapper => {
+      const yearMatch = activeYear === 'all' || wrapper.dataset.year === activeYear;
+      const featuredMatch = !featuredOnly || wrapper.dataset.featured === 'true';
+      const visible = yearMatch && featuredMatch;
+      wrapper.style.display = visible ? '' : 'none';
+      if (visible) wrapper.classList.add('visible');
+    });
+
+    listWrapper?.classList.remove('is-loading');
+    isFiltering = false;
+  }
+
+  yearPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      yearPills.forEach(p => p.classList.remove('filters__pill--active'));
+      pill.classList.add('filters__pill--active');
+      activeYear = pill.dataset.filterYear ?? 'all';
+      applyFilters();
+    });
+  });
+
+  featuredBtn?.addEventListener('click', () => {
+    featuredOnly = !featuredOnly;
+    featuredBtn.dataset.filterFeatured = String(featuredOnly);
+    featuredBtn.setAttribute('aria-pressed', String(featuredOnly));
+    applyFilters();
+  });
+</script>
+
+<style>
+  .filters {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .filters__sep {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--color-border);
+    user-select: none;
+  }
+
+  .filters__group {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .filters__pill {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.85rem;
+    border: 1px solid var(--color-border);
+    background: transparent;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    border-radius: 999px;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .filters__pill:hover {
+    border-color: var(--color-text-primary);
+    color: var(--color-text-primary);
+  }
+
+  .filters__pill--active {
+    background: var(--color-text-primary);
+    border-color: var(--color-text-primary);
+    color: var(--color-bg);
+  }
+
+  .filters__featured {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.85rem;
+    border: 1px solid var(--color-border);
+    background: transparent;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    border-radius: 999px;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .filters__featured:hover {
+    border-color: var(--color-text-primary);
+    color: var(--color-text-primary);
+  }
+
+  .filters__featured[aria-pressed="true"] {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: white;
+  }
+
+  .filters__featured[aria-pressed="true"] svg {
+    fill: white;
+    stroke: white;
+  }
+</style>
