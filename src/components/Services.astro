@@ -96,7 +96,7 @@ const { label, title, services } = Astro.props;
     font-size: 11px;
     color: var(--color-text-secondary);
     font-family: var(--font-mono);
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--gap-sm);
   }
 
   .services__title {
@@ -111,7 +111,7 @@ const { label, title, services } = Astro.props;
   .services__grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: var(--gap-sm);
   }
 
   @media (min-width: 768px) {

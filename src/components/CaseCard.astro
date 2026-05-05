@@ -76,7 +76,7 @@ const isSecondary = variant === 'secondary';
     display: flex;
     align-items: center;
     gap: 3rem;
-    padding: 1.5rem;
+    padding: var(--gap-sm);
     height: 14rem;
     text-decoration: none;
     background: var(--color-surface);
@@ -90,7 +90,7 @@ const isSecondary = variant === 'secondary';
     background: #DCDEE0;
     padding: 1.25rem 1.5rem;
     border-color: transparent;
-    gap: 2rem;
+    gap: var(--gap-block);
   }
 
   .case-card__inner:hover {
@@ -154,7 +154,7 @@ const isSecondary = variant === 'secondary';
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 1.5rem;
+    gap: var(--gap-sm);
   }
 
   .case-card--secondary .case-card__head {
