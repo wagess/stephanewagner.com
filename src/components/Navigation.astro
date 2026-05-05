@@ -44,7 +44,60 @@ const caseCount = cases.length;
   <a href="https://calendly.com/wagess/30min" target="_blank" rel="noopener noreferrer" class="nav__cta">
     I have a dream
   </a>
+
+  <button class="nav__burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+    <span></span>
+    <span></span>
+  </button>
 </header>
+
+<div class="nav__mobile-menu" id="mobile-menu" aria-hidden="true">
+  <nav class="nav__mobile-links">
+    <a href="/services" class:list={['nav__mobile-link', { 'nav__mobile-link--active': pathname.startsWith('/services') }]}>
+      Services
+    </a>
+    <a href="/cases" class:list={['nav__mobile-link', { 'nav__mobile-link--active': pathname.startsWith('/cases') }]}>
+      Études de cas
+      <span class="nav__count">{caseCount}</span>
+    </a>
+    <a href="#approche" class="nav__mobile-link nav__mobile-link--hidden">
+      Approche
+    </a>
+    <a href="/manifeste" class:list={['nav__mobile-link', { 'nav__mobile-link--active': pathname.startsWith('/manifeste') }]}>
+      Manifeste
+    </a>
+  </nav>
+  <a href="https://calendly.com/wagess/30min" target="_blank" rel="noopener noreferrer" class="nav__cta nav__mobile-cta">
+    I have a dream
+  </a>
+</div>
+
+<script>
+  const burger = document.querySelector('.nav__burger') as HTMLButtonElement;
+  const menu = document.getElementById('mobile-menu') as HTMLElement;
+
+  function openMenu() {
+    menu.classList.add('is-open');
+    burger.setAttribute('aria-expanded', 'true');
+    menu.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    menu.classList.remove('is-open');
+    burger.setAttribute('aria-expanded', 'false');
+    menu.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  burger.addEventListener('click', () => {
+    menu.classList.contains('is-open') ? closeMenu() : openMenu();
+  });
+
+  menu.querySelectorAll('.nav__mobile-link').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+</script>
 
 <style>
   .nav {
@@ -56,6 +109,8 @@ const caseCount = cases.length;
     align-items: center;
     justify-content: space-between;
     padding: 1.25rem var(--spacing-container);
+    position: relative;
+    z-index: 100;
   }
 
   .nav__logo {
@@ -68,12 +123,6 @@ const caseCount = cases.length;
     display: flex;
     align-items: center;
     gap: 2.5rem;
-  }
-
-  @media (max-width: 768px) {
-    .nav__links {
-      gap: 1.25rem;
-    }
   }
 
   .nav__link {
@@ -147,9 +196,121 @@ const caseCount = cases.length;
     opacity: 0.85;
   }
 
+  /* Burger button */
+  .nav__burger {
+    display: none;
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+  }
+
+  .nav__burger span {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background: var(--color-text-primary);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .nav__burger span:first-child {
+    top: calc(50% - 4px);
+  }
+
+  .nav__burger span:last-child {
+    top: calc(50% + 4px);
+  }
+
+  .nav__burger[aria-expanded="true"] span:first-child {
+    transform: translateY(4px) rotate(45deg);
+  }
+
+  .nav__burger[aria-expanded="true"] span:last-child {
+    transform: translateY(-4px) rotate(-45deg);
+  }
+
+  /* Mobile menu panel */
+  .nav__mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--color-surface);
+    z-index: 99;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 6rem var(--spacing-container) 3rem;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    pointer-events: none;
+  }
+
+  .nav__mobile-menu.is-open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+
+  .nav__mobile-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .nav__mobile-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: clamp(2rem, 8vw, 3rem);
+    font-family: var(--font-heading);
+    color: var(--color-text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .nav__mobile-link:hover {
+    color: var(--color-accent);
+  }
+
+  .nav__mobile-link--active {
+    color: var(--color-accent);
+  }
+
+  .nav__mobile-link--hidden {
+    display: none;
+  }
+
+  .nav__mobile-cta {
+    display: inline-flex !important;
+    margin-top: 3rem;
+    font-size: 14px;
+  }
+
   @media (max-width: 768px) {
+    .nav__links {
+      display: none;
+    }
+
     .nav__cta {
       display: none;
+    }
+
+    .nav__burger {
+      display: flex;
+    }
+
+    .nav__mobile-menu {
+      display: flex;
     }
   }
 </style>

@@ -94,6 +94,12 @@ const tools = toolNames.map(name => ({ name, svg: svgMap[name] ?? '' }));
 </div>
 
 <style>
+  @media (max-width: 768px) {
+    .banner-wrap {
+      display: none;
+    }
+  }
+
   .banner-wrap {
     overflow: hidden;
     transform: rotate(-1deg);

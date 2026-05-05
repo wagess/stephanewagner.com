@@ -127,6 +127,40 @@ Utiliser `_template.md` comme point de départ pour un nouveau cas.
   - Base : `knowing-maggot-40629`
   - Credentials dans `.env` (`PUBLIC_UPSTASH_REDIS_REST_URL`, `PUBLIC_UPSTASH_REDIS_REST_TOKEN`)
 
+## Mobile-first — Chantier en cours
+
+Le site est actuellement en approche **desktop-first** (media queries `max-width`). L'objectif est de migrer vers une approche **mobile-first** (`min-width`).
+
+### Problèmes critiques (à traiter en priorité)
+
+- [x] **Menu mobile manquant** (`Navigation.astro`) — le CTA est masqué sous 768px mais les liens restent en ligne ; aucun hamburger/drawer prévu
+- [ ] **Overflow horizontal** (`ToolsBanner.astro:107-113`) — `width: 110%; margin-left: -5%` crée un scroll horizontal sur mobile
+- [ ] **Hauteur fixe `ServiceCard`** (`ServiceCard.astro:32`) — `height: 220px` fait déborder le contenu ; remplacer par `min-height`
+
+### Problèmes importants
+
+- [ ] **Refonte mobile-first** — toutes les media queries sont en `max-width` ; migrer vers `min-width` avec styles de base pour mobile
+- [ ] **Typographie secondaire non responsive** — les titres utilisent `clamp()` mais les textes courants dans `ServiceCard`, `HeroPillar`, etc. ont des tailles fixes en `px`
+- [ ] **Pas de breakpoint < 768px** — aucune règle pour petits téléphones (≤ 480px)
+- [ ] **VennDiagram SVG** (`VennDiagram.astro:49-54`) — labels à coordonnées `x/y` fixes, se superposent sur petit écran
+
+### Améliorations secondaires
+
+- [ ] **Breakpoint tablette** — pas de règle intermédiaire entre 768px et 1024px
+- [ ] **Breakpoint large écran** — aucune règle au-delà de 1024px (1440px+)
+- [ ] **Avatar Hero** (`Hero.astro:95`) — `72px` fixe, ne s'adapte pas aux très petits écrans
+- [ ] **Parallax banner** (`[slug].astro`) — `height: 85vh` trop haute sur mobile
+- [ ] **`HeroPillar` padding** (`HeroPillar.astro:72`) — `padding: 2rem` fixe sans adaptation
+
+### Ce qui fonctionne déjà bien (ne pas casser)
+
+- Viewport meta correct (`Layout.astro:16`)
+- Variables `--spacing-container` et `--section-spacing` qui scalent à 768px
+- Grilles qui passent à 1 colonne sur mobile (Services, Cases, `[slug].astro`)
+- Images avec `aspect-ratio` + `object-fit` + `max-width: 100%`
+- `clamp()` sur tous les titres principaux
+- `loading="lazy"` sur les images galerie
+
 ## À faire plus tard
 
 - [ ] Migration multilingue (FR + EN) avec i18n natif Astro 5
