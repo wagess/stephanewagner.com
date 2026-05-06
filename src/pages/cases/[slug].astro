@@ -53,7 +53,7 @@ const md = (str: string) => str
           </div>
         </div>
         <div class="cover">
-          {cover && <img src={cover} alt={title} class="cover__img" />}
+          {cover && <img src={cover} alt={title} class="cover__img" loading="eager" />}
         </div>
           <blockquote class="star-summary" set:html={star_summary.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')} />
       </header>
@@ -61,7 +61,7 @@ const md = (str: string) => str
       <section class="star">
 
         <div class="star-block">
-          <div class="star-letter"><img src={iconS.src} alt="S" class="star-icon" /></div>
+          <div class="star-letter"><img src={iconS.src} alt="S" class="star-icon" loading="lazy" /></div>
           <div class="star-content">
             <h2>Contexte</h2>
             {Array.isArray(contexte)
@@ -79,7 +79,7 @@ const md = (str: string) => str
         </div>
 
         <div class="star-block">
-          <div class="star-letter"><img src={iconT.src} alt="T" class="star-icon" /></div>
+          <div class="star-letter"><img src={iconT.src} alt="T" class="star-icon" loading="lazy" /></div>
           <div class="star-content">
             <h2>Méthodologie</h2>
             {Array.isArray(methodologie)
@@ -94,7 +94,7 @@ const md = (str: string) => str
 
     <div class="parallax-banner">
       <div class="parallax-banner__image">
-        <img src={banner_image} alt={title} class="parallax-banner__img" />
+        <img src={banner_image} alt={title} class="parallax-banner__img" loading="lazy" />
       </div>
       <div class="parallax-banner__solution">
         <div class="solution-card__group">
@@ -117,7 +117,7 @@ const md = (str: string) => str
       <section class="star">
 
         <div class="star-block">
-          <div class="star-letter"><img src={iconA.src} alt="A" class="star-icon" /></div>
+          <div class="star-letter"><img src={iconA.src} alt="A" class="star-icon" loading="lazy" /></div>
           <div class="star-content">
             <h2>Livrables</h2>
             {Array.isArray(livrables)
@@ -127,7 +127,7 @@ const md = (str: string) => str
         </div>
 
         <div class="star-block">
-          <div class="star-letter"><img src={iconR.src} alt="R" class="star-icon" /></div>
+          <div class="star-letter"><img src={iconR.src} alt="R" class="star-icon" loading="lazy" /></div>
           <div class="star-content">
             <h2>Résultats</h2>
             {Array.isArray(resultat)
@@ -139,7 +139,7 @@ const md = (str: string) => str
       </section>
 
       <section class="challenges">
-        <img src={challengesSvg.src} alt="Challenges" class="challenges__title" />
+        <img src={challengesSvg.src} alt="Challenges" class="challenges__title" loading="lazy" />
         <div class="challenges__body">
           <p class="challenges__subtitle">Principaux challenges rencontrés :</p>
           <ul class="challenges__list">

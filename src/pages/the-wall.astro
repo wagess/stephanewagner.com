@@ -33,13 +33,16 @@ try {
           <p class="wall__empty">En cours de construction.</p>
         ) : (
           <div class="wall__grid">
-            {images.map(({ src, alt }) => (
-              <div class="wall__item">
-                <a href={src} class="glightbox">
-                  <img src={src} alt={alt} loading="lazy" />
-                </a>
-              </div>
-            ))}
+            {images.map(({ src, alt }) => {
+              const isWeb = src.split('/').pop()?.startsWith('web-');
+              return (
+                <div class="wall__item">
+                  <a href={src} class={isWeb ? 'wall-web-link' : 'glightbox'} data-type={isWeb ? 'web' : undefined}>
+                    <img src={src} alt={alt} loading="lazy" />
+                  </a>
+                </div>
+              );
+            })}
           </div>
         )}
       </div>
@@ -49,17 +52,118 @@ try {
   </main>
 </Layout>
 
+<div id="web-overlay" class="web-overlay" role="dialog" aria-modal="true" aria-label="Maquette web">
+  <button class="web-overlay__close" aria-label="Fermer">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve"><g><g><path d="M505.943,6.058c-8.077-8.077-21.172-8.077-29.249,0L6.058,476.693c-8.077,8.077-8.077,21.172,0,29.249C10.096,509.982,15.39,512,20.683,512c5.293,0,10.586-2.019,14.625-6.059L505.943,35.306C514.019,27.23,514.019,14.135,505.943,6.058z"/></g></g><g><g><path d="M505.942,476.694L35.306,6.059c-8.076-8.077-21.172-8.077-29.248,0c-8.077,8.076-8.077,21.171,0,29.248l470.636,470.636c4.038,4.039,9.332,6.058,14.625,6.058c5.293,0,10.587-2.019,14.624-6.057C514.018,497.866,514.018,484.771,505.942,476.694z"/></g></g></svg>
+  </button>
+  <div class="web-overlay__scroll">
+    <img id="web-overlay-img" src="" alt="" />
+  </div>
+</div>
+
 <script>
   import GLightbox from 'glightbox';
   import 'glightbox/dist/css/glightbox.css';
   GLightbox({ selector: '.glightbox', openEffect: 'zoom', closeEffect: 'zoom' });
+
+  // Overlay scrollable pour les maquettes web
+  const overlay = document.getElementById('web-overlay') as HTMLElement;
+  const overlayImg = document.getElementById('web-overlay-img') as HTMLImageElement;
+  const closeBtn = overlay.querySelector('.web-overlay__close') as HTMLButtonElement;
+
+  function openOverlay(src: string, alt: string) {
+    overlayImg.src = src;
+    overlayImg.alt = alt;
+    overlay.classList.add('is-open');
+    overlay.scrollTop = 0;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeOverlay() {
+    overlay.classList.remove('is-open');
+    document.body.style.overflow = '';
+    overlayImg.src = '';
+  }
+
+  document.querySelectorAll<HTMLAnchorElement>('.wall-web-link').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const img = link.querySelector('img');
+      openOverlay(link.href, img?.alt ?? '');
+    });
+  });
+
+  closeBtn.addEventListener('click', closeOverlay);
+
+  overlay.addEventListener('click', e => {
+    if (e.target === overlay) closeOverlay();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeOverlay();
+  });
 </script>
 
-<style>
+<style is:global>
   .glightbox-open .goverlay { animation-duration: 0.15s !important; }
   .glightbox-open .gslide { animation-duration: 0.15s !important; }
   .glightbox-closing .goverlay { animation-duration: 0.15s !important; }
   .glightbox-closing .gslide { animation-duration: 0.15s !important; }
+
+  /* Overlay scrollable pour les maquettes web */
+  .web-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.92);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .web-overlay.is-open {
+    display: block;
+  }
+
+  .web-overlay__scroll {
+    max-width: 900px;
+    margin: 3rem auto 4rem;
+    padding: 0 1.5rem;
+  }
+
+  .web-overlay__scroll img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+
+  .web-overlay__close {
+    position: fixed;
+    top: 1rem;
+    right: 1.25rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10000;
+    opacity: 0.7;
+    transition: opacity 0.15s;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .web-overlay__close svg {
+    display: block;
+    width: 18px;
+    height: auto;
+    fill: #fff;
+  }
+
+  .web-overlay__close:hover {
+    opacity: 1;
+  }
 </style>
 
 <style>

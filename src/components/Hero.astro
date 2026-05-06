@@ -18,7 +18,7 @@ const { label, headline, pillars } = Astro.props;
     <div class="hero__text">
       <p class="hero__label">{label}</p>
       <div class="hero__headline-wrap">
-        <img class="hero__avatar" src="/avatar.webp" alt="Stéphane Wagner" />
+        <img class="hero__avatar" src="/avatar.webp" alt="Stéphane Wagner" loading="eager" />
         <h1 class="hero__headline" set:html={headline.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')} />
       </div>
     </div>
