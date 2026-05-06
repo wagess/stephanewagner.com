@@ -163,6 +163,12 @@ Le site est actuellement en approche **desktop-first** (media queries `max-width
 
 ## À faire plus tard
 
+- [ ] **Wall type Pinterest** — galerie masonry de projets/images
+  - Option A : interface drag & drop custom pour uploader les images directement
+  - Option B : Cloudinary — script client-side qui fetch `https://res.cloudinary.com/{cloud_name}/image/list/{tag}.json`
+    - Taguer les images `wall` dans Cloudinary
+    - Aucun rebuild nécessaire : ajouter une image → elle apparaît au prochain chargement
+    - Pas de webhook, pas de GitHub Actions
 - [ ] Migration multilingue (FR + EN) avec i18n natif Astro 5
 - [ ] Sélecteur de langue dans `Navigation.astro`
 - [x] Améliorer les filtres dans la page Cases

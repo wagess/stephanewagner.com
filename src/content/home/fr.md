@@ -6,7 +6,7 @@ hero_pillars:
   - label: "Segment 1"
     title: "Sciences et vulgarisation"
     desc: "Santé, recherche, pharmaceutique"
-    back_title: "Capscience — Capsules de vulgarisation"
+    back_title: "Capscience, Capsules de vulgarisation"
     back_href: "/cases/capscience-case"
   - label: "Segment 2"
     title: "Organisations et institutions"
@@ -16,7 +16,7 @@ hero_pillars:
   - label: "Segment 3"
     title: "Médias et Culturel"
     desc: "Documentaires, divertissements"
-    back_title: "Urbania — Ethnies"
+    back_title: "Urbania Magazine"
     back_href: "/cases/urbania-case"
 
 # ─── Services ────────────────────────────────────────────
@@ -64,13 +64,13 @@ services:
 side_projects_label: "Projets secondaires"
 side_projects_title: "Projets qui influencent mon travail"
 side_projects:
-  - title: "Projet parallèle — Écriture"
+  - title: "Projet parallèle — Écriture et blog voyage"
     href: "#"
     year: 2025
-  - title: "Projet parallèle — Design System"
+  - title: "Projet parallèle — Photographies Fine Art"
     href: "#"
     year: 2024
-  - title: "Projet parallèle — Outil interne"
+  - title: "Projet parallèle — ShopPhoto Conception d'un workflow personnel"
     href: "#"
     year: 2023
 

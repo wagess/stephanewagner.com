@@ -1,15 +1,15 @@
 ---
 title: "Bonifier l'expérience publicitaire d'un média de presse"
-cover: "/cases/[slug]/cover.webp"
-banner_image: "/cases/[slug]/banner.webp"
+cover: "/cases/lapresse/cover.webp"
+banner_image: "/cases/lapresse/banner.webp"
 gallery:
-  - "/cases/[slug]/gallery-1.webp"
-  - "/cases/[slug]/gallery-2.webp"
-  - "/cases/[slug]/gallery-3.webp"
-  - "/cases/[slug]/gallery-4.webp"
-year: 2017
-tags: []
-star_summary: ""
+  - "/cases/lapresse/iPad-Pro-Flamingo.webp"
+  - "/cases/lapresse/iPad-Pro-Kia.webp"
+  - "/cases/lapresse/iPad-Pro-VacheQuiRit.webp"
+  - "/cases/lapresse/iPad-Pro-Volkswagen.webp"
+year: 2016
+tags: ["Mobile","Medias numériques","Produit publicitaire"]
+star_summary: "Participer à une aventure innovante sur le marché des médias numériques."
 contexte: ""
 probleme: ""
 hypothese: ""

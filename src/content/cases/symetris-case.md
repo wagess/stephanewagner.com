@@ -7,7 +7,7 @@ gallery:
   - "/cases/symetris/gallery-2.webp"
   - "/cases/symetris/gallery-3.webp"
   - "/cases/symetris/gallery-4.webp"
-year: 2026
+year: 2023
 tags: []
 featured: false
 star_summary: "Agir en tant que conseiller interne ..."

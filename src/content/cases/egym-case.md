@@ -7,7 +7,7 @@ gallery:
   - "/cases/egym/EGYM-cover.webp"
   - "/cases/egym/EGYM-cover.webp"
   - "/cases/egym/EGYM-cover.webp"
-year: 2025
+year: 2024
 tags: ["UX", "UI", "Design système", "Fitness tech", "Produit"]
 star_summary: "Repenser l'expérience d'une **plateforme fitness** connectée pour améliorer l'engagement et la rétention des utilisateurs."
 contexte: "EGYM est une entreprise de fitness tech proposant des équipements connectés et une plateforme digitale pour les salles de sport et leurs membres."

@@ -7,7 +7,7 @@ gallery:
   - "/cases/curateur/parcours-citoyen.webp"
   - "/cases/curateur/wireframe.webp"
   - "/cases/curateur/parcours-utilisateur.webp"
-year: 2020
+year: 2021
 tags: ["EX", "UX", "UI", "Accessibilité", "Service public"]
 featured: false
 star_summary: "Transformer un processus juridique complexe en une démarche humaine, accessible et centrée sur les besoins des personnes en situation de vulnérabilité et de leurs proches."

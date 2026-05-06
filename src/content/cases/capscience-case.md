@@ -7,7 +7,7 @@ gallery:
   - "/cases/capscience/capscience-2.webp"
   - "/cases/capscience/capscience-3.webp"
   - "/cases/capscience/capscience-4.webp"
-year: 2026
+year: 2019
 tags: ["Founder mindset", "Architecture de l'information", "Product Design", "Visual design", "Animation", "développement" ]
 featured: true
 star_summary: "La transformation d'un sujet passion en idée de produit digital pour contenus scientifique actionable."

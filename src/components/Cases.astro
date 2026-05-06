@@ -13,7 +13,13 @@ const allCases = (await getCollection("cases"))
   .filter(c => !c.id.startsWith('_'))
   .sort((a, b) => b.data.year - a.data.year);
 
-const cases = limit ? allCases.slice(0, limit) : allCases;
+const featuredCases = allCases.filter(c => c.data.featured);
+for (let i = featuredCases.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [featuredCases[i], featuredCases[j]] = [featuredCases[j], featuredCases[i]];
+}
+
+const cases = limit ? featuredCases.slice(0, limit) : allCases;
 
 const years = [...new Set(allCases.map(c => c.data.year))].sort((a, b) => b - a).slice(0, 1);
 ---

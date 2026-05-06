@@ -1,0 +1,123 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import Footer from '../components/Footer.astro';
+import { readdirSync } from 'fs';
+import { join } from 'path';
+
+const EXTENSIONS = /\.(jpg|jpeg|png|webp|gif|avif)$/i;
+
+let images: { src: string; alt: string }[] = [];
+try {
+  images = readdirSync(join(process.cwd(), 'public/wall'))
+    .filter(f => EXTENSIONS.test(f))
+    .map(f => ({
+      src: `/wall/${f}`,
+      alt: f.replace(EXTENSIONS, '').replace(/[-_]/g, ' '),
+    }));
+} catch {
+  // dossier inexistant ou vide
+}
+---
+
+<Layout
+  title="The Wall — Stéphane Wagner"
+  description="Une collection de visuels — illustrations, photographies, explorations graphiques."
+>
+  <main>
+    <PageHeader label="The Wall" title="Une collection de visuels" />
+
+    <section class="wall">
+      <div class="wall__container">
+        {images.length === 0 ? (
+          <p class="wall__empty">En cours de construction.</p>
+        ) : (
+          <div class="wall__grid">
+            {images.map(({ src, alt }) => (
+              <div class="wall__item">
+                <a href={src} class="glightbox">
+                  <img src={src} alt={alt} loading="lazy" />
+                </a>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+
+    <Footer />
+  </main>
+</Layout>
+
+<script>
+  import GLightbox from 'glightbox';
+  import 'glightbox/dist/css/glightbox.css';
+  GLightbox({ selector: '.glightbox', openEffect: 'zoom', closeEffect: 'zoom' });
+</script>
+
+<style>
+  .glightbox-open .goverlay { animation-duration: 0.15s !important; }
+  .glightbox-open .gslide { animation-duration: 0.15s !important; }
+  .glightbox-closing .goverlay { animation-duration: 0.15s !important; }
+  .glightbox-closing .gslide { animation-duration: 0.15s !important; }
+</style>
+
+<style>
+  main {
+    background: var(--color-bg);
+    min-height: 100vh;
+  }
+
+  .wall {
+    padding: 0 var(--spacing-container) var(--section-spacing);
+  }
+
+  .wall__container {
+    margin: 0 auto;
+  }
+
+  .wall__empty {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    text-align: center;
+    padding: 6rem 0;
+  }
+
+  .wall__grid {
+    columns: 4;
+    column-gap: 12px;
+  }
+
+  .wall__item {
+    break-inside: avoid;
+    margin-bottom: 12px;
+    border: 5px solid var(--color-border);
+    border-radius: 6px;
+  }
+
+  .wall__item a {
+    display: block;
+    overflow: hidden;
+    border-radius: 2px;
+  }
+
+  .wall__item img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .wall__grid {
+      columns: 2 140px;
+      column-gap: 8px;
+    }
+
+    .wall__item {
+      margin-bottom: 8px;
+    }
+  }
+</style>

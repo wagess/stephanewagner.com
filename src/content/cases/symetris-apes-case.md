@@ -1,12 +1,9 @@
 ---
 title: "Catalyser la refonte web pour des pharmaciens professionnels"
-cover: "/cases/apes-quebec/cover.webp"
-banner_image: "/cases/apes/Clients-Symetris-1-uai-752x501.jpg"
+cover: "/cases/apes/cover.webp"
+banner_image: "/cases/apes/apes-banner.webp"
 gallery:
-  - "/cases/apes/Clients-Symetris-1-uai-752x501.jpg"
-  - "/cases/apes/Clients-Symetris-1-uai-752x501.jpg"
-  - "/cases/apes/Clients-Symetris-1-uai-752x501.jpg"
-  - "/cases/apes/Clients-Symetris-1-uai-752x501.jpg"
+  - "/cases/apes/gallery-1.webp"
 year: 2023
 tags:
   - Refonte web

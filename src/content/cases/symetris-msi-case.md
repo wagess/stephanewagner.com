@@ -7,7 +7,7 @@ gallery:
   - "/cases/msi/msi-2.webp"
   - "/cases/msi/msi-3.webp"
   - "/cases/msi/msi-mobile.webp"
-year: 2026
+year: 2022
 tags: ["UX", "UI", "Analyse", "Prototypage", "Priorisation"]
 featured: true
 star_summary: "Lisibilité et accéssibilité d'un contenu médical utilisé au quotidien."

@@ -11,6 +11,21 @@ import Footer from '../components/Footer.astro';
 >
   <main>
     <PageHeader label="Manifeste" title="Ce en quoi je crois" />
+
+    <section class="manifeste">
+      <div class="manifeste__container">
+        <div class="manifeste__body">
+          <p>Je crois que la complexité ne se simplifie pas — elle se traduit.</p>
+          <p>Un bon design ne cache pas la réalité d'un système. Il la rend lisible. Il choisit ce qui mérite d'être vu, dans quel ordre, avec quelle intention.</p>
+          <p>Je crois qu'un produit fiable est d'abord un produit honnête. Honnête sur ce qu'il fait, sur ce qu'il ne fait pas, sur ce qu'il demande à l'utilisateur.</p>
+          <p>Je crois que la forme suit la compréhension, pas l'esthétique. La beauté d'une interface vient de sa justesse, pas de sa tendance.</p>
+          <p>Je crois au travail de fond. Aux questions posées avant les maquettes. Aux hypothèses testées avant les livrables. À la recherche comme point de départ, pas comme validation après coup.</p>
+          <p>Je crois que le designer est un passeur — entre les intentions d'une organisation et les besoins de ceux qui la traversent.</p>
+          <p>Et je crois que concevoir un produit utile, c'est l'un des actes les plus concrets qu'on puisse poser dans un monde qui en a besoin.</p>
+        </div>
+      </div>
+    </section>
+
     <VennDiagram />
     <Footer />
   </main>
@@ -20,5 +35,27 @@ import Footer from '../components/Footer.astro';
   main {
     background: white;
     min-height: 100vh;
+  }
+
+  .manifeste {
+    padding: var(--section-spacing) var(--spacing-container);
+  }
+
+  .manifeste__container {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .manifeste__body p {
+    font-family: var(--font-heading);
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--color-text-primary);
+    margin-bottom: 1.75rem;
+  }
+
+  .manifeste__body p:last-child {
+    margin-bottom: 0;
   }
 </style>
