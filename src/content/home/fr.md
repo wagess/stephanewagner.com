@@ -25,11 +25,11 @@ services_title: "Ma trousse de Savoir-faire"
 services:
   - number: "01"
     title: "UX & Stratégie de produit"
-    desc: "Service design / parcours end-to-end"
+    desc: "Design de produit / parcours end-to-end"
     count: 3
   - number: "02"
     title: "Founding designer"
-    desc: "Brand, Visual system, archetypes, UX Writing"
+    desc: "Brand, Visual system, patterns, UX Writing"
     count: 2
   - number: "03"
     title: "Design de systèmes complexes"
@@ -37,27 +37,27 @@ services:
     count: 4
   - number: "04"
     title: "Vibe coding"
-    desc: "Copilotes, assistants"
+    desc: "Workflow code et Desgin"
     count: 1
   - number: "05"
-    title: "Systèmes complexes"
-    desc: "Écosystèmes digitaux, cartographie, carte de besoins"
+    title: "Visuel et narratif"
+    desc: "Déclinaison graphique, UX writing"
     count: 2
   - number: "06"
     title: "Architecture de Produit"
-    desc: "Structures de contenu, parcours, priorisation"
+    desc: "Cartes de contenu, cartographie"
     count: 3
   - number: "07"
     title: "Alignement produit et design"
-    desc: "Amélioration de l'opérabilité"
+    desc: "Amélioration de l'opérabilité, audit technqiue"
     count: 2
   - number: "08"
     title: "Recherche utilisateur"
-    desc: "Tests, entretiens, insights"
+    desc: "Tests A/B, co-création, Analyse"
     count: 1
   - number: "09"
     title: "Prototypage & validation"
-    desc: "Maquettes haute fidélité, itération"
+    desc: "Maquettes haute fidélité, wireframes"
     count: 2
 
 # ─── Side Projects ───────────────────────────────────────
