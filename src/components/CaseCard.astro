@@ -106,10 +106,22 @@ const isSecondary = variant === 'secondary';
   @media (max-width: 768px) {
     .case-card__inner {
       height: auto;
-      padding: 1.25rem;
-      gap: 1rem;
+      padding: 0;
+      gap: 0;
       flex-direction: column;
       align-items: flex-start;
+    }
+
+    .case-card__left,
+    .case-card__body {
+      padding: 1rem 1.25rem;
+    }
+
+    .case-card__left {
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+      padding-bottom: 0;
     }
   }
 
@@ -292,7 +304,17 @@ const isSecondary = variant === 'secondary';
 
   @media (max-width: 768px) {
     .case-card__thumb {
-      display: none;
+      width: 100%;
+      max-height: none;
+      aspect-ratio: 16 / 9;
+      border-radius: var(--card-radius) var(--card-radius) 0 0;
+      border: none;
+      box-shadow: none;
+      order: -1;
+    }
+
+    .case-card__inner:hover .case-card__thumb {
+      box-shadow: none;
     }
   }
 </style>
