@@ -1,17 +1,10 @@
 ---
-interface Props {
-  years: number[];
-}
-
-const { years } = Astro.props;
 ---
 
 <div class="filters">
   <div class="filters__group">
-    <button class="filters__pill filters__pill--active" data-filter-year="all">Tous</button>
-    {years.map(year => (
-      <button class="filters__pill" data-filter-year={year}>{year}</button>
-    ))}
+    <button class="filters__pill filters__pill--active" data-filter-tag="all">Tous</button>
+    <button class="filters__pill" data-filter-tag="B2C">B2C</button>
   </div>
 
   <span class="filters__sep">+</span>
@@ -25,13 +18,12 @@ const { years } = Astro.props;
 </div>
 
 <script>
-  const yearPills = document.querySelectorAll<HTMLButtonElement>('[data-filter-year]');
+  const tagPills = document.querySelectorAll<HTMLButtonElement>('[data-filter-tag]');
   const featuredBtn = document.querySelector<HTMLButtonElement>('[data-filter-featured]');
-  // Cibler directement les wrappers qui portent les data attributes
   const wrappers = document.querySelectorAll<HTMLElement>('.cases__list-wrapper [data-animate][data-year]');
   const listWrapper = document.querySelector<HTMLElement>('.cases__list-wrapper');
 
-  let activeYear = 'all';
+  let activeTag = 'all';
   let featuredOnly = false;
   let isFiltering = false;
 
@@ -43,9 +35,10 @@ const { years } = Astro.props;
     await new Promise(r => setTimeout(r, 200));
 
     wrappers.forEach(wrapper => {
-      const yearMatch = activeYear === 'all' || wrapper.dataset.year === activeYear;
+      const tags = (wrapper.dataset.tags ?? '').split(',');
+      const tagMatch = activeTag === 'all' || tags.includes(activeTag);
       const featuredMatch = !featuredOnly || wrapper.dataset.featured === 'true';
-      const visible = yearMatch && featuredMatch;
+      const visible = tagMatch && featuredMatch;
       wrapper.style.display = visible ? '' : 'none';
       if (visible) wrapper.classList.add('visible');
     });
@@ -54,11 +47,11 @@ const { years } = Astro.props;
     isFiltering = false;
   }
 
-  yearPills.forEach(pill => {
+  tagPills.forEach(pill => {
     pill.addEventListener('click', () => {
-      yearPills.forEach(p => p.classList.remove('filters__pill--active'));
+      tagPills.forEach(p => p.classList.remove('filters__pill--active'));
       pill.classList.add('filters__pill--active');
-      activeYear = pill.dataset.filterYear ?? 'all';
+      activeTag = pill.dataset.filterTag ?? 'all';
       applyFilters();
     });
   });

@@ -21,7 +21,6 @@ for (let i = featuredCases.length - 1; i > 0; i--) {
 
 const cases = limit ? featuredCases.slice(0, limit) : allCases;
 
-const years = [...new Set(allCases.map(c => c.data.year))].sort((a, b) => b - a).slice(0, 1);
 ---
 
 <section id="cases" class="cases">
@@ -32,13 +31,13 @@ const years = [...new Set(allCases.map(c => c.data.year))].sort((a, b) => b - a)
         <p class="cases__label">Études de cas</p>
         <h2 class="cases__title">Histoires de produits et services</h2>
       </div>
-      {!limit && <CasesFilters years={years} />}
+      {!limit && <CasesFilters />}
     </div>
 
     <div class="cases__list-wrapper">
       <ul class="cases__list">
         {cases.map((c, i) => (
-          <div data-animate data-year={c.data.year} data-featured={c.data.featured ?? false} style={`transition-delay: ${i * 0.15}s`}>
+          <div data-animate data-year={c.data.year} data-featured={c.data.featured ?? false} data-tags={c.data.tags.join(',')} style={`transition-delay: ${i * 0.15}s`}>
             <CaseCard
               index={i + 1}
               title={c.data.title}
