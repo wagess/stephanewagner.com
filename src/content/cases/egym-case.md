@@ -13,12 +13,12 @@ gallery_styles:
   - cover
   - cover
 year: 2024
-tags: ["UX", "UI", "Design système", "Fitness tech", "Produit"]
-star_summary: "Repenser l'expérience d'une **plateforme fitness** connectée pour améliorer l'engagement et la rétention des utilisateurs."
+tags: ["UX", "UI", "Design système", "Fitness tech", "Produit", "B2C"]
+star_summary: "Comprendre le modèle d'une plateforme fitness connectée pour améliorer l'engagement."
 contexte: "EGYM est un ==leader mondial de la technologie de fitness==, offrant un écosystème intelligent combinant des machines de musculation connectées (Smart Strength) et des logiciels pour des entraînements personnalisés, efficaces et sécurisés."
 probleme: "Comment améliorer le taux d'engagement sur la plateforme digitale ?"
 hypothese: "Auditer le contenu de la plateforme et proposer une stratégie marketing ciblée"
-solution: "Proposer des améliorations hiérarchiques sur la structure du contenu et améliorer le tunnel de conversion de la cible."
+solution: "Proposer des améliorations hiérarchiques sur la structure du contenu et améliorer le tunnel de conversion de la cible grâce à un formulaire de sondage plus engageant."
 methodologie:
   - "Audit éditorial et inventaire de contenu"
   - "Ausit des pages et propositions de réorganisation"

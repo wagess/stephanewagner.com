@@ -9,61 +9,91 @@ interface Props {
   cover?: string;
   variant?: 'default' | 'secondary';
   featured?: boolean;
+  draft?: boolean;
 }
 
-const { index, title, summary, tags = [], href, year, cover, variant = 'default', featured = false } = Astro.props;
+const { index, title, summary, tags = [], href, year, cover, variant = 'default', featured = false, draft = false } = Astro.props;
 
 const num = String(index).padStart(2, '0');
 const isSecondary = variant === 'secondary';
 ---
 
-<li class:list={['case-card', { 'case-card--secondary': isSecondary }]} data-year={year} data-featured={featured}>
-  <a href={href} class="case-card__inner" target={isSecondary ? '_blank' : undefined} rel={isSecondary ? 'noopener noreferrer' : undefined}>
+<li class:list={['case-card', { 'case-card--secondary': isSecondary, 'case-card--draft': draft }]} data-year={year} data-featured={featured}>
 
-    <div class="case-card__left">
-      <span class="case-card__number">{isSecondary ? num : year}</span>
-      {!isSecondary && (
-        <svg class="case-card__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="7" y1="17" x2="17" y2="7"></line>
-          <polyline points="7 7 17 7 17 17"></polyline>
+  {draft ? (
+    <div class="case-card__inner">
+      <div class="case-card__left">
+        <span class="case-card__number">{year}</span>
+        <svg class="case-card__icon case-card__icon--lock" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
         </svg>
+      </div>
+      <div class="case-card__body">
+        <div class="case-card__head">
+          <h3 class="case-card__title">{title}</h3>
+        </div>
+        {tags.length > 0 && (
+          <div class="case-card__tags">
+            {tags.slice(0, 4).map(tag => (
+              <span class="case-card__tag">{tag}</span>
+            ))}
+          </div>
+        )}
+      </div>
+      {cover && (
+        <div class="case-card__thumb">
+          <img src={cover} alt={title} loading="lazy" />
+        </div>
       )}
     </div>
-
-    <div class="case-card__body">
-      <div class="case-card__head">
-        <h3 class="case-card__title">{title}</h3>
-        {isSecondary && (
-          <svg class="case-card__icon case-card__icon--right" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
+  ) : (
+    <a href={href} class="case-card__inner" target={isSecondary ? '_blank' : undefined} rel={isSecondary ? 'noopener noreferrer' : undefined}>
+      <div class="case-card__left">
+        <span class="case-card__number">{isSecondary ? num : year}</span>
+        {!isSecondary && (
+          <svg class="case-card__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
           </svg>
         )}
       </div>
 
-      {!isSecondary && summary && (
-        <p class="case-card__summary">{summary}</p>
-      )}
-
-      {!isSecondary && tags.length > 0 && (
-        <div class="case-card__tags">
-          {tags.slice(0, 4).map(tag => (
-            <span class="case-card__tag">{tag}</span>
-          ))}
-          {tags.length > 4 && (
-            <span class="case-card__tag case-card__tag--more">+{tags.length - 4}</span>
+      <div class="case-card__body">
+        <div class="case-card__head">
+          <h3 class="case-card__title">{title}</h3>
+          {isSecondary && (
+            <svg class="case-card__icon case-card__icon--right" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
           )}
         </div>
-      )}
-    </div>
 
-    {!isSecondary && cover && (
-      <div class="case-card__thumb">
-        <img src={cover} alt={title} loading="lazy" />
+        {!isSecondary && summary && (
+          <p class="case-card__summary">{summary}</p>
+        )}
+
+        {!isSecondary && tags.length > 0 && (
+          <div class="case-card__tags">
+            {tags.slice(0, 4).map(tag => (
+              <span class="case-card__tag">{tag}</span>
+            ))}
+            {tags.length > 4 && (
+              <span class="case-card__tag case-card__tag--more">+{tags.length - 4}</span>
+            )}
+          </div>
+        )}
       </div>
-    )}
 
-  </a>
+      {!isSecondary && cover && (
+        <div class="case-card__thumb">
+          <img src={cover} alt={title} loading="lazy" />
+        </div>
+      )}
+    </a>
+  )}
+
 </li>
 
 <style>
@@ -93,7 +123,12 @@ const isSecondary = variant === 'secondary';
     gap: var(--gap-block);
   }
 
-  .case-card__inner:hover {
+  .case-card--draft .case-card__inner {
+    cursor: default;
+    opacity: 0.5;
+  }
+
+  a.case-card__inner:hover {
     background: var(--color-accent);
     border-color: var(--color-accent);
   }
@@ -146,7 +181,7 @@ const isSecondary = variant === 'secondary';
     transition: color 0.3s ease;
   }
 
-  .case-card__inner:hover .case-card__number {
+  a.case-card__inner:hover .case-card__number {
     color: white;
   }
 
@@ -188,7 +223,7 @@ const isSecondary = variant === 'secondary';
     font-size: clamp(1.25rem, 2.5vw, 1.75rem);
   }
 
-  .case-card__inner:hover .case-card__title {
+  a.case-card__inner:hover .case-card__title {
     color: white;
   }
 
@@ -202,9 +237,13 @@ const isSecondary = variant === 'secondary';
     transition: color 0.3s ease, transform 0.2s ease;
   }
 
-  .case-card__inner:hover .case-card__icon {
+  a.case-card__inner:hover .case-card__icon {
     color: white;
     transform: translate(3px, -3px);
+  }
+
+  .case-card__icon--lock {
+    transform: none !important;
   }
 
   .case-card__icon--right {
@@ -235,7 +274,7 @@ const isSecondary = variant === 'secondary';
     }
   }
 
-  .case-card__inner:hover .case-card__summary {
+  a.case-card__inner:hover .case-card__summary {
     color: white;
   }
 
@@ -256,7 +295,7 @@ const isSecondary = variant === 'secondary';
     transition: color 0.3s ease, border-color 0.3s ease;
   }
 
-  .case-card__inner:hover .case-card__tag {
+  a.case-card__inner:hover .case-card__tag {
     color: white;
     border-color: rgba(255,255,255,0.5);
   }
@@ -267,7 +306,7 @@ const isSecondary = variant === 'secondary';
     border-style: dashed;
   }
 
-  .case-card__inner:hover .case-card__tag--more {
+  a.case-card__inner:hover .case-card__tag--more {
     color: rgba(255,255,255,0.6);
     border-color: rgba(255,255,255,0.3);
   }
@@ -286,7 +325,7 @@ const isSecondary = variant === 'secondary';
     transition: box-shadow 0.3s ease;
   }
 
-  .case-card__inner:hover .case-card__thumb {
+  a.case-card__inner:hover .case-card__thumb {
     box-shadow: 4px 4px 0 0 rgba(0,0,0,0.4);
   }
 
@@ -298,7 +337,7 @@ const isSecondary = variant === 'secondary';
     transition: transform 0.4s ease;
   }
 
-  .case-card__inner:hover .case-card__thumb img {
+  a.case-card__inner:hover .case-card__thumb img {
     transform: scale(1.05);
   }
 
@@ -313,7 +352,7 @@ const isSecondary = variant === 'secondary';
       order: -1;
     }
 
-    .case-card__inner:hover .case-card__thumb {
+    a.case-card__inner:hover .case-card__thumb {
       box-shadow: none;
     }
   }

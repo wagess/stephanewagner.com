@@ -9,19 +9,67 @@ import Footer from '../components/Footer.astro';
   title="Manifeste — Concepteur Produit"
   description="Mon manifeste de concepteur produit."
 >
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap" rel="stylesheet" />
+
   <main>
     <PageHeader label="Manifeste" title="Ce en quoi je crois" />
 
     <section class="manifeste">
       <div class="manifeste__container">
-        <div class="manifeste__body">
-          <p>Je crois que la complexité ne se simplifie pas — elle se traduit.</p>
-          <p>Un bon design ne cache pas la réalité d'un système. Il la rend lisible. Il choisit ce qui mérite d'être vu, dans quel ordre, avec quelle intention.</p>
-          <p>Je crois qu'un produit fiable est d'abord un produit honnête. Honnête sur ce qu'il fait, sur ce qu'il ne fait pas, sur ce qu'il demande à l'utilisateur.</p>
-          <p>Je crois que la forme suit la compréhension, pas l'esthétique. La beauté d'une interface vient de sa justesse, pas de sa tendance.</p>
-          <p>Je crois au travail de fond. Aux questions posées avant les maquettes. Aux hypothèses testées avant les livrables. À la recherche comme point de départ, pas comme validation après coup.</p>
-          <p>Je crois que le designer est un passeur — entre les intentions d'une organisation et les besoins de ceux qui la traversent.</p>
-          <p>Et je crois que concevoir un produit utile, c'est l'un des actes les plus concrets qu'on puisse poser dans un monde qui en a besoin.</p>
+        <div class="manifeste__stack">
+          <div class="manifeste__sheet manifeste__sheet--1"></div>
+          <div class="manifeste__sheet manifeste__sheet--2"></div>
+          <div class="manifeste__sheet manifeste__sheet--3"></div>
+          <div class="manifeste__paper">
+            <svg class="manifeste__scribbles" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+              <g opacity="0.045" stroke="#3a2a1a" fill="none" transform="rotate(-1.2, 300, 400)">
+                <path d="M20,60 Q80,57 130,61 Q170,58 210,62 Q260,59 310,63 Q360,60 400,62 Q450,58 500,61 Q540,59 580,62" stroke-width="1.2"/>
+                <path d="M20,85 Q60,82 110,86 Q160,83 200,87 Q250,84 300,88 Q340,85 390,87 Q440,83 490,86 Q530,84 570,87" stroke-width="0.9"/>
+                <path d="M20,108 Q70,106 120,109 Q180,107 230,110 Q280,108 330,111 Q380,109 430,110 Q480,108 530,111 Q560,109 590,110" stroke-width="1.1"/>
+                <path d="M20,132 Q90,130 140,133 Q190,131 240,134 Q290,132 340,135 Q400,133 450,134 Q500,132 550,135" stroke-width="0.8"/>
+                <path d="M20,156 Q75,154 125,157 Q175,155 225,158 Q275,156 325,159 Q375,157 425,158 Q475,156 525,159 Q555,157 585,158" stroke-width="1.0"/>
+                <path d="M20,180 Q65,178 115,181 Q165,179 215,182 Q265,180 315,183 Q365,181 415,182 Q465,180 515,183 Q545,181 575,182" stroke-width="0.9"/>
+                <path d="M20,204 Q80,202 130,205 Q185,203 235,206 Q285,204 335,207 Q385,205 435,206 Q485,204 535,207 Q560,205 585,206" stroke-width="1.1"/>
+                <path d="M20,228 Q70,226 120,229 Q170,227 220,230 Q270,228 320,231 Q370,229 420,230 Q470,228 520,231 Q555,229 580,230" stroke-width="0.8"/>
+                <path d="M20,252 Q85,250 135,253 Q185,251 235,254 Q285,252 335,255 Q385,253 435,254 Q485,252 535,255 Q560,253 585,254" stroke-width="1.0"/>
+                <path d="M20,276 Q75,274 125,277 Q175,275 225,278 Q275,276 325,279 Q375,277 425,278 Q475,276 525,279 Q555,277 580,278" stroke-width="0.9"/>
+              </g>
+              <g opacity="0.03" stroke="#2a1a0a" fill="none" transform="rotate(0.6, 300, 400)">
+                <path d="M30,72 Q60,70 90,73 Q110,71 140,74 Q175,72 195,73" stroke-width="1.4"/>
+                <path d="M210,72 Q240,70 280,73 Q310,71 350,74" stroke-width="1.1"/>
+                <path d="M370,72 Q410,70 450,73 Q480,71 520,74 Q550,72 580,73" stroke-width="1.3"/>
+                <path d="M30,120 Q75,118 115,121 Q155,119 180,122" stroke-width="1.2"/>
+                <path d="M200,120 Q250,118 290,121 Q330,119 370,122 Q390,120 420,121" stroke-width="0.9"/>
+                <path d="M445,120 Q480,118 520,121 Q550,119 575,120" stroke-width="1.1"/>
+                <path d="M30,168 Q80,166 120,169 Q160,167 195,170" stroke-width="1.0"/>
+                <path d="M215,168 Q255,166 295,169 Q335,167 365,170 Q395,168 415,169" stroke-width="1.2"/>
+                <path d="M440,168 Q475,166 515,169 Q545,167 575,168" stroke-width="0.9"/>
+                <path d="M30,216 Q70,214 110,217 Q150,215 190,218" stroke-width="1.1"/>
+                <path d="M215,216 Q260,214 300,217 Q340,215 375,218 Q400,216 430,217" stroke-width="1.0"/>
+                <path d="M455,216 Q490,214 525,217 Q555,215 580,216" stroke-width="1.2"/>
+                <path d="M30,264 Q75,262 115,265 Q155,263 185,266" stroke-width="0.9"/>
+                <path d="M210,264 Q255,262 295,265 Q335,263 370,266 Q395,264 420,265" stroke-width="1.1"/>
+                <path d="M445,264 Q480,262 515,265 Q548,263 578,264" stroke-width="1.0"/>
+              </g>
+              <g opacity="0.025" stroke="#1a1a1a" fill="none" transform="rotate(-0.3, 300, 400)">
+                <path d="M40,95 Q200,91 360,96 Q480,93 570,95" stroke-width="2.5"/>
+                <path d="M40,191 Q150,188 280,192 Q390,189 520,191" stroke-width="2.0"/>
+                <path d="M40,287 Q180,284 310,288 Q430,285 565,287" stroke-width="2.2"/>
+              </g>
+            </svg>
+            <div class="manifeste__body">
+              <p>Je crois que la complexité ne se simplifie pas — elle se traduit.</p>
+              <p>Un bon design ne cache pas la réalité d'un système. Il la rend lisible. Il choisit ce qui mérite d'être vu, dans quel ordre, avec quelle intention.</p>
+              <p>Je crois qu'un produit fiable est d'abord un produit honnête. Honnête sur ce qu'il fait, sur ce qu'il ne fait pas, sur ce qu'il demande à l'utilisateur.</p>
+              <p>Je crois que la forme suit la compréhension, pas l'esthétique. La beauté d'une interface vient de sa justesse, pas de sa tendance.</p>
+              <p>Je crois au travail de fond. Aux questions posées avant les maquettes. Aux hypothèses testées avant les livrables. À la recherche comme point de départ, pas comme validation après coup.</p>
+              <p>Je crois que le designer est un passeur — entre les intentions d'une organisation et les besoins de ceux qui la traversent.</p>
+              <p>Et je crois que concevoir un produit utile, c'est l'un des actes les plus concrets qu'on puisse poser dans un monde qui en a besoin.</p>
+              <p class="manifeste__signature">— S.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -39,23 +87,97 @@ import Footer from '../components/Footer.astro';
 
   .manifeste {
     padding: var(--section-spacing) var(--spacing-container);
+    display: flex;
+    justify-content: center;
   }
 
   .manifeste__container {
-    max-width: 680px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 860px;
+  }
+
+  .manifeste__stack {
+    position: relative;
+  }
+
+  .manifeste__sheet {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 2px;
+  }
+
+  .manifeste__sheet--1 {
+    background: #f0ebe0;
+    border: 1px solid #d8cfc0;
+    transform: rotate(-3deg);
+    transform-origin: center bottom;
+    box-shadow: 2px 4px 12px rgba(0,0,0,0.08);
+  }
+
+  .manifeste__sheet--2 {
+    background: #f5f0e6;
+    border: 1px solid #ddd4c0;
+    transform: rotate(2deg);
+    transform-origin: center bottom;
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.06);
+  }
+
+  .manifeste__sheet--3 {
+    background: #f8f4ec;
+    border: 1px solid #e5ddd0;
+    transform: rotate(-1deg);
+    transform-origin: center bottom;
+    box-shadow: 2px 3px 8px rgba(0,0,0,0.05);
+  }
+
+  .manifeste__paper {
+    position: relative;
+    background: #fdfaf5;
+    border: 1px solid #e8e0d0;
+    border-radius: 2px;
+    padding: clamp(1.5rem, 5vw, 3.5rem) clamp(1.5rem, 6vw, 4rem);
+    box-shadow: 2px 3px 8px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.03);
+  }
+
+  .manifeste__paper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: clamp(1.5rem, 6vw, 4rem);
+    bottom: 0;
+    width: 1px;
+    background: rgba(200, 180, 160, 0.35);
+  }
+
+  .manifeste__scribbles {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-radius: 2px;
   }
 
   .manifeste__body p {
-    font-family: var(--font-heading);
-    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-    font-weight: 300;
-    line-height: 1.6;
-    color: var(--color-text-primary);
-    margin-bottom: 1.75rem;
+    font-family: 'Caveat', cursive;
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    font-weight: 400;
+    line-height: 1.75;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
   }
 
   .manifeste__body p:last-child {
     margin-bottom: 0;
+  }
+
+  .manifeste__signature {
+    margin-top: 2.5rem !important;
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem) !important;
+    font-weight: 500 !important;
+    color: #555 !important;
   }
 </style>

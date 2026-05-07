@@ -1,7 +1,7 @@
 ---
 title: "Rendre l’assurance santé plus intuitive"
 cover: "/cases/koios/cover.webp"
-banner_image: "/cases/koios/banner.webp"
+banner_image: "/cases/koios/banner-olivo.webp"
 gallery:
   - "/cases/koios/gallery-1.webp"
   - "/cases/koios/gallery-2.webp"

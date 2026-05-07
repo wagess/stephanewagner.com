@@ -1,6 +1,7 @@
 ---
+draft: true
 title: ""
-cover: "/cases/radiocanada/cover.webp"
+cover: "/cases/radiocanada/cover-radiocanada.webp"
 banner_image: "/cases/radiocanada/banner.webp"
 gallery:
   - "/cases/radiocanada/gallery-1.webp"

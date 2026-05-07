@@ -8,7 +8,7 @@ gallery_styles:
   - cover              
 year: 2023
 tags: ["CX", "B2B", "Architecture de contenu", "Refonte web"]
-star_summary: "Refonte complète du site web d'APES Québec pour moderniser son image, améliorer l'expérience utilisateur et renforcer son engagement envers les personnes en situation de handicap."
+star_summary: "Refonte et modernisation complète du site web d'APES Québec."
 contexte: "APES Québec, une association dédiée à l'accompagnement des personnes en situation de handicap, souhaitait moderniser son site web vieillissant pour mieux refléter ses valeurs d'inclusion et d'accessibilité. Le site précédent ne répondait plus aux standards actuels en matière de design, d'accessibilité et de performance."
 probleme: "Site web obsolète et peu engageant avec une structure de contenu confuse et une navigation complexe"
 hypothese: "Une refonte complète du site avec un focus sur l'accessibilité, un design moderne et une architecture de l'information claire permettrait d'améliorer l'engagement des visiteurs, de renforcer la crédibilité de l'association et d'augmenter la visibilité en ligne."

@@ -13,7 +13,7 @@ gallery_styles:
   - null
   - null
 year: 2019
-tags: ["Founder mindset", "Architecture de l'information", "Product Design", "Visual design", "Animation", "développement" ]
+tags: ["B2C", "Founder mindset", "Architecture de l'information", "Product Design", "Visual design", "Animation", "développement" ]
 featured: true
 star_summary: "La transformation d'un sujet passion en idée de produit digital pour contenus scientifique actionable."
 contexte: "Dans le cadre d'un projet entrepreneurial, j'ai créé ==CAPSCIENCE en tant que une marque== ce qui m'a permis d'approcher Génome Québec pour élaborer un projet pilote."

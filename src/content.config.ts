@@ -24,6 +24,7 @@ const cases = defineCollection({
     variant: z.enum(['default', 'secondary']).optional().default('default'),
     external_url: z.string().optional(),
     featured: z.boolean().optional().default(false),
+    draft: z.boolean().optional().default(false),
   }),
 });
 

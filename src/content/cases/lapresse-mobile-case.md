@@ -13,7 +13,7 @@ gallery_styles:
   - null
   - null
 year: 2016
-tags: ["Mobile","Medias numériques","Produit publicitaire"]
+tags: ["B2C","Mobile","Medias numériques","Produit publicitaire"]
 star_summary: "Participer à une aventure innovante sur le marché des médias numériques."
 contexte: "La Presse+ est l'édition numérique gratuite sur tablette du média québécois La Presse, reconnue pour sa forte couverture de l'actualité et son impact publicitaire élevé."
 probleme: "Information de qualité : Produit une information de qualité accessible gratuitement et économiquement grâce aux revenus publicitaires."

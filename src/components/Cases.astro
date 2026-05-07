@@ -48,6 +48,7 @@ const cases = limit ? featuredCases.slice(0, limit) : allCases;
               cover={c.data.cover}
               variant={c.data.variant}
               featured={c.data.featured}
+              draft={c.data.draft ?? false}
             />
           </div>
         ))}
