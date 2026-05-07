@@ -169,6 +169,10 @@ const md = (str: string) => str
         const hasCover = gallery_styles?.some((s) => s === 'cover');
         return (
         <section class={`visuals${gallery.length === 1 ? ' visuals--single' : gallery.length === 2 ? ' visuals--duo' : ''}${hasCover ? ' visuals--has-cover' : ''}`}>
+          <div class="visuals__header">
+            <div class="star-letter"><img src={iconA.src} alt="" class="star-icon" loading="lazy" /></div>
+            <h2>Visuels</h2>
+          </div>
           {gallery.map((img, i) => {
             const isCover = gallery_styles?.[i] === 'cover';
             return (
@@ -832,26 +836,26 @@ const md = (str: string) => str
 
 
   /* --- Visuals --- */
+  .visuals__header {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: var(--gap-sm);
+  }
+
   .visuals {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 0;
-    row-gap: 2rem;
-  }
-
-  .visuals--has-cover {
-    column-gap: 2rem;
-    padding-top: var(--pt, var(--section-spacing));
-    padding-bottom: var(--pb, var(--section-spacing));
-    padding-left: var(--pl, 0);
-    padding-right: var(--pr, 0);
+    gap: 2rem;
+    padding-top: var(--section-spacing);
+    padding-bottom: var(--section-spacing);
     border-top: 1px solid var(--color-border);
   }
 
   @media (max-width: 768px) {
     .visuals {
       grid-template-columns: 1fr;
-      gap: var(--gap-block);
+      gap: 2rem;
     }
   }
 
@@ -861,7 +865,7 @@ const md = (str: string) => str
 
   .visuals--duo {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
   }
 
   .visuals--duo .visual-block,
@@ -875,7 +879,6 @@ const md = (str: string) => str
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: var(--gap-xs);
   }
 
 .visual-block__img {
