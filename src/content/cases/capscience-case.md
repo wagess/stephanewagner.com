@@ -6,7 +6,12 @@ gallery:
   - "/cases/capscience/capscience-1.webp"
   - "/cases/capscience/capscience-2.webp"
   - "/cases/capscience/capscience-3.webp"
-  - "/cases/capscience/capscience-4.webp"
+  - "/cases/capscience/capscience-4.webp"                                                    
+gallery_styles:
+  - null
+  - null
+  - null
+  - null
 year: 2019
 tags: ["Founder mindset", "Architecture de l'information", "Product Design", "Visual design", "Animation", "développement" ]
 featured: true

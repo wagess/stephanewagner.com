@@ -9,6 +9,7 @@ const cases = defineCollection({
     cover: z.string().optional(),
     banner_image: z.string().optional(),
     gallery: z.array(z.string()).optional(),
+    gallery_styles: z.array(z.string().nullable()).optional(),
     year: z.number(),
     tags: z.array(z.string()),
     star_summary: z.string(),

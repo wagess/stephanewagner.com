@@ -6,7 +6,12 @@ gallery:
   - "/cases/curateur/ecosysteme-omnicanal.webp"
   - "/cases/curateur/parcours-citoyen.webp"
   - "/cases/curateur/wireframe.webp"
-  - "/cases/curateur/parcours-utilisateur.webp"
+  - "/cases/curateur/parcours-utilisateur.webp"                                                   
+gallery_styles:
+  - null
+  - null
+  - null
+  - null
 year: 2021
 tags: ["EX", "UX", "UI", "Accessibilité", "Service public"]
 featured: false

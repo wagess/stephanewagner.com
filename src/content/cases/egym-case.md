@@ -1,27 +1,32 @@
 ---
-title: "Refonte de l'expérience utilisateur EGYM"
-cover: "/cases/egym/EGYM-cover.webp"
-banner_image: "/cases/egym/EGYM-cover.webp"
+title: "Interroger et sonder les utilisateurs de EGYM"
+cover: "/cases/egym/cover.webp"
+banner_image: "/cases/egym/banner.webp"
 gallery:
   - "/cases/egym/EGYM-cover.webp"
-  - "/cases/egym/EGYM-cover.webp"
-  - "/cases/egym/EGYM-cover.webp"
-  - "/cases/egym/EGYM-cover.webp"
+  - "/cases/egym/Sub-intro-goals.webp"
+  - "/cases/egym/welcome-screen.webp"
+  - "/cases/egym/EGYM-Q5.webp"                                               
+gallery_styles:
+  - cover
+  - cover
+  - cover
+  - cover
 year: 2024
 tags: ["UX", "UI", "Design système", "Fitness tech", "Produit"]
 star_summary: "Repenser l'expérience d'une **plateforme fitness** connectée pour améliorer l'engagement et la rétention des utilisateurs."
-contexte: "EGYM est une entreprise de fitness tech proposant des équipements connectés et une plateforme digitale pour les salles de sport et leurs membres."
-probleme: "L'interface existante présentait une courbe d'apprentissage élevée et un faible taux d'engagement sur la plateforme digitale."
-hypothese: "Quelle analyse a guidé la direction du projet ?"
-solution: "Simplifier les parcours utilisateurs et renforcer la cohérence visuelle de la plateforme."
+contexte: "EGYM est un ==leader mondial de la technologie de fitness==, offrant un écosystème intelligent combinant des machines de musculation connectées (Smart Strength) et des logiciels pour des entraînements personnalisés, efficaces et sécurisés."
+probleme: "Comment améliorer le taux d'engagement sur la plateforme digitale ?"
+hypothese: "Auditer le contenu de la plateforme et proposer une stratégie marketing ciblée"
+solution: "Proposer des améliorations hiérarchiques sur la structure du contenu et améliorer le tunnel de conversion de la cible."
 methodologie:
-  - "Quelles méthodes ont été utilisées ?"
-  - "Quels outils ont été mobilisés ?"
-  - "Quels ateliers ou tests ont été conduits ?"
+  - "Audit éditorial et inventaire de contenu"
+  - "Ausit des pages et propositions de réorganisation"
+  - "Analyse marketing et roadmap stratégique"
 livrables:
-  - "Audit UX de la plateforme existante"
-  - "Recherche utilisateurs et définition des personas"
-  - "Refonte des parcours clés"
+  - "ARborescence di contenu inventorié"
+  - "Scan visuel des pages de toute la plateforme"
+  - "Scénario d'expérience de conversion"
   - "Design system et composants UI"
 resultat:
   - "Impact mesuré : métriques, ROI, retours utilisateurs, effets organisationnels"

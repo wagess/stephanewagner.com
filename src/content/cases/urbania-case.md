@@ -6,7 +6,12 @@ gallery:
   - "/cases/urbania/mtl12-7.webp"
   - "/cases/urbania/mtl12-2.webp"
   - "/cases/urbania/mtl12-3.webp"
-  - "/cases/urbania/mtl12-6.webp"
+  - "/cases/urbania/mtl12-6.webp"                                               
+gallery_styles:
+  - cover
+  - cover
+  - cover
+  - cover
 year: 2008
 tags: ["Motion", "Desgin interaction", "UX", "Direction artistique web"]
 featured: true

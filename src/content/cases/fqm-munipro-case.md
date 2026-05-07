@@ -5,8 +5,13 @@ banner_image: "/cases/fqm/Moodboard-Interfaces.webp"
 gallery:
   - "/cases/fqm/visuel-dashboard.webp"
   - "/cases/fqm/visuel-grille.webp"
-  - "/cases/fqm/composants.webp"
-  - "/cases/fqm/visuel-colors.webp"
+  - "/cases/fqm/Diagramme-analyse-fonctionnelle.webp"
+  - "/cases/fqm/visuel-colors.webp"                                                         
+gallery_styles:                                                                              
+  - cover                                                                            
+  - cover                                                                            
+  - cover                                                                            
+  - cover
 year: 2026
 tags: ["UX", "UI", "Analyse produit", "Développement frontend", "Priorisation", "Accessibilité", "Transformation digitale"]
 star_summary: "Dans un contexte de conversion d'affaire, s'adapter à une forte dette technologique et un contexte de transformation digitale en croissance."

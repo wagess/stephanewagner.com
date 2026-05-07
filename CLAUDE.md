@@ -163,7 +163,7 @@ Le site est actuellement en approche **desktop-first** (media queries `max-width
 
 ## À faire plus tard
 
-- [ ] **Wall type Pinterest** — galerie masonry de projets/images
+- [x] **Wall type Pinterest** — galerie masonry de projets/images
   - Option A : interface drag & drop custom pour uploader les images directement
   - Option B : Cloudinary — script client-side qui fetch `https://res.cloudinary.com/{cloud_name}/image/list/{tag}.json`
     - Taguer les images `wall` dans Cloudinary
@@ -173,8 +173,8 @@ Le site est actuellement en approche **desktop-first** (media queries `max-width
 - [ ] Sélecteur de langue dans `Navigation.astro`
 - [x] Améliorer les filtres dans la page Cases
 - [ ] Booster le SEO, surtout avec les pages de projets
-- [ ] Grille Gallery flexible (ex. si une seule image -> pleine largeur)
-- [ ] Pipeline de déploiement GitHub Actions → Dreamhost via SSH + rsync
+- [x] Grille Gallery flexible (ex. si une seule image -> pleine largeur)
+- [x] Pipeline de déploiement GitHub Actions → Dreamhost via SSH + rsync
   - Repo : `git@github.com:wagess/stephanewagner.com.git`
   - Host : `pdx1-shared-a1-34.dreamhost.com`
   - User SSH : `wagess`

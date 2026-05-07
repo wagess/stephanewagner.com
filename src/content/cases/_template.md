@@ -6,7 +6,12 @@ gallery:
   - "/cases/[slug]/gallery-1.webp"
   - "/cases/[slug]/gallery-2.webp"
   - "/cases/[slug]/gallery-3.webp"
-  - "/cases/[slug]/gallery-4.webp"
+  - "/cases/[slug]/gallery-4.webp"                                                   
+gallery_styles:
+  - cover
+  - cover
+  - null
+  - null
 year: 2026
 tags: []
 star_summary: ""
