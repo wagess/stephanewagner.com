@@ -37,7 +37,7 @@ const cases = limit ? featuredCases.slice(0, limit) : allCases;
     <div class="cases__list-wrapper">
       <ul class="cases__list">
         {cases.map((c, i) => (
-          <div data-animate data-year={c.data.year} data-featured={c.data.featured ?? false} data-tags={c.data.tags.join(',')} style={`transition-delay: ${i * 0.15}s`}>
+          <div data-animate data-year={c.data.year} data-featured={c.data.featured ?? false} data-tags={c.data.tags.join(',')} style={`transition-delay: ${i * 0.10}s`}>
             <CaseCard
               index={i + 1}
               title={c.data.title}
@@ -93,7 +93,7 @@ const cases = limit ? featuredCases.slice(0, limit) : allCases;
   [data-animate] {
     opacity: 0;
     transform: translateX(-30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition: opacity 0.4s ease, transform 0.4s ease;
   }
   [data-animate].visible {
     opacity: 1;
