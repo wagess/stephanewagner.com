@@ -15,6 +15,7 @@ gallery_styles:
 year: 2018
 tags: ["B2C"]
 featured: false
+draft: true
 star_summary: ""
 contexte: ""
 probleme: ""

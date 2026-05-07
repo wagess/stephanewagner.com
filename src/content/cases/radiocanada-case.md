@@ -16,6 +16,7 @@ gallery_styles:
 year: 2013
 tags: ["B2C"]
 featured: false
+draft: true
 star_summary: ""
 contexte: ""
 probleme: ""
