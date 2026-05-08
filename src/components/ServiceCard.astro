@@ -24,7 +24,6 @@ const { number, title, description, count, ...rest } = Astro.props;
 
 <style>
   .service-card {
-    position: relative;
     border: var(--card-border);
     border-radius: var(--card-radius);
     background: var(--color-surface);
@@ -35,12 +34,11 @@ const { number, title, description, count, ...rest } = Astro.props;
     flex-direction: column;
     gap: 18px;
     cursor: help;
-    transition: background 0.25s ease, border-color 0.25s ease;
+    transition: border-color 0.25s ease;
   }
 
   .service-card:hover {
-    background: #666666;
-    border-color: #E9ECF3;
+    border-color: var(--color-text-primary);
   }
 
   /* --- Top row --- */
@@ -55,22 +53,12 @@ const { number, title, description, count, ...rest } = Astro.props;
     letter-spacing: 0.2em;
     color: var(--color-text-muted);
     font-family: var(--font-mono);
-    transition: color 0.25s ease;
-  }
-
-  .service-card:hover .service-card__number {
-    color: white;
   }
 
   .service-card__line {
     height: 1px;
     flex: 1;
     background: var(--color-border);
-    transition: background 0.25s ease;
-  }
-
-  .service-card:hover .service-card__line {
-    background: rgba(255,255,255,0.2);
   }
 
   .service-card__badge {
@@ -84,7 +72,7 @@ const { number, title, description, count, ...rest } = Astro.props;
   }
 
   .service-card:hover .service-card__badge {
-    background-color: #EDE9FE;
+    background-color: var(--color-text-primary);
   }
 
   .service-card__badge-text {
@@ -99,7 +87,7 @@ const { number, title, description, count, ...rest } = Astro.props;
   }
 
   .service-card:hover .service-card__badge-text {
-    color: #5B21B6;
+    color: var(--color-surface);
   }
 
   .service-card__title {
@@ -108,11 +96,6 @@ const { number, title, description, count, ...rest } = Astro.props;
     color: var(--color-text-primary);
     font-family: var(--font-heading);
     font-weight: 600;
-    transition: color 0.25s ease;
-  }
-
-  .service-card:hover .service-card__title {
-    color: #E9ECF3;
   }
 
   .service-card__description {
@@ -121,10 +104,5 @@ const { number, title, description, count, ...rest } = Astro.props;
     color: var(--color-text-secondary);
     font-family: var(--font-body);
     font-weight: 300;
-    transition: color 0.25s ease;
-  }
-
-  .service-card:hover .service-card__description {
-    color: white;
   }
 </style>
