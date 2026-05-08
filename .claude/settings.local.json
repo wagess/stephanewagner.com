@@ -1,18 +1,4 @@
 {
-  "hooks": {
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "cd /Users/stephanewagner/astro && npm run dev",
-            "async": true,
-            "statusMessage": "Démarrage du serveur Astro..."
-          }
-        ]
-      }
-    ]
-  },
   "permissions": {
     "allow": [
       "mcp__figma-desktop__get_screenshot",
@@ -26,7 +12,24 @@
       "Bash(mv \"Grid view.svg\" \"grid-view.svg\")",
       "Bash(mv \"Live interaction.svg\" \"live-interaction.svg\")",
       "Bash(mv \"Remove.svg\" \"remove.svg\")",
-      "Bash(mv \"Shapes.svg\" \"shapes.svg\")"
+      "Bash(mv \"Shapes.svg\" \"shapes.svg\")",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd /Users/stephanewagner/astro && npm run dev",
+            "statusMessage": "Démarrage du serveur Astro...",
+            "async": true
+          }
+        ]
+      }
     ]
   }
 }
