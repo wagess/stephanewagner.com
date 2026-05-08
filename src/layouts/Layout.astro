@@ -49,6 +49,7 @@ const { title, description = "Concepteur Produit — Portfolio" } = Astro.props;
     --padding-block: 3rem;
     --gap-block: 2rem;
     --gap-sm: 1.5rem;
+    --gap-md: 1rem;
     --gap-xs: 0.75rem;
     --card-border: 1px solid var(--color-border);
     --card-radius: 10px;
@@ -63,12 +64,14 @@ const { title, description = "Concepteur Produit — Portfolio" } = Astro.props;
       --padding-block: 1.5rem;
       --gap-block: 1rem;
       --gap-sm: 0.75rem;
+      --gap-md: 0.625rem;
       --gap-xs: 0.5rem;
     }
   }
 
   /* Utilitaires padding & margin
-     Échelle : 0=0 | 1=gap-xs | 2=gap-sm | 3=gap-block | 4=padding-block | 5=spacing-block | 6=section-spacing */
+     Échelle : 0=0 | 1=gap-xs | 2=gap-sm | 3=gap-block | 4=padding-block | 5=spacing-block | 6=section-spacing
+     Note : --gap-md (1rem) disponible comme token mais sans classe utilitaire */
   .pt-0 { padding-top: 0 !important; }
   .pt-1 { padding-top: var(--gap-xs) !important; }
   .pt-2 { padding-top: var(--gap-sm) !important; }
