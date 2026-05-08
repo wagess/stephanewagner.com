@@ -23,7 +23,7 @@ const isSecondary = variant === 'secondary';
   {draft ? (
     <div class="case-card__inner">
       <div class="case-card__left">
-        <span class="case-card__number">{year}</span>
+        <span class="case-card__tag">{year}</span>
         <svg class="case-card__icon case-card__icon--lock" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
           <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
@@ -50,7 +50,7 @@ const isSecondary = variant === 'secondary';
   ) : (
     <a href={href} class="case-card__inner" target={isSecondary ? '_blank' : undefined} rel={isSecondary ? 'noopener noreferrer' : undefined}>
       <div class="case-card__left">
-        <span class="case-card__number">{isSecondary ? num : year}</span>
+        <span class={isSecondary ? 'case-card__number' : 'case-card__tag'}>{isSecondary ? num : year}</span>
         {!isSecondary && (
           <svg class="case-card__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="7" y1="17" x2="17" y2="7"></line>
@@ -213,14 +213,14 @@ const isSecondary = variant === 'secondary';
     line-height: 1.25;
     color: var(--color-text-primary);
     font-family: var(--font-heading);
-    font-weight: 600;
+    font-weight: 500;
     flex: 1;
     transition: color 0.3s ease;
   }
 
   .case-card--secondary .case-card__title {
     color: var(--color-text-primary);
-    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
   }
 
   a.case-card__inner:hover .case-card__title {

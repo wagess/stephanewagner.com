@@ -1,7 +1,7 @@
 ---
 # ─── Hero ───────────────────────────────────────────────
 hero_label: "PROFIL - Stéphane Wagner"
-hero_headline: "Je suis un Designer de produits digitaux qui transforme des **systèmes complexes** et traduit vos besoins en **expériences claires et fiables.**"
+hero_headline: "Designer de produits digitaux qui transforme des **systèmes complexes** en **expériences claires** et traduit vos besoins en **résulats fiables.**"
 hero_pillars:
   - label: "Segment 1"
     title: "Sciences et vulgarisation"
@@ -25,7 +25,7 @@ services_title: "Ma trousse de Savoir-faire"
 services:
   - number: "01"
     title: "UX & Stratégie de produit"
-    desc: "Design de produit / parcours end-to-end"
+    desc: "Design de produit / parcours d'usage end-to-end"
     count: 3
   - number: "02"
     title: "Founding designer"
@@ -37,15 +37,15 @@ services:
     count: 4
   - number: "04"
     title: "Vibe coding"
-    desc: "Workflow code et Desgin"
+    desc: "Workflow code & Frontend"
     count: 1
   - number: "05"
     title: "Visuel et narratif"
-    desc: "Déclinaison graphique, UX writing"
+    desc: "Déclinaison graphique, Direction artistique"
     count: 2
   - number: "06"
     title: "Architecture de Produit"
-    desc: "Cartes de contenu, cartographie"
+    desc: "Cartes de contenu, cartographie, flows fonctionnels"
     count: 3
   - number: "07"
     title: "Alignement produit et design"
@@ -53,7 +53,7 @@ services:
     count: 2
   - number: "08"
     title: "Recherche utilisateur"
-    desc: "Tests A/B, co-création, Analyse"
+    desc: "Tests A/B, co-création, Analyse des besoins"
     count: 1
   - number: "09"
     title: "Prototypage & validation"
@@ -64,15 +64,12 @@ services:
 side_projects_label: "Projets secondaires"
 side_projects_title: "Projets qui influencent mon travail"
 side_projects:
-  - title: "Projet parallèle — Écriture et blog voyage"
-    href: "#"
-    year: 2025
-  - title: "Projet parallèle — Photographies Fine Art"
-    href: "#"
+  - title: "Portfolio Photo, Wordpress et architecture éditoriale."
+    href: "https://photographie.stephanewagner.com/"
     year: 2024
-  - title: "Projet parallèle — ShopPhoto Conception d'un workflow personnel"
-    href: "#"
-    year: 2023
+  - title: "ShopPhoto, Workflow end-to-end de l'édition à la publication."
+    href: "https://shop.stephanewagner.com/"
+    year: 2025
 
 # ─── Venn / Approche ─────────────────────────────────────
 venn_label: "Approche"

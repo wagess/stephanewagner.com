@@ -181,6 +181,10 @@ const md = (str: string) => str
         );
       })()}
 
+      <div class="like-cta">
+        <LikeButton slug={c.id} />
+      </div>
+
     </div>
     <nav class="case-nav">
       {prevCase ? (
@@ -904,6 +908,12 @@ const md = (str: string) => str
     width: 100%;
     height: 100%;
     cursor: zoom-in;
+  }
+
+  .like-cta {
+    display: flex;
+    justify-content: center;
+    padding-top: var(--section-spacing);
   }
 </style>
 
