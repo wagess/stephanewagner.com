@@ -128,9 +128,12 @@ const { label, headline, pillars } = Astro.props;
   .hero__headline {
     font-size: clamp(2rem, 4vw, 4rem);
     line-height: 1.5;
-    color: var(--color-accent-vivid);
     font-family: var(--font-heading);
     font-weight: 300;
+    background: linear-gradient(135deg, var(--color-accent-vivid) 0%, var(--color-text-primary) 60%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   .hero__highlight {
