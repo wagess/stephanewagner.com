@@ -19,14 +19,14 @@ const { label, title, services } = Astro.props;
 
     <div class="services__grid">
       {services.map((service, i) => (
-        <ServiceCard
-          number={service.number}
-          title={service.title}
-          description={service.desc}
-          count={service.count}
-          data-animate
-          style={`transition-delay: ${i * 0.1}s`}
-        />
+        <div data-animate style={`transition-delay: ${i * 0.1}s`}>
+          <ServiceCard
+            number={service.number}
+            title={service.title}
+            description={service.desc}
+            count={service.count}
+          />
+        </div>
       ))}
     </div>
   </div>
@@ -60,6 +60,8 @@ const { label, title, services } = Astro.props;
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.6s ease, transform 0.6s ease;
+    display: flex;
+    flex-direction: column;
   }
   [data-animate].visible {
     opacity: 1;

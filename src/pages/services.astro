@@ -17,14 +17,14 @@ const { services_label, services_title, services } = home.data;
     <section class="services-page">
       <div class="services-page__grid">
         {services.map((service: { number: string; title: string; desc: string; count: number }, i: number) => (
-          <ServiceCard
-            number={service.number}
-            title={service.title}
-            description={service.desc}
-            count={service.count}
-            data-animate
-            style={`transition-delay: ${i * 0.07}s`}
-          />
+          <div data-animate style={`transition-delay: ${i * 0.07}s`}>
+            <ServiceCard
+              number={service.number}
+              title={service.title}
+              description={service.desc}
+              count={service.count}
+            />
+          </div>
         ))}
       </div>
     </section>
@@ -79,6 +79,8 @@ const { services_label, services_title, services } = home.data;
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.6s ease, transform 0.6s ease;
+    display: flex;
+    flex-direction: column;
   }
 
   [data-animate].visible {
