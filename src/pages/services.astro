@@ -2,7 +2,7 @@
 import { getEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import PageHeader from '../components/PageHeader.astro';
-import ServiceCard from '../components/ServiceCard.astro';
+import Services from '../components/Services.astro';
 import VennDiagram from '../components/VennDiagram.astro';
 import Footer from '../components/Footer.astro';
 
@@ -13,78 +13,15 @@ const { services_label, services_title, services } = home.data;
 <Layout title="Services — Concepteur Produit" description="Ma trousse de savoir-faire en design produit.">
   <main>
     <PageHeader label={services_label} title={services_title} />
-
-    <section class="services-page">
-      <div class="services-page__grid">
-        {services.map((service: { number: string; title: string; desc: string; count: number }, i: number) => (
-          <div data-animate style={`transition-delay: ${i * 0.07}s`}>
-            <ServiceCard
-              number={service.number}
-              title={service.title}
-              description={service.desc}
-              count={service.count}
-            />
-          </div>
-        ))}
-      </div>
-    </section>
-
+    <Services services={services} showHeader={false} />
     <VennDiagram />
     <Footer />
   </main>
 </Layout>
 
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
-</script>
-
 <style>
   main {
-    background: white;
+    background: var(--color-surface);
     min-height: 100vh;
-  }
-
-  .services-page {
-    padding: 0 var(--spacing-container) var(--section-spacing);
-  }
-
-  .services-page__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  @media (min-width: 768px) {
-    .services-page__grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .services-page__grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  [data-animate] {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-    display: flex;
-    flex-direction: column;
-  }
-
-  [data-animate].visible {
-    opacity: 1;
-    transform: none;
   }
 </style>

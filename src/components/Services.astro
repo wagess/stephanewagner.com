@@ -3,19 +3,22 @@ import ServiceCard from './ServiceCard.astro';
 
 interface Service { number: string; title: string; desc: string; count: number; }
 interface Props {
-  label: string;
-  title: string;
+  label?: string;
+  title?: string;
   services: Service[];
+  showHeader?: boolean;
 }
-const { label, title, services } = Astro.props;
+const { label, title, services, showHeader = true } = Astro.props;
 ---
 
-<section class="services" id="services">
+<section class:list={['services', { 'services--no-header': !showHeader }]} id="services">
   <div class="services__container">
-    <div class="services__header" data-animate>
-      <p class="services__label">{label}</p>
-      <h2 class="services__title">{title}</h2>
-    </div>
+    {showHeader && (
+      <div class="services__header" data-animate>
+        <p class="services__label">{label}</p>
+        <h2 class="services__title">{title}</h2>
+      </div>
+    )}
 
     <div class="services__grid">
       {services.map((service, i) => (
@@ -49,6 +52,10 @@ const { label, title, services } = Astro.props;
   .services {
     padding: var(--section-spacing) var(--spacing-container);
     background: var(--color-bg);
+  }
+
+  .services--no-header {
+    padding-top: 0;
   }
 
   .services__container {
