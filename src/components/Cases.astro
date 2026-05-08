@@ -34,6 +34,12 @@ const cases = limit ? featuredCases.slice(0, limit) : allCases;
       {!limit && <CasesFilters />}
     </div>
 
+    {!limit && (
+      <div class="cases__filters-mobile">
+        <CasesFilters />
+      </div>
+    )}
+
     <div class="cases__list-wrapper">
       <ul class="cases__list">
         {cases.map((c, i) => (
@@ -114,8 +120,31 @@ const cases = limit ? featuredCases.slice(0, limit) : allCases;
     flex-shrink: 0;
   }
 
+  /* Desktop : filters dans le header, mobile cachée */
   .cases__header :global(.filters) {
     margin-bottom: 0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    .cases__header :global(.filters) {
+      display: none;
+    }
+  }
+
+  /* Mobile : filters sous la barre, desktop cachée */
+  .cases__filters-mobile {
+    display: none;
+    padding-top: var(--gap-sm);
+  }
+
+  @media (max-width: 768px) {
+    .cases__filters-mobile {
+      display: block;
+    }
+  }
+
+  .cases__filters-mobile :global(.filters) {
+    justify-content: flex-start;
   }
 
   .cases__header::after {
