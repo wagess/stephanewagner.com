@@ -4,13 +4,15 @@ interface Props {
   title: string;
   description: string;
   count: number;
+  href?: string;
   [key: string]: unknown;
 }
 
-const { number, title, description, count, ...rest } = Astro.props;
+const { number, title, description, count, href, ...rest } = Astro.props;
+const Tag = href ? 'a' : 'div';
 ---
 
-<div class="service-card" {...rest}>
+<Tag class="service-card" href={href || undefined} {...rest}>
   <div class="service-card__top">
     <span class="service-card__number">{number}</span>
     <div class="service-card__line"></div>
@@ -20,7 +22,7 @@ const { number, title, description, count, ...rest } = Astro.props;
   </div>
   <h3 class="service-card__title">{title}</h3>
   <p class="service-card__description">{description}</p>
-</div>
+</Tag>
 
 <style>
   .service-card {
@@ -34,7 +36,8 @@ const { number, title, description, count, ...rest } = Astro.props;
     display: flex;
     flex-direction: column;
     gap: var(--gap-md);
-    cursor: help;
+    cursor: pointer;
+    text-decoration: none;
     transform: translateZ(0);
     will-change: border-color;
     transition: border-color 0.2s ease;
