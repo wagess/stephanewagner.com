@@ -29,8 +29,9 @@ const cases = limit ? featuredCases.slice(0, limit) : allCases;
     <div class="cases__header" data-animate>
       <p class="cases__label">Études de cas</p>
       <h2 class="cases__title">Histoires de produits et services</h2>
-      {!limit && <CasesFilters />}
     </div>
+
+    {!limit && <CasesFilters />}
 
     <div class="cases__list-wrapper">
       <ul class="cases__list">
@@ -99,7 +100,6 @@ const cases = limit ? featuredCases.slice(0, limit) : allCases;
   }
 
   .cases__header {
-    margin-bottom: 4rem;
     padding-bottom: var(--gap-block);
     position: relative;
     display: flex;
