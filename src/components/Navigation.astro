@@ -4,7 +4,7 @@ const { pathname } = Astro.url;
 const cases = (await getCollection('cases')).filter(c => !c.id.startsWith('_'));
 const caseCount = cases.length;
 const ctaHref = 'https://calendly.com/wagess/30min';
-const ctaLabel = 'I have a dream';
+const ctaLabel = 'Calendly';
 ---
 <header class="nav">
   <a href="/" class="nav__logo">
