@@ -1,5 +1,5 @@
 ---
-title: "Refonte d'un portail pour les pharmaciens professionnels"
+title: "Refonte web pour les pharmaciens professionnels"
 cover: "/cases/apes/cover.webp"
 banner_image: "/cases/apes/apes-banner.webp"
 gallery:

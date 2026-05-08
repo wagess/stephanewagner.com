@@ -1,5 +1,5 @@
 ---
-title: "Repositionner l'offre d'une web agence"
+title: "Repositionnement stratégique de l’offre UX d’une agence"
 cover: "/cases/symetris/cover.webp"
 banner_image: "/cases/symetris/banner.webp"
 gallery:
@@ -10,25 +10,25 @@ gallery:
 year: 2024
 tags: ["CX", "UX"]
 featured: false
-star_summary: "Agir en tant que conseiller interne ..."
-contexte: "L'agence Symetris avait besoin de bonifier son approche clients avec une approche mieux orientée design thinking et besoins utilisateurs."
-probleme: "S'adapter à un environnement très orienté technos et moins sur l,approche design de produits."
-hypothese: "Agir en tant que conseiller interne ..."
-solution: "Être présent avec les cliens et en interne pour proposer une approche centrée sur l'utilisateur et conseiller sur les pratiques UX."
+star_summary: "Agir en tant que conseiller stratégique interne afin de repositionner l’approche UX de l’agence."
+contexte: "L’agence Symetris avait besoin de bonifier son approche client avec une vision davantage orientée design thinking et centrée sur les besoins utilisateurs."
+probleme: "S’adapter à un environnement très orienté technologie et moins axé sur l’approche de design de produit."
+hypothese: "Agir en tant que conseiller stratégique interne pour intégrer les pratiques UX aux processus existants."
+solution: "Être présent auprès des clients et des équipes internes afin de proposer une approche centrée sur l’utilisateur et conseiller les bonnes pratiques UX."
 methodologie:
-  - "Rencontres de facilitations, ateliers de co-création"
-  - "Audit et évaluation, recherches comparatives"
-  - "Parcours d'expériences et entrevues individuelles"
+  - "Rencontres de facilitation et ateliers de co-création"
+  - "Audits, évaluations et recherches comparatives"
+  - "Cartographie des parcours d’expérience et entrevues individuelles"
 livrables:
-  - "Audit web et évaluation financières"
+  - "Audits web et évaluations financières"
   - "==Parcours clients== et analyse organisationnelle"
-  - "Architecture d'information et audit de contenus"
-  - "Rencontres de facilitations, ateliers de co-création"
+  - "Architecture d’information et audit de contenus"
+  - "Rencontres de facilitation et ateliers de co-création"
 resultat:
-  - "Améliorer la découvrabilité au delà de 30% des visiteurs initiaux"
-  - "Apporter aux clients un soutien stratégique sur le contenu et le design"
-  - "Bonifier la rétention du produit avec les utilisateurs de plus de 50%"
+  - "Amélioration de la découvrabilité de plus de 30 % auprès des visiteurs initiaux"
+  - "Apport d’un soutien stratégique aux clients sur le contenu et le design"
+  - "Bonification de la rétention produit de plus de 50 % auprès des utilisateurs"
 challenges:
-  - "Interargir dans des délais serrés"
-  - "Rattraper le travail de développement déjà commencé"
+  - "Interagir dans des délais serrés"
+  - "Rattraper un développement déjà amorcé"
 ---

@@ -72,13 +72,9 @@ const md = (str: string) => str
               ? <ul class="star-list">{contexte.map((item: string) => <li set:html={md(item)} />)}</ul>
               : <p set:html={md(contexte)} />}
 
-            <div class="sub-group">
-              <h4><span class="sub">Problème</span></h4>
-              {Array.isArray(probleme)
-                ? <ul class="star-list">{probleme.map((item: string) => <li set:html={md(item)} />)}</ul>
-                : <p set:html={md(probleme)} />}
-            </div>
-
+            {probleme && (Array.isArray(probleme)
+              ? <ul class="star-list star-list--bold">{probleme.map((item: string) => <li set:html={md(item)} />)}</ul>
+              : <p class="text--bold" set:html={md(probleme)} />)}
           </div>
         </div>
 
@@ -576,21 +572,6 @@ const md = (str: string) => str
     margin: 0;
   }
 
-  .sub {
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--color-text-muted);
-    font-family: var(--font-mono);
-    font-style: normal;
-  }
-
-  .sub-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
   p {
     font-size: 16px;
     line-height: 1.75;
@@ -620,6 +601,11 @@ const md = (str: string) => str
     font-weight: 300;
     padding-left: 1.25rem;
     position: relative;
+  }
+
+  .star-list--bold li,
+  .text--bold {
+    font-weight: 500;
   }
 
   .star-list li::before {
@@ -779,7 +765,7 @@ const md = (str: string) => str
   }
 
   .solution-card__text {
-    font-size: 18px;
+    font-size: clamp(1.15rem, 2vw, 1.4rem);
     line-height: 1.7;
     color: var(--color-text-primary);
     font-family: var(--font-body);
@@ -797,7 +783,7 @@ const md = (str: string) => str
   }
 
   .solution-card__list li {
-    font-size: 18px;
+    font-size: clamp(1.15rem, 2vw, 1.4rem);
     line-height: 1.7;
     color: var(--color-text-primary);
     font-family: var(--font-body);

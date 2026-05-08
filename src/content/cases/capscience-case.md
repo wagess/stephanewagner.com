@@ -6,39 +6,46 @@ gallery:
   - "/cases/capscience/capscience-1.webp"
   - "/cases/capscience/capscience-2.webp"
   - "/cases/capscience/capscience-3.webp"
-  - "/cases/capscience/capscience-4.webp"                                                    
+  - "/cases/capscience/capscience-4.webp"
 gallery_styles:
   - null
   - null
   - null
   - null
 year: 2019
-tags: ["B2C", "Founder mindset", "Architecture de l'information", "Product Design", "Visual design", "Animation", "développement" ]
+tags:
+  - "B2C"
+  - "Founder mindset"
+  - "Architecture de l'information"
+  - "Product Design"
+  - "Visual design"
+  - "Animation"
+  - "Développement"
 featured: true
-star_summary: "La transformation d'un sujet passion en idée de produit digital pour contenus scientifique actionable."
-contexte: "Dans le cadre d'un projet entrepreneurial, j'ai créé ==CAPSCIENCE en tant que une marque== ce qui m'a permis d'approcher Génome Québec pour élaborer un projet pilote."
-probleme: "Comment bonifier un contenu de vulgarisation simple en une micro expérience engageante, accessible et scalable tout en étant originale et facilement consommable ?"
-hypothese: "Inspiré d'un modèle de publicité interactives, Capscience se base sur des micro capsules pour proposer des contenus accessibles et reproductibles."
-solution: "Passer de lire l'information avec un visuel brut et inélégant à comprendre activement un sujet par une expérience ludique et esthétique et les proposer à partif d'une ludothèque commune."
+star_summary: "Transformer un sujet passion en produit numérique de vulgarisation scientifique accessible et engageant."
+contexte: "Dans le cadre d’un projet entrepreneurial, la création de la marque ==CAPSCIENCE== m’a permis d’approcher Génome Québec afin de proposer un projet pilote de vulgarisation scientifique interactive."
+probleme: "Comment transformer un contenu de vulgarisation scientifique en une micro-expérience engageante, accessible, scalable et facilement consommable ?"
+hypothese: "Inspiré des formats publicitaires interactifs, CAPSCIENCE repose sur des micro-capsules permettant de proposer des contenus pédagogiques accessibles, reproductibles et engageants."
+solution: "Transformer une information statique et difficile à consommer en une expérience interactive, ludique et esthétique, centralisée dans une ludothèque de contenus réutilisables."
 methodologie:
-  - "Approche commerciale et démarchage de vente produit"
-  - "Entrevues individuelles d'approche de segments"
-  - "REncontres de pitch et vulgarisation"
-  - "recherche de contenus et idéation"
-  - "Développement de la marque et du langauge visuel"
+  - "Approche commerciale et démarchage produit"
+  - "Entrevues individuelles et validation des segments cibles"
+  - "Rencontres de pitch et vulgarisation scientifique"
+  - "Recherche de contenus et idéation"
+  - "Développement de la marque et du langage visuel"
 livrables:
-  - "Capsules jeux de vulgarisation"
-  - "Plan d'affaire"
-  - "Développement de produit"
+  - "Capsules interactives de vulgarisation"
+  - "Plan d’affaires"
+  - "Développement produit"
   - "Développement de la marque"
-  - "Pitch et proposition de vente"
+  - "Pitchs et propositions de vente"
 resultat:
-  - "==Vendre un produit pilote dans une démarche end-to-end de la conception jusqu'à la vente=="
-  - "Trouver un public et une niche cible qui voit une valeur ajoutée monétisable."
-  - "Potentialiser l'idée en nu produit concret et réutilisable"
+  - "==Vente d’un produit pilote dans une démarche end-to-end, de la conception jusqu’à la commercialisation=="
+  - "Identification d’un public cible percevant une valeur ajoutée monétisable"
+  - "Transformation d’une idée abstraite en produit concret, réutilisable et scalable"
 challenges:
-  - "Quels obstacles ou contraintes ont été rencontrés ?"
-  - "Quelles décisions difficiles ont dû être prises ?"
-  - "Déterminer le besoin niche et créer la demande"
-  - "Mettre en place une stratégie d'approche"
+  - "Déterminer un besoin de niche et créer la demande"
+  - "Mettre en place une stratégie d’approche et de positionnement"
+  - "Prendre des décisions produit avec des ressources limitées"
+  - "Équilibrer innovation, faisabilité technique et viabilité commerciale"
 ---

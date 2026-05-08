@@ -1,12 +1,12 @@
 ---
-title: "Rendre l’assurance santé plus intuitive"
-cover: "/cases/koios/cover.webp"
+title: "Rendre l’assurance santé intuitive et intelligente"
+cover: "/cases/koios/dialogue.webp"
 banner_image: "/cases/koios/banner-olivo.webp"
 gallery:
   - "/cases/koios/gallery-1.webp"
   - "/cases/koios/gallery-2.webp"
   - "/cases/koios/gallery-3.webp"
-  - "/cases/koios/gallery-4.webp"                                                      
+  - "/cases/koios/cover.webp"                                                    
 gallery_styles:                                                                              
   - cover                                                                            
   - cover                                                                            

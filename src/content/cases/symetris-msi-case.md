@@ -1,5 +1,5 @@
 ---
-title: "Refonte d'une plateforme de support aux soins infirmiers"
+title: "Refonte d’une plateforme de support aux soins infirmiers"
 cover: "/cases/msi/msi-cover.webp"
 banner_image: "/cases/msi/msi.webp"
 gallery:
@@ -10,26 +10,26 @@ gallery:
 year: 2022
 tags: ["UX", "UI", "Analyse", "Prototypage", "Priorisation"]
 featured: true
-star_summary: "Lisibilité et accéssibilité d'un contenu médical utilisé au quotidien."
-contexte: "Les Méthodes de soins informatisées s’adressent principalement au personnel soignant œuvrant quotidiennement auprès des usagers et usagères : infirmières et infirmiers, infirmières et infirmiers auxiliaires, candidates et candidats à l’exercice de la profession infirmière (CEPI) et externes en soins infirmiers."
-probleme: "Permettre aux infirmiers et infirmières d'accéder à des fiches techniques et des pratiques théoriques riches et difficiles à synthétiser lors de leur activités profesionnelles de terrain."
-hypothese: "Appliquer les conclusions d'une analyse utilisateurs préalable réalisée par une agence spécialisée."
-solution: "Moderniser l'UX/UI en apportant une vision produit et en optimisant le design par un système  plsu structuré."
+star_summary: "Améliorer la lisibilité et l’accessibilité d’un contenu médical utilisé au quotidien."
+contexte: "Les Méthodes de soins informatisées s’adressent principalement au personnel soignant œuvrant quotidiennement auprès des usagers et usagères : infirmières et infirmiers, infirmières et infirmiers auxiliaires, candidates et candidats à l’exercice de la profession infirmière (CEPI) ainsi qu’aux externes en soins infirmiers."
+probleme: "Permettre au personnel infirmier d’accéder rapidement à des fiches techniques et à des contenus théoriques riches, complexes et difficiles à synthétiser dans un contexte de travail terrain."
+hypothese: "Appliquer les conclusions d’une analyse utilisateur préalable réalisée par une agence spécialisée."
+solution: "Moderniser l’UX/UI en apportant une vision produit et en optimisant l’expérience grâce à un système de design plus structuré."
 methodologie:
-  - "Analyse heuristique de l'existant"
-  - "Partir d'études comportementales, Sondages utilisateurs"
-  - "Prototypage, Design sytème et ateliers de présentation"
-  - "Adopter une stratégie pour un format adaptatif"
-  - "Étude de l'existant et benchmark design"
-  - "Analyser le contenu et hiérarchiser sa complexité pour le rendre accéssible"
+  - "Analyse heuristique de l’existant"
+  - "Exploitation d’études comportementales et de sondages utilisateurs"
+  - "Prototypage, système de design et ateliers de présentation"
+  - "Adoption d’une stratégie de conception adaptative"
+  - "Étude comparative et benchmark design"
+  - "Analyse et hiérarchisation du contenu afin de le rendre plus accessible"
 livrables:
-  - "Phase 1 : Heuristique, synhtèse analytique"
-  - "Renouvellement du système de design"
-  - "prototype, interfaces et présentations"
-  - "Planifications et suivi de la livraison"
+  - "Analyse heuristique et synthèse analytique"
+  - "Refonte du système de design"
+  - "Prototypes, interfaces et présentations"
+  - "Planification et suivi de la livraison"
 resultat:
-  - "La refonte a simplifié l’accès au contenu, sur tous les appareils, tout en automatisant les tâches répétitives. Un gain de temps et d’efficacité qui nous permet de nous recentrer sur l’essentiel."
+  - "La refonte a simplifié l’accès au contenu sur tous les appareils, tout en automatisant certaines tâches répétitives. Un gain de temps et d’efficacité permettant aux équipes de se recentrer sur l’essentiel."
 challenges:
-  - "Improviser sans ressources documentées dans un contexte anachronique (dev avant le design)"
-  - "Pioriser les constats et recommandations de l'agence UX avec la réalité et la faisabilité liée au budget"
+  - "Improviser dans un contexte peu documenté et anachronique (développement amorcé avant le design)"
+  - "Prioriser les constats et recommandations de l’agence UX en fonction des réalités techniques et budgétaires"
 ---
