@@ -1,5 +1,5 @@
 ---
-title: "Concevoir et transmettre des formations UX pour Infopresse"
+title: "Concevoir des formations UX pour Infopresse"
 cover: "/cases/infopresse/cover.webp"
 banner_image: "/cases/infopresse/banner.webp"
 
