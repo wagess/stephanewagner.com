@@ -116,6 +116,12 @@ const cases = limit ? featuredCases.slice(0, limit) : allCases;
     gap: var(--gap-block);
   }
 
+  @media (max-width: 768px) {
+    .cases__header {
+      margin-bottom: var(--gap-block);
+    }
+  }
+
   .cases__header__left {
     flex-shrink: 0;
   }
