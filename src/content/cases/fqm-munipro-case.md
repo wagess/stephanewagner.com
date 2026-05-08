@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Modernisation d'une application de gestion municipale"
 cover: "/cases/fqm/VisuelCoverFQM.webp"
 banner_image: "/cases/fqm/Moodboard-Interfaces.webp"

@@ -1,6 +1,6 @@
 ---
 # ─── Hero ───────────────────────────────────────────────
-hero_label: "PROFIL - Stéphane Wagner"
+hero_label: "Stéphane Wagner - Product Designer / UX / UI / Scénarisation et architecture"
 hero_headline: "Designer de produits digitaux qui transforme des **systèmes complexes** en **expériences claires** et traduit vos besoins en **résulats fiables.**"
 hero_pillars:
   - label: "Segment 1"
@@ -38,27 +38,27 @@ services:
   - number: "04"
     title: "Vibe coding"
     desc: "Workflow code & Frontend"
-    count: 1
+    count: 2
   - number: "05"
     title: "Visuel et narratif"
     desc: "Déclinaison graphique, Direction artistique"
-    count: 2
+    count: +50
   - number: "06"
-    title: "Architecture de Produit"
-    desc: "Cartes de contenu, cartographie, flows fonctionnels"
-    count: 3
+    title: "Architecture Contenu et Produit"
+    desc: "Diagrammes de contenu, cartographie, flows fonctionnels"
+    count: 10
   - number: "07"
     title: "Alignement produit et design"
     desc: "Amélioration de l'opérabilité, audit technqiue"
-    count: 2
+    count: 3
   - number: "08"
     title: "Recherche utilisateur"
     desc: "Tests A/B, co-création, Analyse des besoins"
-    count: 1
+    count: 2
   - number: "09"
     title: "Prototypage & validation"
     desc: "Maquettes haute fidélité, wireframes"
-    count: 2
+    count: +20
 
 # ─── Side Projects ───────────────────────────────────────
 side_projects_label: "Projets secondaires"
