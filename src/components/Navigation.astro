@@ -3,6 +3,8 @@ import { getCollection } from 'astro:content';
 const { pathname } = Astro.url;
 const cases = (await getCollection('cases')).filter(c => !c.id.startsWith('_'));
 const caseCount = cases.length;
+const ctaHref = 'https://calendly.com/wagess/30min';
+const ctaLabel = 'I have a dream';
 ---
 <header class="nav">
   <a href="/" class="nav__logo">
@@ -41,8 +43,8 @@ const caseCount = cases.length;
     </a>
   </div>
 
-  <a href="https://calendly.com/wagess/30min" target="_blank" rel="noopener noreferrer" class="nav__cta">
-    Calendly
+  <a href={ctaHref} target="_blank" rel="noopener noreferrer" class="nav__cta">
+    {ctaLabel}
   </a>
 
   <button class="nav__burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -67,8 +69,8 @@ const caseCount = cases.length;
       The Visual Wall
     </a>
   </nav>
-  <a href="https://calendly.com/wagess/30min" target="_blank" rel="noopener noreferrer" class="nav__cta nav__mobile-cta">
-    I have a dream
+  <a href={ctaHref} target="_blank" rel="noopener noreferrer" class="nav__cta nav__mobile-cta">
+    {ctaLabel}
   </a>
 </div>
 
