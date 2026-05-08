@@ -97,7 +97,7 @@ const { label, headline, pillars } = Astro.props;
     height: 72px;
     border-radius: 50%;
     object-fit: cover;
-    margin-right: 1.5rem;
+    margin-right: var(--gap-sm);
     margin-top: 0.5rem;
     shape-outside: circle();
   }
@@ -106,7 +106,7 @@ const { label, headline, pillars } = Astro.props;
     .hero__headline-wrap {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: var(--gap-md);
       overflow: visible;
     }
 

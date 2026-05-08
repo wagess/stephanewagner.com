@@ -102,7 +102,7 @@ const cases = limit ? featuredCases.slice(0, limit) : allCases;
 
   .cases__header {
     margin-bottom: 4rem;
-    padding-bottom: 2rem;
+    padding-bottom: var(--gap-block);
     position: relative;
     display: flex;
     align-items: flex-end;
@@ -163,7 +163,7 @@ const cases = limit ? featuredCases.slice(0, limit) : allCases;
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: var(--gap-md);
     transition: opacity 0.2s ease;
   }
 

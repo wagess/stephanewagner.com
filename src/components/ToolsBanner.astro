@@ -174,7 +174,7 @@ const tools = toolNames.map(name => ({ name, svg: svgMap[name] ?? '' }));
   }
 
   .clients-banner {
-    background: #e8e8e8;
+    background: var(--color-border);
     padding: 2rem 0;
     width: 110%;
     margin-left: -5%;
@@ -213,7 +213,7 @@ const tools = toolNames.map(name => ({ name, svg: svgMap[name] ?? '' }));
   .client__logo {
     display: flex;
     align-items: center;
-    color: #fff;
+    color: var(--color-surface);
     height: 20px;
   }
 
