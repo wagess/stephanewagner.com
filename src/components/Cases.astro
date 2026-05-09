@@ -124,7 +124,7 @@ const cases = limit ? featuredCases.slice(0, limit) : allCases;
     background: var(--color-text-primary);
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform 1s var(--easing-spring);
   }
 
   .cases__header.visible::after {
@@ -133,8 +133,8 @@ const cases = limit ? featuredCases.slice(0, limit) : allCases;
 
   .cases__label {
     text-transform: uppercase;
-    letter-spacing: 0.3em;
-    font-size: 11px;
+    letter-spacing: var(--tracking-label);
+    font-size: var(--font-size-label);
     color: var(--color-text-secondary);
     font-family: var(--font-mono);
     margin-bottom: var(--gap-sm);
@@ -145,7 +145,7 @@ const cases = limit ? featuredCases.slice(0, limit) : allCases;
     line-height: 1.2;
     color: var(--color-text-primary);
     font-family: var(--font-heading);
-    font-weight: 400;
+    font-weight: 300;
   }
 
   .cases__list-wrapper {
@@ -159,7 +159,7 @@ const cases = limit ? featuredCases.slice(0, limit) : allCases;
     display: flex;
     flex-direction: column;
     gap: var(--gap-md);
-    transition: opacity 0.2s ease;
+    transition: opacity var(--transition-base);
   }
 
   .cases__list-wrapper.is-loading .cases__list {
@@ -175,7 +175,7 @@ const cases = limit ? featuredCases.slice(0, limit) : allCases;
     justify-content: center;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.2s ease;
+    transition: opacity var(--transition-base);
   }
 
   .cases__list-wrapper.is-loading .cases__loader {
@@ -187,7 +187,7 @@ const cases = limit ? featuredCases.slice(0, limit) : allCases;
     height: 20px;
     border: 2px solid var(--color-border);
     border-top-color: var(--color-text-primary);
-    border-radius: 50%;
+    border-radius: var(--radius-circle);
     animation: spin 0.6s linear infinite;
   }
 
@@ -207,12 +207,12 @@ const cases = limit ? featuredCases.slice(0, limit) : allCases;
     border: 1px solid var(--color-border);
     color: var(--color-text-secondary);
     font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.15em;
+    font-size: var(--font-size-label);
+    letter-spacing: var(--tracking-button);
     text-transform: uppercase;
     text-decoration: none;
-    border-radius: 999px;
-    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    border-radius: var(--radius-pill);
+    transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
   }
 
   .cases__more:hover {

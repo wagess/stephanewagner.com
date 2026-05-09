@@ -77,7 +77,7 @@ const { label, headline, pillars } = Astro.props;
     background: var(--color-text-primary);
     margin-bottom: var(--spacing-block);
     transform-origin: left;
-    animation: scaleFromLeft 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation: scaleFromLeft 1s var(--easing-spring) both;
   }
 
   .hero__text {
@@ -95,7 +95,7 @@ const { label, headline, pillars } = Astro.props;
     float: left;
     width: 72px;
     height: 72px;
-    border-radius: 50%;
+    border-radius: var(--radius-circle);
     object-fit: cover;
     margin-right: var(--gap-sm);
     margin-top: 0.5rem;
@@ -119,8 +119,8 @@ const { label, headline, pillars } = Astro.props;
 
   .hero__label {
     text-transform: uppercase;
-    letter-spacing: 0.3em;
-    font-size: 11px;
+    letter-spacing: var(--tracking-label);
+    font-size: var(--font-size-label);
     color: var(--color-text-secondary);
     font-family: var(--font-mono);
   }
@@ -152,7 +152,7 @@ const { label, headline, pillars } = Astro.props;
 
   .hero__description {
     font-size: 17px;
-    line-height: 1.7;
+    line-height: var(--leading-relaxed);
     color: var(--color-text-primary);
     font-family: var(--font-body);
     font-weight: 300;

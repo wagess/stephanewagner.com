@@ -240,7 +240,7 @@ const md = (str: string) => str
     background: var(--color-text-primary);
     margin: 0 var(--spacing-container);
     transform-origin: left;
-    animation: scaleFromLeft 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation: scaleFromLeft 1s var(--easing-spring) both;
   }
 
   @keyframes scaleFromLeft {
@@ -267,7 +267,7 @@ const md = (str: string) => str
 
   /* --- page open animation --- */
   [data-open] {
-    animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation: fadeInUp 0.8s var(--easing-spring) both;
   }
 
   @keyframes fadeInUp {
@@ -295,7 +295,7 @@ const md = (str: string) => str
     background: var(--color-text-primary);
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1) 0.5s;
+    transition: transform 1s var(--easing-spring) 0.5s;
   }
 
   header[data-open]::after {
@@ -368,8 +368,8 @@ const md = (str: string) => str
 
   .case-nav__hint {
     font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.2em;
+    font-size: var(--font-size-label);
+    letter-spacing: var(--tracking-mono);
     text-transform: uppercase;
     color: var(--color-text-muted);
   }
@@ -386,7 +386,7 @@ const md = (str: string) => str
     justify-content: center;
     width: 2rem;
     height: 2rem;
-    border-radius: 50%;
+    border-radius: var(--radius-circle);
     border: 1px solid var(--color-border);
     background: var(--color-surface);
     color: var(--color-text-primary);
@@ -402,8 +402,8 @@ const md = (str: string) => str
 
   .label {
     text-transform: uppercase;
-    letter-spacing: 0.3em;
-    font-size: 11px;
+    letter-spacing: var(--tracking-label);
+    font-size: var(--font-size-label);
     color: var(--color-text-secondary);
     font-family: var(--font-mono);
   }
@@ -425,8 +425,8 @@ const md = (str: string) => str
   }
 
   .year {
-    font-size: 11px;
-    letter-spacing: 0.15em;
+    font-size: var(--font-size-label);
+    letter-spacing: var(--tracking-button);
     color: var(--color-text-muted);
     font-family: var(--font-mono);
   }
@@ -439,7 +439,7 @@ const md = (str: string) => str
   }
 
   .tags li {
-    font-size: 12px;
+    font-size: var(--font-size-xs);
     letter-spacing: 0.1em;
     color: var(--color-text-secondary);
     border: 1px solid var(--color-border);
@@ -528,7 +528,7 @@ const md = (str: string) => str
   .star-letter {
     width: 3.5rem;
     height: 3.5rem;
-    border-radius: 50%;
+    border-radius: var(--radius-circle);
     background-color: var(--color-surface-subtle);
     display: flex;
     align-items: center;
@@ -549,10 +549,10 @@ const md = (str: string) => str
   }
 
   h2 {
-    font-size: 11px;
+    font-size: var(--font-size-label);
     font-family: var(--font-mono);
     font-weight: 400;
-    letter-spacing: 0.2em;
+    letter-spacing: var(--tracking-mono);
     text-transform: uppercase;
     color: var(--color-text-secondary);
     margin: 0;
@@ -567,9 +567,9 @@ const md = (str: string) => str
   }
 
   h4 {
-    font-size: 11px;
+    font-size: var(--font-size-label);
     font-weight: 400;
-    letter-spacing: 0.2em;
+    letter-spacing: var(--tracking-mono);
     text-transform: uppercase;
     color: var(--color-text-secondary);
     font-family: var(--font-mono);
@@ -577,7 +577,7 @@ const md = (str: string) => str
   }
 
   p {
-    font-size: 16px;
+    font-size: var(--font-size-body);
     line-height: 1.75;
     color: var(--color-text-primary);
     font-family: var(--font-body);
@@ -598,7 +598,7 @@ const md = (str: string) => str
   }
 
   .star-list li {
-    font-size: 16px;
+    font-size: var(--font-size-body);
     line-height: 1.75;
     color: var(--color-text-primary);
     font-family: var(--font-body);
@@ -617,7 +617,7 @@ const md = (str: string) => str
     position: absolute;
     left: 0;
     font-family: var(--font-mono);
-    font-size: 13px;
+    font-size: var(--font-size-sm);
     color: var(--color-text-primary);
   }
 
@@ -635,7 +635,7 @@ const md = (str: string) => str
     width: 70%;
     height: 70%;
     background: var(--color-danger-bg);
-    border-radius: 50%;
+    border-radius: var(--radius-circle);
   }
 
   .challenges__title {
@@ -655,7 +655,7 @@ const md = (str: string) => str
   .challenges__subtitle {
     display: block;
     width: fit-content;
-    font-size: 11px;
+    font-size: var(--font-size-label);
     font-weight: 600;
     font-family: var(--font-mono);
     letter-spacing: 0.08em;
@@ -702,7 +702,7 @@ const md = (str: string) => str
     display: flex;
     align-items: baseline;
     gap: var(--gap-xs);
-    font-size: 15px;
+    font-size: var(--font-size-body-sm);
     line-height: 1.75;
     color: var(--color-text-primary);
     font-family: var(--font-body);
@@ -760,9 +760,9 @@ const md = (str: string) => str
   }
 
   .solution-card__label {
-    font-size: 11px;
+    font-size: var(--font-size-label);
     font-family: var(--font-mono);
-    letter-spacing: 0.2em;
+    letter-spacing: var(--tracking-mono);
     text-transform: uppercase;
     color: var(--color-text-secondary);
     margin: 0;
@@ -770,7 +770,7 @@ const md = (str: string) => str
 
   .solution-card__text {
     font-size: clamp(1.15rem, 2vw, 1.4rem);
-    line-height: 1.7;
+    line-height: var(--leading-relaxed);
     color: var(--color-text-primary);
     font-family: var(--font-body);
     font-weight: 300;
@@ -788,7 +788,7 @@ const md = (str: string) => str
 
   .solution-card__list li {
     font-size: clamp(1.15rem, 2vw, 1.4rem);
-    line-height: 1.7;
+    line-height: var(--leading-relaxed);
     color: var(--color-text-primary);
     font-family: var(--font-body);
     font-weight: 500;
@@ -879,7 +879,7 @@ const md = (str: string) => str
     height: 100%;
     object-fit: contain;
     filter: none;
-    transition: filter 0.3s ease, transform 0.3s ease;
+    transition: filter var(--transition-slow), transform var(--transition-slow);
     user-select: none;
     -webkit-user-select: none;
     pointer-events: none;
@@ -898,7 +898,7 @@ const md = (str: string) => str
 
   .challenges__arrow {
     font-family: var(--font-mono);
-    font-size: 13px;
+    font-size: var(--font-size-sm);
     color: var(--color-text-primary);
     flex-shrink: 0;
   }

@@ -20,7 +20,7 @@ const { label, title } = Astro.props;
     background: var(--color-text-primary);
     margin: 0 var(--spacing-container);
     transform-origin: left;
-    animation: scaleFromLeft 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation: scaleFromLeft 1s var(--easing-spring) both;
   }
 
   .page-header {
@@ -39,13 +39,13 @@ const { label, title } = Astro.props;
     background: var(--color-text-primary);
     transform: scaleX(0);
     transform-origin: left;
-    animation: scaleFromLeft 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+    animation: scaleFromLeft 1s var(--easing-spring) 0.3s both;
   }
 
   .page-header__label {
     text-transform: uppercase;
-    letter-spacing: 0.3em;
-    font-size: 11px;
+    letter-spacing: var(--tracking-label);
+    font-size: var(--font-size-label);
     color: var(--color-text-secondary);
     font-family: var(--font-mono);
     margin-bottom: 1.5rem;
@@ -54,10 +54,10 @@ const { label, title } = Astro.props;
 
   .page-header__title {
     font-size: clamp(2rem, 4vw, 3.5rem);
-    line-height: 1.2;
+    line-height: var(--leading-tight);
     color: var(--color-text-primary);
     font-family: var(--font-heading);
-    font-weight: 500;
+    font-weight: 300;
     /* max-width: 48rem; */
     animation: fadeInUp 0.8s ease 0.5s both;
   }

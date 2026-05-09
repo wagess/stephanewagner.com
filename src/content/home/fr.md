@@ -27,38 +27,47 @@ services:
     title: "UX & Stratégie de produit"
     desc: "Design de produit / parcours d'usage end-to-end"
     count: 3
+    href: "/cases/symetris-case"
   - number: "02"
     title: "Founding designer"
     desc: "Brand, Visual system, patterns, UX Writing"
     count: 2
+    href: "/cases/capscience-case"
   - number: "03"
     title: "Design de systèmes complexes"
     desc: "B2B, SaaS, IA, dashboards, outils internes"
     count: 4
+    href: "/cases/curateur-case"
   - number: "04"
     title: "Vibe coding"
     desc: "Workflow code & Frontend"
     count: 2
+    # href: "/cases/mon-cas"
   - number: "05"
     title: "Visuel et narratif"
     desc: "Déclinaison graphique, Direction artistique"
     count: +50
+    href: "/cases/urbania-case"
   - number: "06"
-    title: "Architecture Contenu et Produit"
+    title: "Architecture.s"
     desc: "Diagrammes de contenu, cartographie, flows fonctionnels"
     count: 10
+    href: "/cases/symetris-msi-case"
   - number: "07"
     title: "Alignement produit et design"
     desc: "Amélioration de l'opérabilité, audit technqiue"
     count: 3
+    href: "/cases/fqm-munipro-case"
   - number: "08"
     title: "Recherche utilisateur"
     desc: "Tests A/B, co-création, Analyse des besoins"
     count: 2
+    href: "/cases/symetris-msi-case"
   - number: "09"
     title: "Prototypage & validation"
     desc: "Maquettes haute fidélité, wireframes"
     count: +20
+    href: "/cases/koios-olivo-case"
 
 # ─── Side Projects ───────────────────────────────────────
 side_projects_label: "Projets secondaires"

@@ -147,7 +147,7 @@ try {
     cursor: pointer;
     z-index: 10000;
     opacity: 0.7;
-    transition: opacity 0.15s;
+    transition: opacity var(--transition-fast);
     padding: 5px;
     display: flex;
     align-items: center;
@@ -182,8 +182,8 @@ try {
 
   .wall__empty {
     font-family: var(--font-mono);
-    font-size: 12px;
-    letter-spacing: 0.2em;
+    font-size: var(--font-size-xs);
+    letter-spacing: var(--tracking-mono);
     text-transform: uppercase;
     color: var(--color-text-muted);
     text-align: center;
@@ -205,7 +205,7 @@ try {
   .wall__item a {
     display: block;
     overflow: hidden;
-    border-radius: 2px;
+    border-radius: var(--radius-sm);
   }
 
   .wall__item img {

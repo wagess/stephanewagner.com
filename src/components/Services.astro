@@ -1,7 +1,7 @@
 ---
 import ServiceCard from './ServiceCard.astro';
 
-interface Service { number: string; title: string; desc: string; count: number; }
+interface Service { number: string; title: string; desc: string; count: number; href?: string; }
 interface Props {
   label?: string;
   title?: string;
@@ -28,7 +28,7 @@ const { label, title, services, showHeader = true } = Astro.props;
             title={service.title}
             description={service.desc}
             count={service.count}
-            href="/cases"
+            href={service.href ?? '/cases'}
           />
         </div>
       ))}
@@ -70,6 +70,7 @@ const { label, title, services, showHeader = true } = Astro.props;
     transition: opacity 0.6s ease, transform 0.6s ease;
     display: flex;
     flex-direction: column;
+    height: 100%;
   }
   [data-animate].visible {
     opacity: 1;
@@ -114,7 +115,7 @@ const { label, title, services, showHeader = true } = Astro.props;
     line-height: 1.2;
     color: var(--color-text-primary);
     font-family: var(--font-heading);
-    font-weight: 500;
+    font-weight: 300;
   }
 
   .services__grid {

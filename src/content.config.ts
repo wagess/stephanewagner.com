@@ -29,7 +29,7 @@ const cases = defineCollection({
 });
 
 const pillar = z.object({ label: z.string(), title: z.string(), desc: z.string(), back_title: z.string().optional(), back_href: z.string().optional() });
-const service = z.object({ number: z.string(), title: z.string(), desc: z.string(), count: z.number() });
+const service = z.object({ number: z.string(), title: z.string(), desc: z.string(), count: z.number(), href: z.string().optional() });
 const sideProject = z.object({ title: z.string(), href: z.string(), year: z.number() });
 
 const home = defineCollection({

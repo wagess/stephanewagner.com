@@ -62,6 +62,34 @@ const { title, description = "Concepteur Produit — Portfolio" } = Astro.props;
     --card-border: 1px solid var(--color-border);
     --card-radius: 10px;
     --border-strong: 1px solid var(--color-text-primary);
+
+    /* Border radius */
+    --radius-pill: 999px;
+    --radius-sm: 2px;
+    --radius-circle: 50%;
+
+    /* Typography */
+    --font-size-label: 11px;
+    --font-size-xs: 12px;
+    --font-size-sm: 13px;
+    --font-size-body-sm: 15px;
+    --font-size-body: 16px;
+    --font-size-card-title: 26px;
+    --leading-tight: 1.25;
+    --leading-relaxed: 1.7;
+    --tracking-label: 0.3em;
+    --tracking-mono: 0.2em;
+    --tracking-button: 0.15em;
+
+    /* Transitions & easing */
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.2s ease;
+    --transition-slow: 0.3s ease;
+    --easing-spring: cubic-bezier(0.22, 1, 0.36, 1);
+    --easing-bounce: cubic-bezier(0.34, 1.4, 0.64, 1);
+
+    /* Shadows */
+    --shadow-offset: 4px 4px 0 0 var(--color-shadow);
   }
 
   @media (max-width: 768px) {

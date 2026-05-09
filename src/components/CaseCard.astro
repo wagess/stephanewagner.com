@@ -112,7 +112,7 @@ const isSecondary = variant === 'secondary';
     background: var(--color-surface);
     border: var(--card-border);
     border-radius: var(--card-radius);
-    transition: background 0.3s ease, border-color 0.3s ease;
+    transition: background var(--transition-slow), border-color var(--transition-slow);
   }
 
   .case-card--secondary .case-card__inner {
@@ -174,11 +174,11 @@ const isSecondary = variant === 'secondary';
   }
 
   .case-card__number {
-    font-size: 11px;
-    letter-spacing: 0.2em;
+    font-size: var(--font-size-label);
+    letter-spacing: var(--tracking-mono);
     color: var(--color-text-muted);
     font-family: var(--font-mono);
-    transition: color 0.3s ease;
+    transition: color var(--transition-slow);
   }
 
   a.case-card__inner:hover .case-card__number {
@@ -210,12 +210,12 @@ const isSecondary = variant === 'secondary';
 
   .case-card__title {
     font-size: clamp(1.5rem, 3vw, 2rem);
-    line-height: 1.25;
+    line-height: var(--leading-tight);
     color: var(--color-text-primary);
     font-family: var(--font-heading);
     font-weight: 500;
     flex: 1;
-    transition: color 0.3s ease;
+    transition: color var(--transition-slow);
   }
 
   .case-card--secondary .case-card__title {
@@ -228,13 +228,13 @@ const isSecondary = variant === 'secondary';
   }
 
   .case-card--secondary .case-card__inner:hover .case-card__title {
-    color: var(--color-text-accent);
+    color: var(--color-accent);
   }
 
   .case-card__icon {
     color: var(--color-text-secondary);
     flex-shrink: 0;
-    transition: color 0.3s ease, transform 0.2s ease;
+    transition: color var(--transition-slow), transform var(--transition-base);
   }
 
   a.case-card__inner:hover .case-card__icon {
@@ -249,22 +249,22 @@ const isSecondary = variant === 'secondary';
   .case-card__icon--right {
     color: var(--color-text-muted);
     flex-shrink: 0;
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition: color var(--transition-slow), transform var(--transition-slow);
   }
 
   .case-card--secondary .case-card__inner:hover .case-card__icon--right {
-    color: var(--color-text-accent);
+    color: var(--color-accent);
     transform: translateX(5px);
   }
 
   .case-card__summary {
     font-size: 16px;
-    line-height: 1.7;
+    line-height: var(--leading-relaxed);
     color: var(--color-text-primary);
     font-family: var(--font-body);
     font-weight: 300;
     font-style: italic;
-    transition: color 0.3s ease;
+    transition: color var(--transition-slow);
   }
 
   @media (max-width: 768px) {
@@ -291,7 +291,7 @@ const isSecondary = variant === 'secondary';
     padding: 0.25rem 0.75rem;
     text-transform: uppercase;
     font-family: var(--font-mono);
-    transition: color 0.3s ease, border-color 0.3s ease;
+    transition: color var(--transition-slow), border-color var(--transition-slow);
   }
 
   a.case-card__inner:hover .case-card__tag {
@@ -320,8 +320,8 @@ const isSecondary = variant === 'secondary';
     background-color: var(--color-surface);
     border-radius: var(--card-radius);
     overflow: hidden;
-    box-shadow: 4px 4px 0 0 var(--color-shadow);
-    transition: box-shadow 0.3s ease;
+    box-shadow: var(--shadow-offset);
+    transition: box-shadow var(--transition-slow);
   }
 
   a.case-card__inner:hover .case-card__thumb {
@@ -333,7 +333,7 @@ const isSecondary = variant === 'secondary';
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.4s ease;
+    transition: transform 0.4s var(--easing-spring);
   }
 
   a.case-card__inner:hover .case-card__thumb img {
