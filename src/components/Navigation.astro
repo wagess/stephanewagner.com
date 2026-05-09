@@ -55,6 +55,10 @@ const lp = (path: string) => `/${lang}${path}`;
     </a>
   </div>
 
+  <a href={lang === 'fr' ? pathname.replace(/^\/fr/, '/en') : pathname.replace(/^\/en/, '/fr')} class="nav__lang nav__lang--mobile-only">
+    {lang === 'fr' ? 'EN' : 'FR'}
+  </a>
+
   <button class="nav__burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
     <span></span>
     <span></span>
@@ -368,6 +372,10 @@ const lp = (path: string) => `/${lang}${path}`;
     font-size: 14px;
   }
 
+  .nav__lang--mobile-only {
+    display: none;
+  }
+
   @media (max-width: 768px) {
     .nav__links {
       display: none;
@@ -375,6 +383,10 @@ const lp = (path: string) => `/${lang}${path}`;
 
     .nav__right {
       display: none;
+    }
+
+    .nav__lang--mobile-only {
+      display: flex;
     }
 
     .nav__burger {
