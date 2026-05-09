@@ -190,16 +190,16 @@ const md = (str: string) => str
       <div class="case-nav__slot case-nav__slot--prev">
         {prevCase && (
           <>
-            <CaseNavButton direction="prev" href={`/${lang}/cases/${prevCase.id.replace(/\.md$/, '')}`} title={prevCase.data.title} />
-            <CaseNavButton direction="prev" href={`/${lang}/cases/${prevCase.id.replace(/\.md$/, '')}`} title={prevCase.data.title} variant="mobile" />
+            <CaseNavButton direction="prev" href={`/${lang}/cases/${prevCase.id.replace(/^fr\//, '').replace(/\.md$/, '')}`} title={prevCase.data.title} />
+            <CaseNavButton direction="prev" href={`/${lang}/cases/${prevCase.id.replace(/^fr\//, '').replace(/\.md$/, '')}`} title={prevCase.data.title} variant="mobile" />
           </>
         )}
       </div>
       <div class="case-nav__slot case-nav__slot--next">
         {nextCase && (
           <>
-            <CaseNavButton direction="next" href={`/${lang}/cases/${nextCase.id.replace(/\.md$/, '')}`} title={nextCase.data.title} />
-            <CaseNavButton direction="next" href={`/${lang}/cases/${nextCase.id.replace(/\.md$/, '')}`} title={nextCase.data.title} variant="mobile" />
+            <CaseNavButton direction="next" href={`/${lang}/cases/${nextCase.id.replace(/^fr\//, '').replace(/\.md$/, '')}`} title={nextCase.data.title} />
+            <CaseNavButton direction="next" href={`/${lang}/cases/${nextCase.id.replace(/^fr\//, '').replace(/\.md$/, '')}`} title={nextCase.data.title} variant="mobile" />
           </>
         )}
       </div>
