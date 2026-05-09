@@ -4,9 +4,9 @@ import { getCollection } from "astro:content";
 // Redirect les anciennes URLs /cases/{slug} vers /fr/cases/{slug}
 export async function getStaticPaths() {
   const cases = (await getCollection("cases"))
-    .filter(c => !c.id.startsWith('_'));
+    .filter(c => c.id.startsWith('fr/') && !c.id.includes('_template'));
   return cases.map(c => ({
-    params: { slug: c.id.replace(/\.md$/, '') },
+    params: { slug: c.id.replace(/^fr\//, '').replace(/\.md$/, '') },
   }));
 }
 

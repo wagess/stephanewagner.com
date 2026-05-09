@@ -14,8 +14,9 @@ const { limit, label, title } = Astro.props;
 const lang = (Astro.currentLocale ?? 'fr') as 'fr' | 'en';
 const t = useTranslations(lang);
 
+const locale = lang === 'en' ? 'en' : 'fr';
 const allCases = (await getCollection("cases"))
-  .filter(c => !c.id.startsWith('_'))
+  .filter(c => c.id.startsWith(`${locale}/`) && !c.id.includes('_template'))
   .sort((a, b) => b.data.year - a.data.year);
 
 const featuredCases = allCases.filter(c => c.data.featured);
@@ -48,7 +49,7 @@ const cases = limit ? featuredCases.slice(0, limit) : allCases;
               title={c.data.title}
               summary={c.data.star_summary}
               tags={c.data.tags}
-              href={c.data.variant === 'secondary' && c.data.external_url ? c.data.external_url : `/cases/${c.id.replace(/\.md$/, '')}`}
+              href={c.data.variant === 'secondary' && c.data.external_url ? c.data.external_url : `/${lang}/cases/${c.id.replace(/^(fr|en)\//, '').replace(/\.md$/, '')}`}
               year={c.data.year}
               cover={c.data.cover}
               variant={c.data.variant}

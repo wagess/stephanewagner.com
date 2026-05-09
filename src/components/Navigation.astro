@@ -46,9 +46,14 @@ const lp = (path: string) => `/${lang}${path}`;
     </a>
   </div>
 
-  <a href={ctaHref} target="_blank" rel="noopener noreferrer" class="nav__cta">
-    {t.cta}
-  </a>
+  <div class="nav__right">
+    <a href={lang === 'fr' ? pathname.replace(/^\/fr/, '/en') : pathname.replace(/^\/en/, '/fr')} class="nav__lang">
+      {lang === 'fr' ? 'EN' : 'FR'}
+    </a>
+    <a href={ctaHref} target="_blank" rel="noopener noreferrer" class="nav__cta">
+      {t.cta}
+    </a>
+  </div>
 
   <button class="nav__burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
     <span></span>
@@ -72,9 +77,14 @@ const lp = (path: string) => `/${lang}${path}`;
       {t.wall}
     </a>
   </nav>
-  <a href={ctaHref} target="_blank" rel="noopener noreferrer" class="nav__cta nav__mobile-cta">
-    {t.cta}
-  </a>
+  <div class="nav__mobile-bottom">
+    <a href={lang === 'fr' ? pathname.replace(/^\/fr/, '/en') : pathname.replace(/^\/en/, '/fr')} class="nav__lang">
+      {lang === 'fr' ? 'EN' : 'FR'}
+    </a>
+    <a href={ctaHref} target="_blank" rel="noopener noreferrer" class="nav__cta nav__mobile-cta">
+      {t.cta}
+    </a>
+  </div>
 </div>
 
 <script>
@@ -179,6 +189,29 @@ const lp = (path: string) => `/${lang}${path}`;
       outline-color: var(--color-accent);
       padding: 0.2rem 0.6rem;
     }
+  }
+
+  .nav__right {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-sm);
+  }
+
+  .nav__lang {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-label);
+    letter-spacing: var(--tracking-button);
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
+    padding: 0.25rem 0.6rem;
+    text-decoration: none;
+    transition: color var(--transition-fast), border-color var(--transition-fast);
+  }
+
+  .nav__lang:hover {
+    color: var(--color-text-primary);
+    border-color: var(--color-text-primary);
   }
 
   .nav__cta {
@@ -295,9 +328,15 @@ const lp = (path: string) => `/${lang}${path}`;
     display: none;
   }
 
+  .nav__mobile-bottom {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-sm);
+    margin-top: var(--padding-block);
+  }
+
   .nav__mobile-cta {
     display: inline-flex !important;
-    margin-top: var(--padding-block);
     font-size: 14px;
   }
 
@@ -306,7 +345,7 @@ const lp = (path: string) => `/${lang}${path}`;
       display: none;
     }
 
-    .nav__cta {
+    .nav__right {
       display: none;
     }
 

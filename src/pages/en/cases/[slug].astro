@@ -14,13 +14,12 @@ import iconA from '../../../assets/grid-view.svg';
 import iconR from '../../../assets/live-interaction.svg';
 import { useTranslations } from '../../../i18n/index';
 
-// TODO étape 6 : filtrer uniquement les cases traduits en EN
 export async function getStaticPaths() {
   const cases = (await getCollection("cases"))
-    .filter(c => !c.id.startsWith('_'))
+    .filter(c => c.id.startsWith('en/') && !c.id.includes('_template'))
     .sort((a, b) => b.data.year - a.data.year);
   return cases.map((c, i) => ({
-    params: { slug: c.id.replace(/\.md$/, '') },
+    params: { slug: c.id.replace(/^en\//, '').replace(/\.md$/, '') },
     props: { case: c, prevCase: cases[i + 1] ?? null, nextCase: cases[i - 1] ?? null },
   }));
 }
