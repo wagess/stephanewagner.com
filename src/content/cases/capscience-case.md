@@ -1,5 +1,5 @@
 ---
-title: "Créer un produit end-to-end pour vulgariser la génomique"
+title: "Un produit end-to-end pour vulgariser la génomique"
 cover: "/cases/capscience/capscience-mission-2.webp"
 banner_image: "/cases/capscience/avantages-produit.webp"
 gallery:

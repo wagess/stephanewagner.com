@@ -24,7 +24,7 @@ services_label: "Services"
 services_title: "Ma trousse de Savoir-faire"
 services:
   - number: "01"
-    title: "UX & Stratégie de produit"
+    title: "UX & Stratégie"
     desc: "Design de produit / parcours d'usage end-to-end"
     count: 3
     href: "/cases/symetris-case"
@@ -34,7 +34,7 @@ services:
     count: 2
     href: "/cases/capscience-case"
   - number: "03"
-    title: "Design de systèmes complexes"
+    title: "Systèmes complexes"
     desc: "B2B, SaaS, IA, dashboards, outils internes"
     count: 4
     href: "/cases/curateur-case"
@@ -54,7 +54,7 @@ services:
     count: 10
     href: "/cases/symetris-msi-case"
   - number: "07"
-    title: "Alignement produit et design"
+    title: "Alignement Produit-Design"
     desc: "Amélioration de l'opérabilité, audit technqiue"
     count: 3
     href: "/cases/fqm-munipro-case"
