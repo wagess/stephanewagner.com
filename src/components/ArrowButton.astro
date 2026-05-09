@@ -1,16 +1,17 @@
 ---
 interface Props {
   variant?: 'back' | 'next' | 'diagonal' | 'eye';
+  size?: 'default' | 'medium';
   href?: string;
   ariaLabel?: string;
 }
 
-const { variant = 'back', href, ariaLabel } = Astro.props;
+const { variant = 'back', size = 'default', href, ariaLabel } = Astro.props;
 const Tag = href ? 'a' : 'span';
 ---
 
 <Tag
-  class:list={['arrow-btn', `arrow-btn--${variant}`]}
+  class:list={['arrow-btn', `arrow-btn--${variant}`, { 'arrow-btn--medium': size === 'medium' }]}
   href={href || undefined}
   aria-label={ariaLabel || undefined}
   aria-hidden={!ariaLabel ? 'true' : undefined}
@@ -59,6 +60,16 @@ const Tag = href ? 'a' : 'span';
       border-color var(--transition-base),
       color var(--transition-base),
       transform var(--transition-base);
+  }
+
+  .arrow-btn--medium {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .arrow-btn--medium svg {
+    width: 20px;
+    height: 20px;
   }
 
   a.arrow-btn:hover {
