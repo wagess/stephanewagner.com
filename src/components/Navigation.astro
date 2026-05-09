@@ -1,41 +1,44 @@
 ---
 import { getCollection } from 'astro:content';
+import { useTranslations } from '../i18n/index';
 const { pathname } = Astro.url;
+const lang = (Astro.currentLocale ?? 'fr') as 'fr' | 'en';
+const t = useTranslations(lang).nav;
 const cases = (await getCollection('cases')).filter(c => !c.id.startsWith('_'));
 const caseCount = cases.length;
 const ctaHref = 'https://calendly.com/wagess/30min';
-const ctaLabel = 'Calendly';
+const lp = (path: string) => `/${lang}${path}`;
 ---
 <header class="nav">
-  <a href="/" class="nav__logo">
+  <a href={lp('/')} class="nav__logo">
     <img src="/logo-nav.svg" alt="S." width="41" height="34" loading="eager" />
   </a>
 
   <div class="nav__links">
-    <a href="/services" class:list={['nav__link', { 'nav__link--active': pathname.startsWith('/services') }]}>
-      Services
+    <a href={lp('/services')} class:list={['nav__link', { 'nav__link--active': pathname.startsWith(`/${lang}/services`) }]}>
+      {t.services}
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <line x1="5" y1="12" x2="19" y2="12"></line>
         <polyline points="12 5 19 12 12 19"></polyline>
       </svg>
     </a>
-    <a href="/cases" class:list={['nav__link', { 'nav__link--active': pathname.startsWith('/cases') }]}>
-      Études de cas
+    <a href={lp('/cases')} class:list={['nav__link', { 'nav__link--active': pathname.startsWith(`/${lang}/cases`) }]}>
+      {t.cases}
       <span class="nav__count">{caseCount}</span>
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <line x1="5" y1="12" x2="19" y2="12"></line>
         <polyline points="12 5 19 12 12 19"></polyline>
       </svg>
     </a>
-    <a href="/the-wall" class:list={['nav__link', { 'nav__link--active': pathname.startsWith('/the-wall') }]}>
-      The Visual Wall
+    <a href={lp('/the-wall')} class:list={['nav__link', { 'nav__link--active': pathname.startsWith(`/${lang}/the-wall`) }]}>
+      {t.wall}
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <line x1="5" y1="12" x2="19" y2="12"></line>
         <polyline points="12 5 19 12 12 19"></polyline>
       </svg>
     </a>
-    <a href="#approche" class="nav__link">
-      Approche
+    <a href={lp('/#approche')} class="nav__link">
+      {t.approach}
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <line x1="12" y1="5" x2="12" y2="19"></line>
         <polyline points="5 12 12 19 19 12"></polyline>
@@ -44,7 +47,7 @@ const ctaLabel = 'Calendly';
   </div>
 
   <a href={ctaHref} target="_blank" rel="noopener noreferrer" class="nav__cta">
-    {ctaLabel}
+    {t.cta}
   </a>
 
   <button class="nav__burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -55,22 +58,22 @@ const ctaLabel = 'Calendly';
 
 <div class="nav__mobile-menu" id="mobile-menu" aria-hidden="true">
   <nav class="nav__mobile-links">
-    <a href="/services" class:list={['nav__mobile-link', { 'nav__mobile-link--active': pathname.startsWith('/services') }]}>
-      Services
+    <a href={lp('/services')} class:list={['nav__mobile-link', { 'nav__mobile-link--active': pathname.startsWith(`/${lang}/services`) }]}>
+      {t.services}
     </a>
-    <a href="/cases" class:list={['nav__mobile-link', { 'nav__mobile-link--active': pathname.startsWith('/cases') }]}>
-      Études de cas
+    <a href={lp('/cases')} class:list={['nav__mobile-link', { 'nav__mobile-link--active': pathname.startsWith(`/${lang}/cases`) }]}>
+      {t.cases}
       <span class="nav__count">{caseCount}</span>
     </a>
-    <a href="#approche" class="nav__mobile-link nav__mobile-link--hidden">
-      Approche
+    <a href={lp('/#approche')} class="nav__mobile-link nav__mobile-link--hidden">
+      {t.approach}
     </a>
-    <a href="/the-wall" class:list={['nav__mobile-link', { 'nav__mobile-link--active': pathname.startsWith('/the-wall') }]}>
-      The Visual Wall
+    <a href={lp('/the-wall')} class:list={['nav__mobile-link', { 'nav__mobile-link--active': pathname.startsWith(`/${lang}/the-wall`) }]}>
+      {t.wall}
     </a>
   </nav>
   <a href={ctaHref} target="_blank" rel="noopener noreferrer" class="nav__cta nav__mobile-cta">
-    {ctaLabel}
+    {t.cta}
   </a>
 </div>
 

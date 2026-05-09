@@ -1,0 +1,621 @@
+---
+import { getCollection } from "astro:content";
+import Layout from '../../../layouts/Layout.astro';
+import Footer from '../../../components/Footer.astro';
+import VennDiagram from '../../../components/VennDiagram.astro';
+import LikeButton from '../../../components/LikeButton.astro';
+import YearTag from '../../../components/YearTag.astro';
+import ArrowButton from '../../../components/ArrowButton.astro';
+import CaseNavButton from '../../../components/CaseNavButton.astro';
+import challengesSvg from '../../../assets/challenges.svg';
+import iconS from '../../../assets/start-with-an-outline.svg';
+import iconT from '../../../assets/shapes.svg';
+import iconA from '../../../assets/grid-view.svg';
+import iconR from '../../../assets/live-interaction.svg';
+import { useTranslations } from '../../../i18n/index';
+
+export async function getStaticPaths() {
+  const cases = (await getCollection("cases"))
+    .filter(c => !c.id.startsWith('_'))
+    .sort((a, b) => b.data.year - a.data.year);
+  return cases.map((c, i) => ({
+    params: { slug: c.id.replace(/\.md$/, '') },
+    props: { case: c, prevCase: cases[i + 1] ?? null, nextCase: cases[i - 1] ?? null },
+  }));
+}
+
+const { case: c, prevCase, nextCase } = Astro.props;
+const { title, cover, banner_image, gallery, gallery_styles, year, tags, star_summary, contexte, probleme, hypothese, solution, methodologie, livrables, resultat, challenges } = c.data as any;
+
+const lang = 'fr';
+const t = useTranslations(lang);
+
+const md = (str: string) => str
+  ?.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+  ?.replace(/==(.+?)==/g, '<mark>$1</mark>') ?? '';
+---
+
+<Layout title={title}>
+  <main>
+    <div class="page-line-top"></div>
+    <div class="container pb-0">
+
+      <header data-open>
+        <div class="header__text">
+          <div class="label-row">
+            <ArrowButton href={`/${lang}/`} ariaLabel={t.cases.backHome} />
+            <p class="label">{t.cases.caseLabel}</p>
+          </div>
+          <h1 class="header__title pb-2">{title}</h1>
+          <div class="meta">
+            <ul class="tags">
+              <li><YearTag year={year} /></li>
+              {tags?.map((tag: string) => <li>{tag}</li>)}
+            </ul>
+          </div>
+        </div>
+        <div class="cover">
+          {cover && <img src={cover} alt={title} class="cover__img" loading="eager" />}
+        </div>
+        <blockquote class="star-summary" set:html={star_summary.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')} />
+      </header>
+
+      <section class="star">
+
+        <div class="star-block">
+          <div class="star-block__header">
+            <div class="star-letter"><img src={iconS.src} alt="S" class="star-icon" loading="lazy" /></div>
+            <h2>{t.cases.sections.context}</h2>
+          </div>
+          <div class="star-content">
+            {Array.isArray(contexte)
+              ? <ul class="star-list">{contexte.map((item: string) => <li set:html={md(item)} />)}</ul>
+              : <p set:html={md(contexte)} />}
+
+            {probleme && (Array.isArray(probleme)
+              ? <ul class="star-list star-list--bold">{probleme.map((item: string) => <li set:html={md(item)} />)}</ul>
+              : <p class="text--bold" set:html={md(probleme)} />)}
+          </div>
+        </div>
+
+        <div class="star-block">
+          <div class="star-block__header">
+            <div class="star-letter"><img src={iconT.src} alt="T" class="star-icon" loading="lazy" /></div>
+            <h2>{t.cases.sections.methodology}</h2>
+          </div>
+          <div class="star-content">
+            {Array.isArray(methodologie)
+              ? <ul class="star-list">{methodologie.map((item: string) => <li set:html={md(item)} />)}</ul>
+              : <p set:html={md(methodologie)} />}
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+
+    <div class="parallax-banner">
+      <div class="parallax-banner__image">
+        <img src={banner_image} alt={title} class="parallax-banner__img" loading="lazy" />
+      </div>
+      <div class="parallax-banner__solution">
+        <div class="solution-card__group">
+          <p class="solution-card__label">{t.cases.sections.hypothesis}</p>
+          {Array.isArray(hypothese)
+            ? <ul class="solution-card__list">{hypothese.map((item: string) => <li set:html={md(item)} />)}</ul>
+            : <p class="solution-card__text" set:html={md(hypothese)} />}
+        </div>
+        <div class="solution-card__group">
+          <p class="solution-card__label">{t.cases.sections.solution}</p>
+          {Array.isArray(solution)
+            ? <ul class="solution-card__list">{solution.map((item: string) => <li set:html={md(item)} />)}</ul>
+            : <p class="solution-card__text" set:html={md(solution)} />}
+        </div>
+      </div>
+    </div>
+
+    <div class="container container--bottom pt-0">
+
+      <section class="star">
+
+        <div class="star-block">
+          <div class="star-block__header">
+            <div class="star-letter"><img src={iconA.src} alt="A" class="star-icon" loading="lazy" /></div>
+            <h2>{t.cases.sections.deliverables}</h2>
+          </div>
+          <div class="star-content">
+            {Array.isArray(livrables)
+              ? <ul class="star-list">{livrables.map((item: string) => <li set:html={md(item)} />)}</ul>
+              : <p set:html={md(livrables)} />}
+          </div>
+        </div>
+
+        <div class="star-block">
+          <div class="star-block__header">
+            <div class="star-letter"><img src={iconR.src} alt="R" class="star-icon" loading="lazy" /></div>
+            <h2>{t.cases.sections.results}</h2>
+          </div>
+          <div class="star-content">
+            {Array.isArray(resultat)
+              ? <ul class="star-list">{resultat.map((item: string) => <li set:html={md(item)} />)}</ul>
+              : <p set:html={md(resultat)} />}
+          </div>
+        </div>
+
+      </section>
+
+      <section class="challenges">
+        <div class="challenges__title-wrap">
+          <img src={challengesSvg.src} alt="Challenges" class="challenges__title" loading="lazy" />
+        </div>
+        <div class="challenges__body">
+          <p class="challenges__subtitle">{t.cases.sections.challengesTitle}</p>
+          <ul class="challenges__list">
+            {challenges?.slice(0, 2).map((item: string) => (
+              <li class="challenges__item">
+                <span class="challenges__arrow" aria-hidden="true">→</span>
+                <span set:html={md(item)} />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {gallery && gallery.length > 0 && (() => {
+        const hasCover = gallery_styles?.some((s: string) => s === 'cover');
+        return (
+        <section class={`visuals${gallery.length === 1 ? ' visuals--single' : gallery.length === 2 ? ' visuals--duo' : ''}${hasCover ? ' visuals--has-cover' : ''}`}>
+          <div class="visuals__header">
+            <div class="star-letter"><img src={iconA.src} alt="" class="star-icon" loading="lazy" /></div>
+            <h2>{t.cases.sections.visuals}</h2>
+          </div>
+          {gallery.map((img: string, i: number) => {
+            const isCover = gallery_styles?.[i] === 'cover';
+            return (
+              <div class={isCover ? 'cover' : 'visual-block'}>
+                <a href={img} class="glightbox"><img src={img} alt={title} class={isCover ? 'cover__img' : 'visual-block__img'} /></a>
+              </div>
+            );
+          })}
+        </section>
+        );
+      })()}
+
+      <div class="like-cta">
+        <LikeButton slug={c.id} size="large" />
+      </div>
+
+    </div>
+    <nav class="case-nav">
+      <div class="case-nav__slot case-nav__slot--prev">
+        {prevCase && (
+          <>
+            <CaseNavButton direction="prev" href={`/${lang}/cases/${prevCase.id.replace(/\.md$/, '')}`} title={prevCase.data.title} />
+            <CaseNavButton direction="prev" href={`/${lang}/cases/${prevCase.id.replace(/\.md$/, '')}`} title={prevCase.data.title} variant="mobile" />
+          </>
+        )}
+      </div>
+      <div class="case-nav__slot case-nav__slot--next">
+        {nextCase && (
+          <>
+            <CaseNavButton direction="next" href={`/${lang}/cases/${nextCase.id.replace(/\.md$/, '')}`} title={nextCase.data.title} />
+            <CaseNavButton direction="next" href={`/${lang}/cases/${nextCase.id.replace(/\.md$/, '')}`} title={nextCase.data.title} variant="mobile" />
+          </>
+        )}
+      </div>
+    </nav>
+
+    <VennDiagram />
+    <Footer />
+  </main>
+</Layout>
+
+<style is:global>
+  .glightbox-open .goverlay { animation-duration: 0.15s !important; }
+  .glightbox-open .gslide { animation-duration: 0.15s !important; }
+  .glightbox-closing .goverlay { animation-duration: 0.15s !important; }
+  .glightbox-closing .gslide { animation-duration: 0.15s !important; }
+</style>
+
+<style>
+  main { min-height: 100vh; }
+
+  .page-line-top {
+    height: 1px;
+    background: var(--color-text-primary);
+    margin: 0 var(--spacing-container);
+    transform-origin: left;
+    animation: scaleFromLeft 1s var(--easing-spring) both;
+  }
+
+  @keyframes scaleFromLeft {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+
+  @media (max-width: 768px) { main { padding: 0; } }
+
+  .container {
+    margin: 0 auto;
+    padding-top: var(--pt, var(--spacing-block));
+    padding-bottom: var(--pb, var(--spacing-block));
+    padding-left: var(--pl, var(--spacing-container));
+    padding-right: var(--pr, var(--spacing-container));
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  [data-open] { animation: fadeInUp 0.8s var(--easing-spring) both; }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+    gap: var(--gap-block);
+    padding-bottom: var(--spacing-block);
+    position: relative;
+  }
+
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 1px;
+    background: var(--color-text-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1s var(--easing-spring) 0.5s;
+  }
+
+  header[data-open]::after { transform: scaleX(1); }
+
+  @media (max-width: 768px) { header { grid-template-columns: 1fr; } }
+
+  .header__text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-sm);
+    position: relative;
+    z-index: 1;
+  }
+
+  .label-row { display: flex; align-items: center; gap: var(--gap-xs); }
+
+  .case-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--color-border);
+    padding: var(--section-spacing) var(--spacing-container);
+    gap: var(--gap-sm);
+  }
+
+  .case-nav__slot { display: flex; }
+  .case-nav__slot--next { justify-content: flex-end; }
+
+  @media (max-width: 768px) { .case-nav { padding: var(--gap-block) var(--spacing-container); } }
+
+  .label {
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-label);
+    font-size: var(--font-size-label);
+    color: var(--color-text-secondary);
+    font-family: var(--font-mono);
+  }
+
+  h1 {
+    font-size: clamp(2rem, 5vw, 4.5rem);
+    line-height: 1.1;
+    font-family: var(--font-heading);
+    font-weight: 300;
+    max-width: 60rem;
+    background: linear-gradient(135deg, var(--color-accent-vivid) 0%, var(--color-text-primary) 60%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .meta { display: flex; align-items: center; gap: var(--gap-sm); flex-wrap: wrap; }
+
+  .tags { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+  .tags li {
+    font-size: var(--font-size-xs);
+    letter-spacing: 0.1em;
+    color: var(--color-text-secondary);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    padding: 0.25rem 0.75rem;
+    text-transform: uppercase;
+    font-family: var(--font-mono);
+  }
+
+  .cover {
+    border: 1px solid var(--color-border-dark);
+    background-color: var(--color-surface);
+    border-radius: var(--card-radius);
+    aspect-ratio: 9 / 6;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    box-shadow: 8px 8px 0 0 var(--color-shadow);
+  }
+
+  .cover__img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    user-select: none; -webkit-user-select: none; pointer-events: none;
+  }
+
+  .star-summary {
+    grid-column: 1 / -1;
+    margin: 0;
+    padding: 1.5rem 2rem;
+    border-left: 2px solid var(--color-text-primary);
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-style: italic;
+    color: var(--color-text-primary);
+    line-height: 1.6;
+    font-family: var(--font-heading);
+    font-weight: 400;
+  }
+
+  .star { display: flex; flex-wrap: wrap; }
+  .container > .star:first-of-type { border-top: none; }
+
+  .star-block {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-sm);
+    align-items: start;
+    border-bottom: 1px solid var(--color-border);
+    padding-top: var(--pt, var(--padding-block));
+    padding-bottom: var(--pb, var(--padding-block));
+    padding-left: var(--pl, var(--spacing-block));
+    padding-right: var(--pr, var(--spacing-block));
+    box-sizing: border-box;
+  }
+
+  .star-block__header { display: flex; align-items: center; gap: var(--gap-sm); }
+  .star-block:nth-child(odd) { border-right: 1px solid var(--color-border); }
+
+  @media (max-width: 768px) {
+    .star-block { flex: 1 1 100%; padding-left: 0; padding-right: 0; border-right: none; }
+  }
+
+  .star-letter {
+    width: 3.5rem; height: 3.5rem;
+    border-radius: var(--radius-circle);
+    background-color: var(--color-surface-subtle);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .star-icon { width: 2.25rem; height: 2.25rem; object-fit: contain; }
+  .star-content { display: flex; flex-direction: column; gap: var(--gap-sm); }
+
+  h2 {
+    font-size: var(--font-size-label);
+    font-family: var(--font-mono);
+    font-weight: 400;
+    letter-spacing: var(--tracking-mono);
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 400; color: var(--color-text-primary); font-family: var(--font-heading); margin: 0; }
+  h4 { font-size: var(--font-size-label); font-weight: 400; letter-spacing: var(--tracking-mono); text-transform: uppercase; color: var(--color-text-secondary); font-family: var(--font-mono); margin: 0; }
+
+  p {
+    font-size: var(--font-size-body);
+    line-height: 1.75;
+    color: var(--color-text-primary);
+    font-family: var(--font-body);
+    font-weight: 300;
+    margin: 0;
+    max-width: 52rem;
+  }
+
+  .star-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin: 0; padding: 0; max-width: 52rem; }
+
+  .star-list li {
+    font-size: var(--font-size-body);
+    line-height: 1.75;
+    color: var(--color-text-primary);
+    font-family: var(--font-body);
+    font-weight: 300;
+    padding-left: 1.25rem;
+    position: relative;
+  }
+
+  .star-list--bold li, .text--bold { font-weight: 500; }
+
+  .star-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+  }
+
+  .challenges__title-wrap {
+    position: relative; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .challenges__title-wrap::before {
+    content: '';
+    position: absolute;
+    width: 70%; height: 70%;
+    background: var(--color-danger-bg);
+    border-radius: var(--radius-circle);
+  }
+
+  .challenges__title { position: relative; max-height: 10rem; width: auto; display: block; }
+  .challenges__body { flex: 1; display: flex; flex-direction: column; gap: var(--gap-md); }
+
+  .challenges__subtitle {
+    display: block; width: fit-content;
+    font-size: var(--font-size-label); font-weight: 600;
+    font-family: var(--font-mono); letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-danger);
+    background-color: var(--color-danger-bg);
+    border: 1px solid var(--color-danger-border);
+    border-radius: 4px;
+    padding: 0.25rem 0.6rem;
+    margin: 0;
+  }
+
+  .challenges {
+    border-bottom: 1px solid var(--color-border);
+    padding-top: var(--pt, var(--padding-block));
+    padding-bottom: var(--pb, var(--padding-block));
+    padding-left: var(--pl, var(--gap-block));
+    padding-right: var(--pr, var(--gap-block));
+    display: flex; flex-wrap: wrap; gap: var(--gap-block); align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .challenges { padding-left: 0; padding-right: 0; }
+    .challenges__title { display: none; }
+  }
+
+  .challenges__list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .challenges__item {
+    display: flex; align-items: baseline; gap: var(--gap-xs);
+    font-size: var(--font-size-body-sm);
+    line-height: 1.75;
+    color: var(--color-text-primary);
+    font-family: var(--font-body);
+    font-weight: 300;
+    max-width: 52rem;
+  }
+
+  .parallax-banner {
+    height: 85vh; width: 100%;
+    display: grid; grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    background-color: var(--color-surface-subtle);
+  }
+
+  .parallax-banner__image { position: relative; overflow: hidden; height: 100%; }
+
+  .parallax-banner__image::after {
+    content: ''; position: absolute; inset: 0;
+    box-shadow: inset -60px 0 40px -20px rgba(0, 0, 0, 0.25);
+    pointer-events: none; z-index: 1;
+  }
+
+  .parallax-banner__img { position: absolute; top: -10%; left: 0; width: 100%; height: 120%; object-fit: cover; will-change: transform; }
+
+  .parallax-banner__solution {
+    display: flex; flex-direction: column; justify-content: center;
+    gap: var(--gap-block);
+    padding: var(--padding-block) var(--spacing-container) var(--padding-block) 4rem;
+  }
+
+  .solution-card__group { display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .solution-card__label {
+    font-size: var(--font-size-label); font-family: var(--font-mono);
+    letter-spacing: var(--tracking-mono); text-transform: uppercase;
+    color: var(--color-text-secondary); margin: 0;
+  }
+
+  .solution-card__text {
+    font-size: clamp(1.15rem, 2vw, 1.4rem); line-height: var(--leading-relaxed);
+    color: var(--color-text-primary); font-family: var(--font-body); font-weight: 300; margin: 0;
+  }
+
+  .solution-card__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .solution-card__list li {
+    font-size: clamp(1.15rem, 2vw, 1.4rem); line-height: var(--leading-relaxed);
+    color: var(--color-text-primary); font-family: var(--font-body); font-weight: 500;
+    padding-left: 1.25rem; position: relative;
+  }
+
+  .solution-card__list li::before { content: "→"; position: absolute; left: 0; font-family: var(--font-mono); font-size: 13px; color: var(--color-text-secondary); }
+
+  @media (max-width: 768px) {
+    .parallax-banner { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; height: 100vh; }
+    .parallax-banner__image { height: 100%; }
+    .parallax-banner__solution { padding: var(--padding-block) var(--spacing-container); }
+  }
+
+  .container--bottom { padding-top: var(--spacing-block); }
+  .container--bottom .star:first-child { border-top: 1px solid var(--color-border); }
+
+  .visuals__header { grid-column: 1 / -1; display: flex; align-items: center; gap: var(--gap-sm); }
+
+  .visuals {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding-top: var(--section-spacing); padding-bottom: var(--section-spacing);
+    border-top: 1px solid var(--color-border);
+  }
+
+  @media (max-width: 768px) { .visuals { grid-template-columns: 1fr; gap: 2rem; } }
+
+  .visuals--single { grid-template-columns: 1fr; }
+  .visuals--duo { display: flex; gap: 2rem; }
+  .visuals--duo .visual-block, .visuals--duo .cover { flex: 1; }
+
+  .visual-block { aspect-ratio: 9 / 6; position: relative; display: flex; align-items: center; justify-content: center; }
+
+  .visual-block__img {
+    width: 100%; height: 100%; object-fit: contain; filter: none;
+    transition: filter var(--transition-slow), transform var(--transition-slow);
+    user-select: none; -webkit-user-select: none; pointer-events: none;
+  }
+
+  .visual-block a:hover .visual-block__img {
+    filter: drop-shadow(0 16px 40px rgba(0,0,0,0.18)) drop-shadow(0 4px 10px rgba(0,0,0,0.10));
+    transform: translateY(-3px);
+  }
+
+  mark { background: none; color: var(--color-accent); font-weight: 600; }
+  .challenges__arrow { font-family: var(--font-mono); font-size: var(--font-size-sm); color: var(--color-text-primary); flex-shrink: 0; }
+  .visual-block a { display: block; width: 100%; height: 100%; cursor: zoom-in; }
+  .like-cta { display: flex; justify-content: center; padding-top: var(--section-spacing); }
+</style>
+
+<script>
+  import GLightbox from 'glightbox';
+  import 'glightbox/dist/css/glightbox.css';
+  GLightbox({ selector: '.glightbox', openEffect: 'zoom', closeEffect: 'zoom' });
+
+  const bannerImg = document.querySelector<HTMLElement>('.parallax-banner__img');
+  if (bannerImg) {
+    const speed = 0.07;
+    let rafId: number;
+
+    function updateParallax() {
+      const container = bannerImg!.closest('.parallax-banner__image') as HTMLElement;
+      const rect = container.getBoundingClientRect();
+      const viewH = window.innerHeight;
+      const relativeCenter = (rect.top + rect.height / 2) - viewH / 2;
+      const offset = relativeCenter * speed;
+      bannerImg!.style.transform = `translateY(${offset}px)`;
+      rafId = 0;
+    }
+
+    function onScroll() {
+      if (!rafId) rafId = requestAnimationFrame(updateParallax);
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    updateParallax();
+  }
+</script>
