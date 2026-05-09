@@ -4,7 +4,7 @@ import { useTranslations } from '../i18n/index';
 const { pathname } = Astro.url;
 const lang = (Astro.currentLocale ?? 'fr') as 'fr' | 'en';
 const t = useTranslations(lang).nav;
-const cases = (await getCollection('cases')).filter(c => !c.id.startsWith('_'));
+const cases = (await getCollection('cases')).filter(c => c.id.startsWith(`${lang}/`) && !c.id.includes('_template'));
 const caseCount = cases.length;
 const ctaHref = 'https://calendly.com/wagess/30min';
 const lp = (path: string) => `/${lang}${path}`;
