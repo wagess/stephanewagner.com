@@ -1,5 +1,5 @@
 ---
-title: "Enrichir le documentaire par les médias  interactifs"
+title: "Enriching documentary storytelling through interactive media"
 cover: "/cases/urbania/mtl12-0.webp"
 banner_image: "/cases/urbania/ethnies.webp"
 gallery:
@@ -15,30 +15,30 @@ gallery_styles:
 year: 2008
 tags:
   - "Motion"
-  - "Design d’interaction"
+  - "Interaction Design"
   - "UX"
-  - "Direction artistique web"
+  - "Web Art Direction"
 featured: true
-star_summary: "Propulser l’audience d’un magazine papier en insufflant une dimension interactive supplémentaire au média."
-contexte: "URBANIA était un magazine en pleine croissance ayant pour ambition de proposer des expériences web innovantes tout en demeurant accessible à une large audience."
-probleme: "Créer un contenu multimédia riche en vidéos et offrir une expérience interactive immersive et inédite."
-hypothese: "Combiner les médias traditionnels aux technologies web émergentes afin de créer de nouveaux formats narratifs."
-solution: "Découper l’expérience en modules interactifs et optimiser l’ensemble grâce à des interfaces fluides, dynamiques et percutantes."
+star_summary: "Expanding the audience of a print magazine by adding an interactive dimension to the medium."
+contexte: "URBANIA was a fast-growing magazine with ambitions to offer innovative web experiences while remaining accessible to a wide audience."
+probleme: "Creating rich multimedia content with video and delivering an immersive, unprecedented interactive experience."
+hypothese: "Combining traditional media with emerging web technologies to create new narrative formats."
+solution: "Breaking the experience into interactive modules and optimizing everything through fluid, dynamic, and impactful interfaces."
 methodologie:
-  - "Recherches visuelles et étude de l’existant"
-  - "Veille créative et exploration constante des tendances numériques"
-  - "Collaboration étroite avec les équipes de reportage"
-  - "Création de portraits documentaires et vox pop terrain"
+  - "Visual research and study of existing work"
+  - "Creative monitoring and constant exploration of digital trends"
+  - "Close collaboration with the reporting teams"
+  - "Creation of documentary portraits and vox pop field work"
 livrables:
-  - "Expériences web interactives (hybrides Flash/HTML)"
-  - "Reportages terrain et contenus photo et vidéo"
-  - "Captation sonore et reportages photographiques"
-  - "Rédaction d’entrevues et de synopsis"
+  - "Interactive web experiences (hybrid Flash/HTML)"
+  - "Field reportages and photo and video content"
+  - "Audio recording and photographic reportages"
+  - "Writing interviews and synopses"
 resultat:
-  - "Récipiendaire de plusieurs prix"
-  - "Augmentation de l’audience de plus de 200 %"
-  - "Production de contenus scalables et réutilisables"
+  - "Recipient of several awards"
+  - "Audience growth of over 200%"
+  - "Production of scalable and reusable content"
 challenges:
-  - "Travailler dans des contraintes serrées de temps et de budget dans un contexte innovant et sous pression"
-  - "Faire des compromis et développer rapidement de nouvelles compétences dans un contexte d’autoapprentissage"
+  - "Working within tight time and budget constraints in an innovative, high-pressure context"
+  - "Making compromises and rapidly developing new skills in a self-taught environment"
 ---

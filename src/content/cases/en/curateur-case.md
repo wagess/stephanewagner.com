@@ -1,39 +1,39 @@
 ---
-title: "Redéfinir une expérience citoyen pour la curatelle"
+title: "Redefining the citizen experience for guardianship services"
 cover: "/cases/curateur/logo-curateur.webp"
 banner_image: "/cases/curateur/design-system-curateur.webp"
 gallery:
   - "/cases/curateur/ecosysteme-omnicanal.webp"
   - "/cases/curateur/parcours-citoyen.webp"
   - "/cases/curateur/wireframe.webp"
-  - "/cases/curateur/parcours-utilisateur.webp"                                                   
+  - "/cases/curateur/parcours-utilisateur.webp"
 gallery_styles:
   - null
   - null
   - null
   - null
 year: 2021
-tags: ["EX", "UX", "UI", "Accessibilité", "Service public"]
+tags: ["EX", "UX", "UI", "Accessibility", "Public Service"]
 featured: false
-star_summary: "Transformer un processus juridique complexe en une démarche humaine pour des personnes en situation de vulnérabilité."
-contexte: "Au Québec, la ==mesure d’assistance== (anciennement liée à la curatelle) permet à une personne majeure dont les facultés sont altérées de désigner un proche pour l’aider dans ses décisions personnelles, médicales ou financières, ==sans perte de capacité juridique==."
-probleme: "Accessibilité cognitive et juridique: Les formulaires et procédures étaient perçus comme opaques, longs et intimidants, notamment pour les personnes âgées ou en situation de handicap cognitif."
-hypothese: "En adoptant une approche **centrée sur l’humain** et en intégrant les principes de **design inclusif**, nous pouvons :"
-solution: "Co-conception avec les parties prenantes et proposition de parcours et d'interfaces intuitives"
+star_summary: "Transforming a complex legal process into a humane journey for people in vulnerable situations."
+contexte: "In Québec, the ==assistance measure== (formerly tied to guardianship) allows an adult with diminished capacity to designate a trusted person to help with personal, medical, or financial decisions, ==without losing legal capacity==."
+probleme: "Cognitive and legal accessibility: forms and procedures were perceived as opaque, lengthy, and intimidating — especially for elderly people or those with cognitive disabilities."
+hypothese: "By adopting a **human-centred approach** and integrating **inclusive design** principles, we can:"
+solution: "Co-design with stakeholders and propose intuitive journeys and interfaces"
 methodologie:
-  - "Co-conception avec les parties prenantes"
-  - "Scénarios et parcours d'usages tests"
-  - "Approche agile avec l'équippe de développement"
-  - "Prototypes haut niveau et design system"
+  - "Co-design with stakeholders"
+  - "Test scenarios and usage journey mapping"
+  - "Agile approach with the development team"
+  - "High-fidelity prototypes and design system"
 livrables:
-  - "==Orientations UX== et Guide d’accompagnement et de bonnes pratiques"
-  - "**Design system** contributif pour celui de Quebec.ca"
-  - "**Prototypes et wireframes** : Maquettes interactives pour le guichet unique et les formulaires"
-  - "==Scénarios et cartes d'écosystèmes=="
+  - "==UX guidelines== and best practices companion guide"
+  - "**Design system** contributing to the Quebec.ca system"
+  - "**Prototypes and wireframes**: interactive mockups for the one-stop portal and forms"
+  - "==Scenarios and ecosystem maps=="
 resultat:
-  - "Un service commun et omnicanal pour les différents acteurs citoyens, employés, service public"
-  - "Avoir agit comme un acteur clé dans le processus d'évangélisation UX et Desgign centré utilsiateur"
+  - "A unified, omnichannel service for citizens, employees, and public service agents"
+  - "Acting as a key player in the UX evangelization and user-centred design process"
 challenges:
-  - "**Contraintes juridiques** : Équilibrer **simplicité** et **conformité légale** (ex: signatures électroniques, preuves d’identité)"
-  - "Inertie organisationnelle face à la digitalisation, structure gouvernementale en silos"
+  - "**Legal constraints**: balancing **simplicity** with **legal compliance** (e.g. electronic signatures, identity verification)"
+  - "Organizational inertia toward digitalization within a siloed government structure"
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Refonte d’une plateforme de support aux soins infirmiers"
+title: "Redesigning a nursing care support platform"
 cover: "/cases/msi/msi-cover.webp"
 banner_image: "/cases/msi/msi.webp"
 gallery:
@@ -8,28 +8,28 @@ gallery:
   - "/cases/msi/msi-3.webp"
   - "/cases/msi/msi-mobile.webp"
 year: 2022
-tags: ["UX", "UI", "Analyse", "Prototypage", "Priorisation"]
+tags: ["UX", "UI", "Analysis", "Prototyping", "Prioritization"]
 featured: true
-star_summary: "Améliorer la lisibilité et l’accessibilité d’un contenu médical utilisé au quotidien."
-contexte: "Les Méthodes de soins informatisées s’adressent principalement au personnel soignant œuvrant quotidiennement auprès des usagers et usagères : infirmières et infirmiers, infirmières et infirmiers auxiliaires, candidates et candidats à l’exercice de la profession infirmière (CEPI) ainsi qu’aux externes en soins infirmiers."
-probleme: "Permettre au personnel infirmier d’accéder rapidement à des fiches techniques et à des contenus théoriques riches, complexes et difficiles à synthétiser dans un contexte de travail terrain."
-hypothese: "Appliquer les conclusions d’une analyse utilisateur préalable réalisée par une agence spécialisée."
-solution: "Moderniser l’UX/UI en apportant une vision produit et en optimisant l’expérience grâce à un système de design plus structuré."
+star_summary: "Improving the readability and accessibility of medical content used daily in the field."
+contexte: "Computerized Care Methods (MSI) primarily serves care staff working daily with patients: nurses, licensed practical nurses, nursing candidates (CEPI), and nursing extern students."
+probleme: "Enabling nursing staff to quickly access technical data sheets and rich, complex theoretical content that is difficult to synthesize in a fieldwork context."
+hypothese: "Apply the findings of a prior user analysis conducted by a specialized agency."
+solution: "Modernize the UX/UI by bringing a product vision and optimizing the experience through a more structured design system."
 methodologie:
-  - "Analyse heuristique de l’existant"
-  - "Exploitation d’études comportementales et de sondages utilisateurs"
-  - "Prototypage, système de design et ateliers de présentation"
-  - "Adoption d’une stratégie de conception adaptative"
-  - "Étude comparative et benchmark design"
-  - "Analyse et hiérarchisation du contenu afin de le rendre plus accessible"
+  - "Heuristic analysis of the existing product"
+  - "Leveraging behavioural studies and user surveys"
+  - "Prototyping, design system, and presentation workshops"
+  - "Adopting an adaptive design strategy"
+  - "Comparative study and design benchmarking"
+  - "Content analysis and hierarchy to improve accessibility"
 livrables:
-  - "Analyse heuristique et synthèse analytique"
-  - "Refonte du système de design"
-  - "Prototypes, interfaces et présentations"
-  - "Planification et suivi de la livraison"
+  - "Heuristic analysis and analytical summary"
+  - "Design system redesign"
+  - "Prototypes, interfaces, and presentations"
+  - "Delivery planning and follow-up"
 resultat:
-  - "La refonte a simplifié l’accès au contenu sur tous les appareils, tout en automatisant certaines tâches répétitives. Un gain de temps et d’efficacité permettant aux équipes de se recentrer sur l’essentiel."
+  - "The redesign simplified content access across all devices while automating certain repetitive tasks. A time and efficiency gain that allowed teams to refocus on what matters most."
 challenges:
-  - "Improviser dans un contexte peu documenté et anachronique (développement amorcé avant le design)"
-  - "Prioriser les constats et recommandations de l’agence UX en fonction des réalités techniques et budgétaires"
+  - "Improvising in a poorly documented, anachronistic context (development started before design)"
+  - "Prioritizing UX agency findings based on technical and budgetary realities"
 ---

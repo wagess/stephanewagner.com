@@ -1,5 +1,5 @@
 ---
-title: "Repositionnement stratégique de l’offre UX d’une agence"
+title: "Strategic repositioning of an agency's UX offering"
 cover: "/cases/symetris/cover.webp"
 banner_image: "/cases/symetris/banner.webp"
 gallery:
@@ -10,25 +10,25 @@ gallery:
 year: 2024
 tags: ["CX", "UX"]
 featured: false
-star_summary: "Agir en tant que conseiller stratégique interne afin de repositionner l’approche UX de l’agence."
-contexte: "L’agence Symetris avait besoin de bonifier son approche client avec une vision davantage orientée design thinking et centrée sur les besoins utilisateurs."
-probleme: "S’adapter à un environnement très orienté technologie et moins axé sur l’approche de design de produit."
-hypothese: "Agir en tant que conseiller stratégique interne pour intégrer les pratiques UX aux processus existants."
-solution: "Être présent auprès des clients et des équipes internes afin de proposer une approche centrée sur l’utilisateur et conseiller les bonnes pratiques UX."
+star_summary: "Acting as an internal strategic advisor to reposition the agency's UX approach."
+contexte: "Symetris needed to enhance its client approach with a vision more oriented toward design thinking and user-centred needs."
+probleme: "Adapting to a heavily technology-driven environment with less focus on product design methodology."
+hypothese: "Act as an internal strategic advisor to integrate UX practices into existing processes."
+solution: "Be present with clients and internal teams to advocate for a user-centred approach and advise on UX best practices."
 methodologie:
-  - "Rencontres de facilitation et ateliers de co-création"
-  - "Audits, évaluations et recherches comparatives"
-  - "Cartographie des parcours d’expérience et entrevues individuelles"
+  - "Facilitation meetings and co-creation workshops"
+  - "Audits, assessments, and competitive analyses"
+  - "Experience journey mapping and individual interviews"
 livrables:
-  - "Audits web et évaluations financières"
-  - "==Parcours clients== et analyse organisationnelle"
-  - "Architecture d’information et audit de contenus"
-  - "Rencontres de facilitation et ateliers de co-création"
+  - "Web audits and financial assessments"
+  - "==Customer journeys== and organizational analysis"
+  - "Information architecture and content audits"
+  - "Facilitation meetings and co-creation workshops"
 resultat:
-  - "Amélioration de la découvrabilité de plus de 30 % auprès des visiteurs initiaux"
-  - "Apport d’un soutien stratégique aux clients sur le contenu et le design"
-  - "Bonification de la rétention produit de plus de 50 % auprès des utilisateurs"
+  - "Improved discoverability by over 30% among first-time visitors"
+  - "Strategic support for clients on content and design"
+  - "Product retention improved by over 50% among users"
 challenges:
-  - "Interagir dans des délais serrés"
-  - "Rattraper un développement déjà amorcé"
+  - "Working within tight deadlines"
+  - "Catching up on development already underway"
 ---

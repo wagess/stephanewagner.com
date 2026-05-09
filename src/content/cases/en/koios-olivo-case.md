@@ -1,40 +1,40 @@
 ---
-title: "Rendre l’assurance santé intuitive et intelligente"
+title: "Making health insurance intuitive and intelligent"
 cover: "/cases/koios/dialogue.webp"
 banner_image: "/cases/koios/banner-olivo.webp"
 gallery:
   - "/cases/koios/gallery-1.webp"
   - "/cases/koios/gallery-2.webp"
   - "/cases/koios/gallery-3.webp"
-  - "/cases/koios/cover.webp"                                                    
-gallery_styles:                                                                              
-  - cover                                                                            
-  - cover                                                                            
-  - cover                                                                            
+  - "/cases/koios/cover.webp"
+gallery_styles:
+  - cover
+  - cover
+  - cover
   - cover
 year: 2019
-tags: ["IA", "Conversationnel", "Assurances", "B2B", "B2C"]
+tags: ["AI", "Conversational AI", "Insurance", "B2B", "B2C"]
 featured: true
-star_summary: "Faire du conversationnel avant que la mode de l'IA ne se popularise."
-contexte: "La mission de Koios Intelligence est de renforcer les secteurs de l’assurance, des services financiers et des technologies grâce à une nouvelle génération de plateformes d’IA intelligentes et personnalisées."
-probleme: "Soutenir la startup dans sa démarche. Poser les bases d'un language visuel sur un produit, un service et finalement ... ==une marque==."
-hypothese: "Réduisez les délais d’attente avec des agents IA spécialisés en assurance"
-solution: "OlivoAgent est bien plus qu’un simple chatbot d’assurance : c’est un agent virtuel complet et performant qui optimise les soumissions, les renouvellements et bien plus encore."
+star_summary: "Doing conversational AI before it became mainstream."
+contexte: "Koios Intelligence's mission is to strengthen the insurance, financial services, and technology sectors through a new generation of intelligent, personalized AI platforms."
+probleme: "Supporting the startup in its journey. Laying the groundwork for a visual language across a product, a service, and ultimately... ==a brand==."
+hypothese: "Reduce wait times with AI agents specialized in insurance"
+solution: "OlivoAgent is far more than a simple insurance chatbot: it's a fully capable virtual agent that streamlines submissions, renewals, and much more."
 methodologie:
-  - "Co création avec les parties prenantes"
-  - "Analyse architecturale et fonctionnelle"
-  - "Prototypage et modélisation ibteractive"
-  - "Recherches et création visuelle"
+  - "Co-creation with stakeholders"
+  - "Architectural and functional analysis"
+  - "Interactive prototyping and modelling"
+  - "Research and visual creation"
 livrables:
-  - "Prototype fonctionnel et démo"
-  - "Indentité de produit"
-  - "Design d'écran mobiles"
-  - "Architecture et flows fonctionnels"
+  - "Functional prototype and demo"
+  - "Product identity"
+  - "Mobile screen design"
+  - "Architecture and functional flows"
 resultat:
-  - "Des bénéfices démontrés à toutes les étapes de la chaîne de valeur"
-  - "50% de temps économisé dans le traitement des soumissions"
-  - "80% des requêtes résolues sans intervention humaine"
+  - "Demonstrated benefits at every stage of the value chain"
+  - "50% time savings in submission processing"
+  - "80% of requests resolved without human intervention"
 challenges:
-  - "Apprivoiser le transfert de connaissance dans un contexte d'innovation"
-  - "Livrer de la qualité à plusieurs niveaux avec un budget serré"
+  - "Navigating knowledge transfer in an innovation-driven context"
+  - "Delivering quality at multiple levels with a tight budget"
 ---
