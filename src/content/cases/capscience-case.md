@@ -1,7 +1,7 @@
 ---
 title: "Un produit end-to-end pour vulgariser la génomique"
 cover: "/cases/capscience/capscience-mission-2.webp"
-banner_image: "/cases/capscience/avantages-produit.webp"
+banner_image: "/cases/capscience/banner-capscience.webp"
 gallery:
   - "/cases/capscience/capscience-1.webp"
   - "/cases/capscience/capscience-2.webp"

@@ -1,5 +1,5 @@
 ---
-title: "Enrichir les nouveaux médias documentaires interactifs"
+title: "Enrichir le documentaire par les médias  interactifs"
 cover: "/cases/urbania/mtl12-0.webp"
 banner_image: "/cases/urbania/ethnies.webp"
 gallery:
