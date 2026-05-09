@@ -8,6 +8,13 @@ interface Props {
 
 const { title, description = "Concepteur Produit — Portfolio" } = Astro.props;
 const lang = (Astro.currentLocale ?? 'fr') as 'fr' | 'en';
+
+const SITE = 'https://stephanewagner.com';
+const { pathname } = Astro.url;
+const canonicalUrl = `${SITE}${pathname}`;
+const alternateFr = `${SITE}${pathname.replace(/^\/(fr|en)/, '/fr')}`;
+const alternateEn = `${SITE}${pathname.replace(/^\/(fr|en)/, '/en')}`;
+const ogImage = `${SITE}/avatar.webp`;
 ---
 
 <!doctype html>
@@ -20,6 +27,27 @@ const lang = (Astro.currentLocale ?? 'fr') as 'fr' | 'en';
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <title>{title}</title>
+
+    <!-- Canonical & hreflang -->
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="fr" href={alternateFr} />
+    <link rel="alternate" hreflang="en" href={alternateEn} />
+    <link rel="alternate" hreflang="x-default" href={alternateFr} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content={lang === 'fr' ? 'fr_CA' : 'en_CA'} />
+    <meta property="og:locale:alternate" content={lang === 'fr' ? 'en_CA' : 'fr_CA'} />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Libre+Franklin:wght@300;400;500;600&family=Nunito:wght@700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />

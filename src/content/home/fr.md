@@ -7,17 +7,17 @@ hero_pillars:
     title: "Sciences & Vulgarisation"
     desc: "Santé, recherche, pharmaceutique"
     back_title: "Capscience, Capsules de vulgarisation"
-    back_href: "/cases/capscience-case"
+    back_href: "/fr/cases/capscience-case"
   - label: "Segment 2"
     title: "Organisations"
     desc: "Gouvernementales, para-publique"
     back_title: "Fédération Québécoise des Municipalités"
-    back_href: "/cases/fqm-munipro-case"
+    back_href: "/fr/cases/fqm-munipro-case"
   - label: "Segment 3"
     title: "Médias & Culturel"
     desc: "Documentaires, divertissements"
     back_title: "Urbania Magazine"
-    back_href: "/cases/urbania-case"
+    back_href: "/fr/cases/urbania-case"
 
 # ─── Services ────────────────────────────────────────────
 services_label: "Services"
@@ -27,17 +27,17 @@ services:
     title: "UX & Stratégie"
     desc: "Design de produit / parcours d'usage end-to-end"
     count: 3
-    href: "/cases/symetris-case"
+    href: "/fr/cases/symetris-case"
   - number: "02"
     title: "Founding designer"
     desc: "Brand, Visual system, patterns, UX Writing"
     count: 2
-    href: "/cases/capscience-case"
+    href: "/fr/cases/capscience-case"
   - number: "03"
     title: "Systèmes complexes"
     desc: "B2B, SaaS, IA, dashboards, outils internes"
     count: 4
-    href: "/cases/curateur-case"
+    href: "/fr/cases/curateur-case"
   - number: "04"
     title: "Vibe coding"
     desc: "Workflow code & Frontend"
@@ -47,27 +47,27 @@ services:
     title: "Visuel et narratif"
     desc: "Déclinaison graphique, Direction artistique"
     count: +50
-    href: "/cases/urbania-case"
+    href: "/fr/cases/urbania-case"
   - number: "06"
     title: "Architecture.s"
     desc: "Diagrammes de contenu, cartographie, flows fonctionnels"
     count: 10
-    href: "/cases/symetris-msi-case"
+    href: "/fr/cases/symetris-msi-case"
   - number: "07"
     title: "Alignement Produit-Design"
     desc: "Amélioration de l'opérabilité, audit technqiue"
     count: 3
-    href: "/cases/fqm-munipro-case"
+    href: "/fr/cases/fqm-munipro-case"
   - number: "08"
     title: "Recherche utilisateur"
     desc: "Tests A/B, co-création, Analyse des besoins"
     count: 2
-    href: "/cases/symetris-msi-case"
+    href: "/fr/cases/symetris-msi-case"
   - number: "09"
     title: "Prototypage & validation"
     desc: "Maquettes haute fidélité, wireframes"
     count: +20
-    href: "/cases/koios-olivo-case"
+    href: "/fr/cases/koios-olivo-case"
 
 # ─── Cases ───────────────────────────────────────────────
 cases_label: "Études de cas"

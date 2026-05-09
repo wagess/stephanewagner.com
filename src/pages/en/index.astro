@@ -9,13 +9,12 @@ import ToolsBanner from '../../components/ToolsBanner.astro';
 import SideProjects from '../../components/SideProjects.astro';
 import Footer from '../../components/Footer.astro';
 
-// TODO étape 5 : remplacer par getEntry('home', 'en') quand le contenu EN sera créé
-const home = await getEntry('home', 'fr');
+const home = await getEntry('home', 'en');
 const t = home.data;
 ---
 
 <Layout
-  title="Product Designer"
+  title="Product Designer — Stéphane Wagner"
   description={t.hero_headline.replace(/\*\*/g, '')}
 >
   <main>
