@@ -411,10 +411,13 @@ const md = (str: string) => str
   h1 {
     font-size: clamp(2rem, 5vw, 4.5rem);
     line-height: 1.1;
-    color: var(--color-text-primary);
     font-family: var(--font-heading);
-    font-weight: 400;
+    font-weight: 300;
     max-width: 60rem;
+    background: linear-gradient(135deg, var(--color-accent-vivid) 0%, var(--color-text-primary) 60%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   .meta {
