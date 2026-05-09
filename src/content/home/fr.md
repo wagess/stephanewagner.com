@@ -1,7 +1,7 @@
 ---
 # ─── Hero ───────────────────────────────────────────────
 hero_label: "Stéphane Wagner - Product Designer / UX / UI / Scénarisation et architecture"
-hero_headline: "Designer de produits digitaux qui transforme des **systèmes complexes** en **expériences claires** et traduit vos besoins en **résulats fiables.**"
+hero_headline: "Designer de produits digitaux qui transforme des **systèmes complexes** en **expériences claires**. Je traduis vos besoins en **résulats fiables.**"
 hero_pillars:
   - label: "Segment 1"
     title: "Sciences & Vulgarisation"
@@ -69,9 +69,13 @@ services:
     count: +20
     href: "/cases/koios-olivo-case"
 
+# ─── Cases ───────────────────────────────────────────────
+cases_label: "Études de cas"
+cases_title: "Projets sélectionnés"
+
 # ─── Side Projects ───────────────────────────────────────
-side_projects_label: "Projets secondaires"
-side_projects_title: "Projets qui influencent mon travail"
+side_projects_label: "En parallèle"
+side_projects_title: "Projets personnels qui influencent mon travail"
 side_projects:
   - title: "Portfolio Photo, Wordpress et architecture éditoriale."
     href: "https://photographie.stephanewagner.com/"

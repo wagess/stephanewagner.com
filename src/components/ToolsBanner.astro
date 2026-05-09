@@ -63,7 +63,7 @@ const svgMap = Object.fromEntries(allTools.map(t => [t.name, t.svg]));
 const tools = toolNames.map(name => ({ name, svg: svgMap[name] ?? '' }));
 ---
 
-<div class="banner-wrap">
+<div class="banner-wrap hide-mobile">
   <div class="banner">
     <div class="track">
       {[...tools, ...tools, ...tools].map(tool => (
@@ -76,7 +76,7 @@ const tools = toolNames.map(name => ({ name, svg: svgMap[name] ?? '' }));
   </div>
 </div>
 
-<div class="clients-wrap">
+<div class="clients-wrap hide-mobile">
   <div class="clients-banner">
     <div class="clients-track">
       {[0, 1, 2].map(i => (
@@ -94,12 +94,6 @@ const tools = toolNames.map(name => ({ name, svg: svgMap[name] ?? '' }));
 </div>
 
 <style>
-  @media (max-width: 768px) {
-    .banner-wrap {
-      display: none;
-    }
-  }
-
   .banner-wrap {
     overflow: hidden;
     transform: rotate(-1deg);

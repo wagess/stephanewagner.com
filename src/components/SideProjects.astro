@@ -1,5 +1,5 @@
 ---
-import CaseCard from './CaseCard.astro';
+import SideProjectCard from './SideProjectCard.astro';
 
 interface Project { title: string; href: string; year: number; }
 interface Props {
@@ -21,12 +21,11 @@ const { label, title, projects } = Astro.props;
     <ul class="side-projects__list">
       {projects.map((p, i) => (
         <div data-animate-sp style={`transition-delay: ${i * 0.15}s`}>
-          <CaseCard
+          <SideProjectCard
             index={i + 1}
             title={p.title}
             href={p.href}
             year={p.year}
-            variant="secondary"
           />
         </div>
       ))}

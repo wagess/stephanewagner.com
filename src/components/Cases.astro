@@ -5,9 +5,11 @@ import CasesFilters from './CasesFilters.astro';
 
 interface Props {
   limit?: number;
+  label?: string;
+  title?: string;
 }
 
-const { limit } = Astro.props;
+const { limit, label, title } = Astro.props;
 
 const allCases = (await getCollection("cases"))
   .filter(c => !c.id.startsWith('_'))
@@ -23,8 +25,15 @@ const cases = limit ? featuredCases.slice(0, limit) : allCases;
 
 ---
 
-<section id="cases" class="cases">
+<section id="cases" class:list={['cases', { 'cases--with-header': label && title }]}>
   <div class="cases__container">
+
+    {label && title && (
+      <div class="cases__header" data-animate>
+        <p class="cases__label">{label}</p>
+        <h2 class="cases__title">{title}</h2>
+      </div>
+    )}
 
     <div class="cases__list-wrapper">
       {!limit && <CasesFilters />}
@@ -76,7 +85,51 @@ const cases = limit ? featuredCases.slice(0, limit) : allCases;
 <style>
   .cases {
     padding: 0 var(--spacing-container) var(--section-spacing);
+  }
 
+  .cases--with-header {
+    padding-top: var(--section-spacing);
+  }
+
+  .cases__header {
+    margin-bottom: var(--section-spacing);
+    padding-bottom: var(--gap-block);
+    position: relative;
+    transition-duration: 0.8s;
+  }
+
+  .cases__header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--color-text-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .cases__header.visible::after {
+    transform: scaleX(1);
+  }
+
+  .cases__label {
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 11px;
+    color: var(--color-text-secondary);
+    font-family: var(--font-mono);
+    margin-bottom: var(--gap-sm);
+  }
+
+  .cases__title {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.2;
+    color: var(--color-text-primary);
+    font-family: var(--font-heading);
+    font-weight: 300;
   }
 
   .cases__container {

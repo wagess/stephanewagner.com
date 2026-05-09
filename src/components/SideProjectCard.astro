@@ -1,0 +1,107 @@
+---
+import ArrowButton from './ArrowButton.astro';
+
+interface Props {
+  index: number;
+  title: string;
+  href: string;
+  year: number;
+}
+
+const { index, title, href, year } = Astro.props;
+const num = String(index).padStart(2, '0');
+---
+
+<li class="sp-card">
+  <a href={href} class="sp-card__inner" target="_blank" rel="noopener noreferrer">
+    <span class="sp-card__number">{num}</span>
+    <span class="sp-card__title">{title}</span>
+    <div class="sp-card__right">
+      <span class="sp-card__year">{year}</span>
+      <ArrowButton variant="diagonal" />
+    </div>
+  </a>
+</li>
+
+<style>
+  .sp-card {
+    list-style: none;
+    border-radius: var(--card-radius);
+    overflow: hidden;
+  }
+
+  .sp-card__inner {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-block);
+    padding: 1.25rem 1.5rem;
+    background: var(--color-surface);
+    border: var(--card-border);
+    border-radius: var(--card-radius);
+    text-decoration: none;
+    color: var(--color-text-primary);
+    transition:
+      background var(--transition-slow),
+      border-color var(--transition-slow),
+      color var(--transition-slow);
+  }
+
+  .sp-card__inner:hover {
+    background: var(--color-text-primary);
+    border-color: var(--color-text-primary);
+    color: var(--color-surface);
+  }
+
+  .sp-card__inner:hover :global(.arrow-btn) {
+    background: var(--color-surface);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: var(--color-text-primary);
+    transform: translate(3px, -3px);
+  }
+
+  .sp-card__number {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-label);
+    letter-spacing: var(--tracking-mono);
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+    transition: color var(--transition-slow);
+  }
+
+  .sp-card__inner:hover .sp-card__number {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .sp-card__title {
+    flex: 1;
+    font-family: var(--font-heading);
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-weight: 400;
+    line-height: var(--leading-tight);
+  }
+
+  .sp-card__right {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-sm);
+    flex-shrink: 0;
+  }
+
+  .sp-card__year {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-label);
+    letter-spacing: var(--tracking-mono);
+    color: var(--color-text-muted);
+    transition: color var(--transition-slow);
+  }
+
+  .sp-card__inner:hover .sp-card__year {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  @media (max-width: 768px) {
+    .sp-card__year {
+      display: none;
+    }
+  }
+</style>

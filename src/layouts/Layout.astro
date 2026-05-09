@@ -199,4 +199,11 @@ const { title, description = "Concepteur Produit — Portfolio" } = Astro.props;
     50%  { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
   }
+
+  /* ── Utility ─────────────────────────────────────────── */
+  .hide-mobile { display: none !important; }
+
+  @media (min-width: 769px) {
+    .hide-mobile { display: revert !important; }
+  }
 </style>
