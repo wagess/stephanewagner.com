@@ -3,6 +3,9 @@
 
 <footer class="footer">
   <div class="footer__inner">
+    <a href="/" class="footer__logo-mobile" aria-label="Stéphane Wagner">
+      <img src="/logo-nav.svg" alt="S." width="41" height="34" loading="lazy" />
+    </a>
     <div class="footer__left">
     <span class="footer__label">Fait avec amour et savoir-faire</span>
 
@@ -79,19 +82,17 @@
     gap: var(--gap-sm);
   }
 
+  .footer__logo-mobile {
+    display: none;
+  }
+
   @media (max-width: 768px) {
-    .footer__inner {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: var(--gap-sm);
+    .footer__logo-mobile {
+      display: flex;
     }
 
-    .footer__left {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .footer__label {
+    .footer__left,
+    .footer__right {
       display: none;
     }
   }

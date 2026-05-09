@@ -77,6 +77,11 @@ const lp = (path: string) => `/${lang}${path}`;
       {t.wall}
     </a>
   </nav>
+  <div class="nav__mobile-footer-links">
+    <a href={lp('/the-wall')} class="nav__mobile-footer-link">{t.wall}</a>
+    <a href="https://shop.stephanewagner.com" target="_blank" rel="noopener noreferrer" class="nav__mobile-footer-link">Shop</a>
+    <a href="https://photographie.stephanewagner.com" target="_blank" rel="noopener noreferrer" class="nav__mobile-footer-link">Photographie</a>
+  </div>
   <div class="nav__mobile-bottom">
     <a href={lang === 'fr' ? pathname.replace(/^\/fr/, '/en') : pathname.replace(/^\/en/, '/fr')} class="nav__lang">
       {lang === 'fr' ? 'EN' : 'FR'}
@@ -326,6 +331,29 @@ const lp = (path: string) => `/${lang}${path}`;
 
   .nav__mobile-link--hidden {
     display: none;
+  }
+
+  .nav__mobile-footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-xs);
+    margin-top: var(--gap-block);
+    padding-top: var(--gap-block);
+    border-top: 1px solid var(--color-border);
+    width: 100%;
+  }
+
+  .nav__mobile-footer-link {
+    font-size: var(--font-size-sm);
+    font-family: var(--font-body);
+    color: var(--color-text-secondary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color var(--transition-base);
+  }
+
+  .nav__mobile-footer-link:hover {
+    color: var(--color-text-primary);
   }
 
   .nav__mobile-bottom {
