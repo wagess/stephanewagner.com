@@ -55,14 +55,15 @@ const lp = (path: string) => `/${lang}${path}`;
     </a>
   </div>
 
-  <a href={lang === 'fr' ? pathname.replace(/^\/fr/, '/en') : pathname.replace(/^\/en/, '/fr')} class="nav__lang nav__lang--mobile-only">
-    {lang === 'fr' ? 'EN' : 'FR'}
-  </a>
-
-  <button class="nav__burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
-    <span></span>
-    <span></span>
-  </button>
+  <div class="nav__mobile-actions">
+    <a href={lang === 'fr' ? pathname.replace(/^\/fr/, '/en') : pathname.replace(/^\/en/, '/fr')} class="nav__lang">
+      {lang === 'fr' ? 'EN' : 'FR'}
+    </a>
+    <button class="nav__burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span>
+      <span></span>
+    </button>
+  </div>
 </header>
 
 <div class="nav__mobile-menu" id="mobile-menu" aria-hidden="true">
@@ -372,8 +373,11 @@ const lp = (path: string) => `/${lang}${path}`;
     font-size: 14px;
   }
 
-  .nav__lang--mobile-only {
+  .nav__mobile-actions {
     display: none;
+    align-items: center;
+    gap: var(--gap-xs);
+    margin-left: auto;
   }
 
   @media (max-width: 768px) {
@@ -385,7 +389,7 @@ const lp = (path: string) => `/${lang}${path}`;
       display: none;
     }
 
-    .nav__lang--mobile-only {
+    .nav__mobile-actions {
       display: flex;
     }
 
