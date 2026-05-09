@@ -1,4 +1,6 @@
 ---
+import ArrowButton from './ArrowButton.astro';
+
 interface Props {
   label: string;
   title: string;
@@ -13,12 +15,16 @@ const flippable = !!backTitle;
   <div class="pillar-inner">
 
     <div class="pillar-face pillar-face--front">
-      <div class="pillar-top">
+      <div class="pillar-content">
         <span class="pillar-label">{label}</span>
-        <div class="pillar-line"></div>
+        <h3 class="pillar-title">{title}</h3>
+        <p class="pillar-desc">{desc}</p>
       </div>
-      <h3 class="pillar-title">{title}</h3>
-      <p class="pillar-desc">{desc}</p>
+      {flippable && (
+        <div class="pillar-aside">
+          <ArrowButton variant="eye" ariaLabel="Voir le projet associé" />
+        </div>
+      )}
     </div>
 
     {backTitle && (
@@ -27,9 +33,13 @@ const flippable = !!backTitle;
         href={backHref ?? '#'}
         aria-label={`Voir le projet : ${backTitle}`}
       >
-        <span class="pillar-hint">Projet associé</span>
-        <p class="pillar-back-title">{backTitle}</p>
-        <span class="pillar-arrow">→</span>
+        <div class="pillar-content">
+          <span class="pillar-hint">Projet associé</span>
+          <p class="pillar-back-title">{backTitle}</p>
+        </div>
+        <div class="pillar-aside">
+          <ArrowButton variant="next" />
+        </div>
       </a>
     )}
 
@@ -71,17 +81,23 @@ const flippable = !!backTitle;
     border-radius: var(--card-radius);
     padding: var(--gap-block);
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--gap-sm);
     height: 180px;
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 768px) {
+    .pillar-face {
+      height: 160px;
+    }
   }
 
   .pillar-face--back {
     position: absolute;
     inset: 0;
     transform: rotateX(180deg);
-    justify-content: center;
-    gap: var(--gap-md);
     background: var(--color-accent);
     border-color: var(--color-accent);
     text-decoration: none;
@@ -93,10 +109,22 @@ const flippable = !!backTitle;
     pointer-events: auto;
   }
 
-  .pillar-top {
+  /* Zones */
+  .pillar-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    min-width: 0;
+  }
+
+  .pillar-aside {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    flex-shrink: 0;
+    align-self: stretch;
   }
 
   .pillar-label {
@@ -106,10 +134,11 @@ const flippable = !!backTitle;
     font-family: var(--font-mono);
   }
 
-  .pillar-line {
-    height: 1px;
-    width: 2rem;
-    background: var(--color-border);
+  /* ArrowButton sur le verso — inversé pour fond accent */
+  .pillar-face--back :global(.arrow-btn) {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: var(--color-surface);
   }
 
   .pillar-title {
@@ -142,11 +171,6 @@ const flippable = !!backTitle;
     color: var(--color-surface);
     font-family: var(--font-heading);
     font-weight: 600;
-  }
-
-  .pillar-arrow {
-    font-size: 20px;
-    color: rgba(255, 255, 255, 0.6);
   }
 </style>
 
