@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import PageHeader from "../../components/PageHeader.astro";
 import Cases from "../../components/Cases.astro";
 import VennDiagram from "../../components/VennDiagram.astro";
 import Footer from "../../components/Footer.astro";
@@ -7,7 +8,7 @@ import Footer from "../../components/Footer.astro";
 
 <Layout title="Études de cas">
   <main>
-    <div class="page-line-top"></div>
+    <PageHeader label="Études de cas" title="Histoires de produits et services" />
     <Cases />
     <VennDiagram />
     <Footer />
@@ -18,18 +19,5 @@ import Footer from "../../components/Footer.astro";
   main {
     background: var(--color-surface);
     min-height: 100vh;
-  }
-
-  .page-line-top {
-    height: 1px;
-    background: var(--color-text-primary);
-    margin: 0 var(--spacing-container);
-    transform-origin: left;
-    animation: scaleFromLeft 1s cubic-bezier(0.22, 1, 0.36, 1) both;
-  }
-
-  @keyframes scaleFromLeft {
-    from { transform: scaleX(0); }
-    to   { transform: scaleX(1); }
   }
 </style>
