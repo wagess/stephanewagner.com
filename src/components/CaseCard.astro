@@ -288,34 +288,16 @@ const isSecondary = variant === 'secondary';
     color: var(--color-text-secondary);
     background: var(--color-surface);
     border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
     padding: 0.25rem 0.75rem;
     text-transform: uppercase;
     font-family: var(--font-mono);
-    transition: color var(--transition-slow), border-color var(--transition-slow);
-  }
-
-  a.case-card__inner:hover .case-card__tag {
-    color: var(--color-text-primary);
-    background: var(--color-surface);
-    border-color: var(--color-surface);
-  }
-
-  a.case-card__inner:hover :global(.year-tag) {
-    background: var(--color-surface);
-    border-color: var(--color-surface);
-    color: var(--color-text-primary);
   }
 
   .case-card__tag--more {
     color: var(--color-text-muted);
     border-color: var(--color-border);
     border-style: dashed;
-  }
-
-  a.case-card__inner:hover .case-card__tag--more {
-    color: var(--color-text-muted);
-    background: var(--color-surface);
-    border-color: var(--color-surface);
   }
 
   /* Thumbnail */

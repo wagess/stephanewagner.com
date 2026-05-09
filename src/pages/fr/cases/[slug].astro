@@ -48,8 +48,8 @@ const md = (str: string) => str
           </div>
           <h1 class="header__title pb-2">{title}</h1>
           <div class="meta">
+            <YearTag year={year} />
             <ul class="tags">
-              <li><YearTag year={year} /></li>
               {tags?.map((tag: string) => <li>{tag}</li>)}
             </ul>
           </div>
@@ -331,6 +331,7 @@ const md = (str: string) => str
     color: var(--color-text-secondary);
     background: var(--color-surface);
     border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
     padding: 0.25rem 0.75rem;
     text-transform: uppercase;
     font-family: var(--font-mono);

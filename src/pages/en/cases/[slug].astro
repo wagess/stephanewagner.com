@@ -48,8 +48,8 @@ const md = (str: string) => str
           </div>
           <h1 class="header__title pb-2">{title}</h1>
           <div class="meta">
+            <YearTag year={year} />
             <ul class="tags">
-              <li><YearTag year={year} /></li>
               {tags?.map((tag: string) => <li>{tag}</li>)}
             </ul>
           </div>
@@ -231,7 +231,7 @@ const md = (str: string) => str
   h1 { font-size: clamp(2rem, 5vw, 4.5rem); line-height: 1.1; font-family: var(--font-heading); font-weight: 300; max-width: 60rem; background: linear-gradient(135deg, var(--color-accent-vivid) 0%, var(--color-text-primary) 60%); -webkit-background-clip: text; background-clip: text; color: transparent; }
   .meta { display: flex; align-items: center; gap: var(--gap-sm); flex-wrap: wrap; }
   .tags { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; }
-  .tags li { font-size: var(--font-size-xs); letter-spacing: 0.1em; color: var(--color-text-secondary); background: var(--color-surface); border: 1px solid var(--color-border); padding: 0.25rem 0.75rem; text-transform: uppercase; font-family: var(--font-mono); }
+  .tags li { font-size: var(--font-size-xs); letter-spacing: 0.1em; color: var(--color-text-secondary); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 0.25rem 0.75rem; text-transform: uppercase; font-family: var(--font-mono); }
   .cover { border: 1px solid var(--color-border-dark); background-color: var(--color-surface); border-radius: var(--card-radius); aspect-ratio: 9 / 6; overflow: hidden; position: relative; z-index: 1; box-shadow: 8px 8px 0 0 var(--color-shadow); }
   .cover__img { width: 100%; height: 100%; object-fit: cover; user-select: none; -webkit-user-select: none; pointer-events: none; }
   .star-summary { grid-column: 1 / -1; margin: 0; padding: 1.5rem 2rem; border-left: 2px solid var(--color-text-primary); font-size: clamp(1.1rem, 2vw, 1.4rem); font-style: italic; color: var(--color-text-primary); line-height: 1.6; font-family: var(--font-body); font-weight: 400; }
