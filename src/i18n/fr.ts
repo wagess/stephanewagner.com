@@ -4,7 +4,7 @@ export const fr = {
     cases: 'Études de cas',
     wall: 'The Visual Wall',
     approach: 'Approche',
-    cta: 'Calendly',
+    cta: 'Parlons-en',
   },
   cases: {
     pageTitle: 'Études de cas',

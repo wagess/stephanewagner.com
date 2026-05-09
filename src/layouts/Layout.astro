@@ -4,9 +4,10 @@ import Navigation from '../components/Navigation.astro';
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
 }
 
-const { title, description = "Concepteur Produit — Portfolio" } = Astro.props;
+const { title, description = "Concepteur Produit — Portfolio", ogImage: ogImageProp } = Astro.props;
 const lang = (Astro.currentLocale ?? 'fr') as 'fr' | 'en';
 
 const SITE = 'https://stephanewagner.com';
@@ -14,7 +15,7 @@ const { pathname } = Astro.url;
 const canonicalUrl = `${SITE}${pathname}`;
 const alternateFr = `${SITE}${pathname.replace(/^\/(fr|en)/, '/fr')}`;
 const alternateEn = `${SITE}${pathname.replace(/^\/(fr|en)/, '/en')}`;
-const ogImage = `${SITE}/avatar.webp`;
+const ogImage = ogImageProp?.startsWith('http') ? ogImageProp : `${SITE}${ogImageProp ?? '/avatar.webp'}`;
 ---
 
 <!doctype html>

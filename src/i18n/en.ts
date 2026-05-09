@@ -6,7 +6,7 @@ export const en: UI = {
     cases: 'Case studies',
     wall: 'The Visual Wall',
     approach: 'Approach',
-    cta: 'Calendly',
+    cta: "Let's talk",
   },
   cases: {
     pageTitle: 'Case studies',

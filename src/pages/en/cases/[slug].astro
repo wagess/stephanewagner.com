@@ -35,7 +35,7 @@ const md = (str: string) => str
   ?.replace(/==(.+?)==/g, '<mark>$1</mark>') ?? '';
 ---
 
-<Layout title={title}>
+<Layout title={title} description={star_summary.replace(/\*\*(.+?)\*\*/g, '$1')} ogImage={cover}>
   <main>
     <div class="page-line-top"></div>
     <div class="container pb-0">
