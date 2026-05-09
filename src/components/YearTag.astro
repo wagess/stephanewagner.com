@@ -1,0 +1,20 @@
+---
+interface Props {
+  year: number;
+}
+const { year } = Astro.props;
+---
+<span class="year-tag">{year}</span>
+
+<style>
+  .year-tag {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--color-surface);
+    background: var(--color-text-primary);
+    border: 1px solid var(--color-text-primary);
+    padding: 0.25rem 0.75rem;
+    text-transform: uppercase;
+    font-family: var(--font-mono);
+  }
+</style>

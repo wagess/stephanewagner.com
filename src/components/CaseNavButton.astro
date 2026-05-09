@@ -1,0 +1,109 @@
+---
+import ArrowButton from './ArrowButton.astro';
+
+interface Props {
+  direction: 'prev' | 'next';
+  href: string;
+  title: string;
+  variant?: 'default' | 'mobile';
+}
+
+const { direction, href, title, variant = 'default' } = Astro.props;
+const isPrev = direction === 'prev';
+const hint = isPrev ? 'Précédent' : 'Suivant';
+---
+
+<a
+  href={href}
+  class:list={['case-nav-btn', `case-nav-btn--${direction}`, `case-nav-btn--${variant}`]}
+>
+  {isPrev && <ArrowButton variant="back" />}
+  <span class="case-nav-btn__label">
+    <span class="case-nav-btn__hint">{hint}</span>
+    {variant === 'default' && <span class="case-nav-btn__title">{title}</span>}
+  </span>
+  {!isPrev && <ArrowButton variant="next" />}
+</a>
+
+<style>
+  .case-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--gap-sm);
+    padding: 1rem 1.25rem;
+    background: var(--color-surface);
+    border: var(--card-border);
+    border-radius: var(--card-radius);
+    text-decoration: none;
+    color: var(--color-text-primary);
+    transition:
+      background var(--transition-slow),
+      border-color var(--transition-slow);
+  }
+
+  .case-nav-btn:hover {
+    border-color: var(--color-text-primary);
+  }
+
+  .case-nav-btn:hover :global(.arrow-btn) {
+    background: var(--color-text-primary);
+    border-color: var(--color-text-primary);
+    color: var(--color-surface);
+  }
+
+  .case-nav-btn--next {
+    text-align: right;
+  }
+
+  /* Label */
+  .case-nav-btn__label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .case-nav-btn__hint {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-label);
+    letter-spacing: var(--tracking-mono);
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+
+  .case-nav-btn__title {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: var(--leading-tight);
+  }
+
+  .case-nav-btn--default {
+    width: 16rem;
+  }
+
+  .case-nav-btn--default .case-nav-btn__title {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Mobile variant — compact pill, caché sur desktop */
+  .case-nav-btn--mobile {
+    display: none;
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius-pill);
+  }
+
+  @media (max-width: 768px) {
+    .case-nav-btn--default {
+      display: none;
+    }
+
+    .case-nav-btn--mobile {
+      display: inline-flex;
+    }
+  }
+</style>

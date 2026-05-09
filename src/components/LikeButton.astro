@@ -1,12 +1,13 @@
 ---
 interface Props {
   slug: string;
+  size?: 'default' | 'large';
 }
-const { slug } = Astro.props;
+const { slug, size = 'default' } = Astro.props;
 ---
 
 <button
-  class="like-btn"
+  class:list={['like-btn', { 'like-btn--large': size === 'large' }]}
   data-slug={slug}
   aria-label="J'aime ce projet"
   aria-pressed="false"
@@ -125,6 +126,17 @@ const { slug } = Astro.props;
 
   .like-btn--active:not(:disabled):hover {
     opacity: 0.85;
+  }
+
+  .like-btn--large {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    gap: 0.75rem;
+  }
+
+  .like-btn--large svg {
+    width: 18px;
+    height: 18px;
   }
 
   .like-btn svg {

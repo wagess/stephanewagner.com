@@ -4,6 +4,9 @@ import Layout from "../../layouts/Layout.astro";
 import Footer from "../../components/Footer.astro";
 import VennDiagram from "../../components/VennDiagram.astro";
 import LikeButton from "../../components/LikeButton.astro";
+import YearTag from "../../components/YearTag.astro";
+import ArrowButton from "../../components/ArrowButton.astro";
+import CaseNavButton from "../../components/CaseNavButton.astro";
 import challengesSvg from "../../assets/challenges.svg";
 import iconS from "../../assets/start-with-an-outline.svg";
 import iconT from "../../assets/shapes.svg";
@@ -37,21 +40,15 @@ const md = (str: string) => str
         <div class="header__grid-bg"></div>
         <div class="header__text">
           <div class="label-row">
-            <a href="/" class="back-btn" aria-label="Retour à l'accueil">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="19" y1="12" x2="5" y2="12"></line>
-                <polyline points="12 5 5 12 12 19"></polyline>
-              </svg>
-            </a>
+            <ArrowButton href="/" ariaLabel="Retour à l'accueil" />
             <p class="label">Étude de cas</p>
           </div>
           <h1 class="header__title pb-2">{title}</h1>
           <div class="meta">
-            <span class="year">{year}</span>
             <ul class="tags">
+              <li><YearTag year={year} /></li>
               {tags?.map((tag: string) => <li>{tag}</li>)}
             </ul>
-            <LikeButton slug={c.id} />
           </div>
         </div>
         <div class="cover">
@@ -182,39 +179,27 @@ const md = (str: string) => str
       })()}
 
       <div class="like-cta">
-        <LikeButton slug={c.id} />
+        <LikeButton slug={c.id} size="large" />
       </div>
 
     </div>
     <nav class="case-nav">
-      {prevCase ? (
-        <a href={`/cases/${prevCase.id.replace(/\.md$/, '')}`} class="case-nav__btn case-nav__btn--prev">
-          <span class="back-btn" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="19" y1="12" x2="5" y2="12"></line>
-              <polyline points="12 19 5 12 12 5"></polyline>
-            </svg>
-          </span>
-          <span class="case-nav__label">
-            <span class="case-nav__hint">Précédent</span>
-            <span class="case-nav__title">{prevCase.data.title}</span>
-          </span>
-        </a>
-      ) : <div />}
-      {nextCase ? (
-        <a href={`/cases/${nextCase.id.replace(/\.md$/, '')}`} class="case-nav__btn case-nav__btn--next">
-          <span class="case-nav__label">
-            <span class="case-nav__hint">Suivant</span>
-            <span class="case-nav__title">{nextCase.data.title}</span>
-          </span>
-          <span class="back-btn" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </span>
-        </a>
-      ) : <div />}
+      <div class="case-nav__slot case-nav__slot--prev">
+        {prevCase && (
+          <>
+            <CaseNavButton direction="prev" href={`/cases/${prevCase.id.replace(/\.md$/, '')}`} title={prevCase.data.title} />
+            <CaseNavButton direction="prev" href={`/cases/${prevCase.id.replace(/\.md$/, '')}`} title={prevCase.data.title} variant="mobile" />
+          </>
+        )}
+      </div>
+      <div class="case-nav__slot case-nav__slot--next">
+        {nextCase && (
+          <>
+            <CaseNavButton direction="next" href={`/cases/${nextCase.id.replace(/\.md$/, '')}`} title={nextCase.data.title} />
+            <CaseNavButton direction="next" href={`/cases/${nextCase.id.replace(/\.md$/, '')}`} title={nextCase.data.title} variant="mobile" />
+          </>
+        )}
+      </div>
     </nav>
 
     <VennDiagram />
@@ -337,70 +322,27 @@ const md = (str: string) => str
   .case-nav {
     display: flex;
     justify-content: space-between;
-    align-items: stretch;
+    align-items: center;
     border-top: 1px solid var(--color-border);
     padding: var(--section-spacing) var(--spacing-container);
-  }
-
-  .case-nav__btn {
-    display: flex;
-    align-items: center;
     gap: var(--gap-sm);
-    text-decoration: none;
-    color: var(--color-text-primary);
   }
 
-  .case-nav__btn--next {
-    text-align: right;
-  }
-
-  .case-nav__btn:hover .back-btn {
-    background: var(--color-text-primary);
-    border-color: var(--color-text-primary);
-    color: var(--color-surface);
-  }
-
-  .case-nav__label {
+  .case-nav__slot {
     display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
   }
 
-  .case-nav__hint {
-    font-family: var(--font-mono);
-    font-size: var(--font-size-label);
-    letter-spacing: var(--tracking-mono);
-    text-transform: uppercase;
-    color: var(--color-text-muted);
+  .case-nav__slot--next {
+    justify-content: flex-end;
   }
 
-  .case-nav__title {
-    font-family: var(--font-heading);
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    font-weight: 400;
+  @media (max-width: 768px) {
+    .case-nav {
+      padding: var(--gap-block) var(--spacing-container);
+    }
   }
 
-  .back-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2rem;
-    height: 2rem;
-    border-radius: var(--radius-circle);
-    border: 1px solid var(--color-border);
-    background: var(--color-surface);
-    color: var(--color-text-primary);
-    text-decoration: none;
-    flex-shrink: 0;
-  }
-
-  .back-btn:hover {
-    background: var(--color-text-primary);
-    border-color: var(--color-text-primary);
-    color: var(--color-surface);
-  }
-
-  .label {
+.label {
     text-transform: uppercase;
     letter-spacing: var(--tracking-label);
     font-size: var(--font-size-label);
@@ -425,13 +367,6 @@ const md = (str: string) => str
     align-items: center;
     gap: var(--gap-sm);
     flex-wrap: wrap;
-  }
-
-  .year {
-    font-size: var(--font-size-label);
-    letter-spacing: var(--tracking-button);
-    color: var(--color-text-muted);
-    font-family: var(--font-mono);
   }
 
   .tags {
