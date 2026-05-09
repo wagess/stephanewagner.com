@@ -10,8 +10,6 @@ interface Props {
 const { label, headline, pillars } = Astro.props;
 ---
 <section class="hero">
-  <div class="hero__grid-bg"></div>
-
   <div class="hero__content">
     <div class="hero__line-top"></div>
 
@@ -50,18 +48,7 @@ const { label, headline, pillars } = Astro.props;
     }
   }
 
-  .hero__grid-bg {
-    position: absolute;
-    inset: 0;
-    opacity: 0.03;
-    background-image:
-      linear-gradient(var(--color-text-primary) 1px, transparent 1px),
-      linear-gradient(90deg, var(--color-text-primary) 1px, transparent 1px);
-    background-size: 60px 60px;
-    pointer-events: none;
-  }
-
-  .hero__content {
+.hero__content {
     
     width: 100%;
     position: relative;

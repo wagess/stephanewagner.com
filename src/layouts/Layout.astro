@@ -38,6 +38,7 @@ const { title, description = "Concepteur Produit — Portfolio" } = Astro.props;
     --color-accent: #694878;
     --color-accent-vivid: #8619e0;
     --color-bg: #FAFAFA;
+    --color-bg-warm: #e7e7e7;
     --color-surface: #ffffff;
     --color-surface-secondary: #DCDEE0;
     --color-surface-subtle: #F0F0F0;
@@ -168,7 +169,8 @@ const { title, description = "Concepteur Produit — Portfolio" } = Astro.props;
   }
 
   body {
-    background-color: var(--color-bg);
+    background: linear-gradient(160deg, var(--color-bg) 0%, var(--color-bg-warm) 100%);
+    background-attachment: fixed;
     color: var(--color-text-primary);
     line-height: 1.6;
   }

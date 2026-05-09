@@ -37,7 +37,6 @@ const md = (str: string) => str
     <div class="container pb-0">
 
       <header data-open>
-        <div class="header__grid-bg"></div>
         <div class="header__text">
           <div class="label-row">
             <ArrowButton href="/" ariaLabel="Retour à l'accueil" />
@@ -216,7 +215,7 @@ const md = (str: string) => str
 
 <style>
   main {
-    background: var(--color-bg);
+
     min-height: 100vh;
   }
 
@@ -287,19 +286,7 @@ const md = (str: string) => str
     transform: scaleX(1);
   }
 
-  .header__grid-bg {
-    position: absolute;
-    inset: 0;
-    opacity: 0.03;
-    background-image:
-      linear-gradient(var(--color-text-primary) 1px, transparent 1px),
-      linear-gradient(90deg, var(--color-text-primary) 1px, transparent 1px);
-    background-size: 60px 60px;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     header {
       grid-template-columns: 1fr;
     }
