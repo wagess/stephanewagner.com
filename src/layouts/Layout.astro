@@ -119,6 +119,10 @@ const ogImage = ogImageProp?.startsWith('http') ? ogImageProp : `${SITE}${ogImag
     --easing-spring: cubic-bezier(0.22, 1, 0.36, 1);
     --easing-bounce: cubic-bezier(0.34, 1.4, 0.64, 1);
 
+    /* Gradients */
+    --gradient-vivid: linear-gradient(135deg, var(--color-accent-vivid) 0%, var(--color-text-primary) 60%);
+    --gradient-accent-soft: linear-gradient(135deg, var(--color-accent-vivid) 0%, #2a0f52 100%);
+
     /* Shadows */
     --shadow-offset: 4px 4px 0 0 var(--color-shadow);
   }
