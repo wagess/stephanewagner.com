@@ -41,7 +41,7 @@ const cases = limit ? featuredCases.slice(0, limit) : allCases;
     )}
 
     <div class="cases__list-wrapper">
-      {!limit && <CasesFilters />}
+      {!limit && <CasesFilters labelAll={t.cases.filters.all} labelFeatured={t.cases.filters.featured} />}
       <ul class="cases__list">
         {cases.map((c, i) => (
           <div data-animate data-year={c.data.year} data-featured={c.data.featured ?? false} data-tags={c.data.tags.join(',')} style={`transition-delay: ${i * 0.10}s`}>
