@@ -1,6 +1,6 @@
 ---
 # ─── Hero ───────────────────────────────────────────────
-hero_label: "Stéphane Wagner - Product Designer / UX / UI / Scénarisation et architecture"
+hero_label: "Stéphane Wagner / Product Designer / UX / UI / Scénarisation / Architecture"
 hero_headline: "Designer de produits digitaux qui transforme des **systèmes complexes** en **expériences claires**. Je traduis vos besoins en **résulats fiables.**"
 hero_pillars:
   - label: "Segment 1"
@@ -97,16 +97,23 @@ venn_caption: "L'intersection de ces trois disciplines — visualisation, rédac
 # ─── Tools Banner ────────────────────────────────────────
 tools:
   - "Figma"
-  - "VS Code"
   - "GitHub"
-  - "TypeScript"
-  - "React"
-  - "Astro"
-  - "Azure Microsoft"
-  - "Notion"
-  - "Adobe"
+  - "GitLab"
   - "Claude"
-  - "Node.js"
+  - "OpenAI"
+  - "Miro"
+  - "Microsoft"
+  - "OneDrive"
+  - "Adobe Cloud"
+  - "Photoshop"
+  - "Lightroom"
+  - "Google"
+  - "Google Docs"
+  - "Google Sheets"
+  - "Google Forms"
+  - "Google Chat"
+  - "Play Store"
+  - "Mailchimp"
 
 clients:
   - "URBANIA"

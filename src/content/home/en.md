@@ -1,6 +1,6 @@
 ---
 # ─── Hero ───────────────────────────────────────────────
-hero_label: "Stéphane Wagner - Product Designer / UX / UI / Storytelling & architecture"
+hero_label: "Stéphane Wagner / Product Designer / UX / UI / Storytelling / Architecture"
 hero_headline: "Digital product designer who turns **complex systems** into **clear experiences**. I translate your needs into **reliable outcomes.**"
 hero_pillars:
   - label: "Segment 1"
@@ -96,16 +96,23 @@ venn_caption: "The intersection of these three disciplines — visualisation, wr
 # ─── Tools Banner ────────────────────────────────────────
 tools:
   - "Figma"
-  - "VS Code"
   - "GitHub"
-  - "TypeScript"
-  - "React"
-  - "Astro"
-  - "Azure Microsoft"
-  - "Notion"
-  - "Adobe"
+  - "GitLab"
   - "Claude"
-  - "Node.js"
+  - "OpenAI"
+  - "Miro"
+  - "Microsoft"
+  - "OneDrive"
+  - "Adobe Cloud"
+  - "Photoshop"
+  - "Lightroom"
+  - "Google"
+  - "Google Docs"
+  - "Google Sheets"
+  - "Google Forms"
+  - "Google Chat"
+  - "Play Store"
+  - "Mailchimp"
 
 clients:
   - "URBANIA"

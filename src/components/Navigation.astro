@@ -157,14 +157,16 @@ const lp = (path: string) => `/${lang}${path}`;
     font-size: 14px;
     color: var(--color-text-primary);
     font-family: var(--font-body);
-    text-decoration: underline;
-    text-underline-offset: 3px;
+    text-decoration: none;
     white-space: nowrap;
+    background: var(--color-surface-subtle);
+    border-radius: var(--radius-pill);
+    padding: 0.2rem 0.6rem;
     transition: opacity var(--transition-base);
   }
 
   .nav__link:hover {
-    opacity: 0.5;
+    opacity: 0.6;
   }
 
   .nav__count {
