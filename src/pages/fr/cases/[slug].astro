@@ -182,7 +182,11 @@ const md = (str: string) => str
       })()}
 
       <div class="like-cta">
-        <LikeButton slug={c.id} size="large" />
+        <LikeButton slug={c.id} size="medium" />
+        <a href={`mailto:info@stephanewagner.com?subject=Détails — ${title}`} class="details-btn">
+          Obtenir plus de détails
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </a>
       </div>
 
     </div>
@@ -589,7 +593,26 @@ const md = (str: string) => str
   mark { background: none; color: var(--color-accent); font-weight: 600; }
   .challenges__arrow { font-family: var(--font-mono); font-size: var(--font-size-sm); color: var(--color-text-primary); flex-shrink: 0; }
   .visual-block a { display: block; width: 100%; height: 100%; cursor: zoom-in; }
-  .like-cta { display: flex; justify-content: center; padding-top: var(--section-spacing); }
+  .like-cta { display: flex; justify-content: center; align-items: center; gap: 0.75rem; padding-top: var(--section-spacing); }
+
+  .details-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.55rem 1.1rem;
+    border: 1px solid var(--color-accent);
+    border-radius: var(--radius-pill);
+    background: var(--color-accent);
+    color: white;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: opacity var(--transition-base);
+  }
+
+  .details-btn:hover { opacity: 0.85; }
 </style>
 
 <script>
