@@ -26,6 +26,8 @@ export const fr = {
       all: 'Tous',
       featured: 'Coups de cœur',
     },
+    likeLabel: "j'aime ce projet",
+    likeAriaLabel: "J'aime ce projet",
   },
   services: {
     pageTitle: 'Services — Concepteur Produit',

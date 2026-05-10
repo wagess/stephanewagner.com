@@ -28,6 +28,8 @@ export const en: UI = {
       all: 'All',
       featured: 'Favorites',
     },
+    likeLabel: 'I like this project',
+    likeAriaLabel: 'I like this project',
   },
   services: {
     pageTitle: 'Services — Product Designer',
