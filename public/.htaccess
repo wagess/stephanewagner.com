@@ -1,0 +1,4 @@
+RewriteEngine On
+
+# Redirect racine vers /fr/
+RewriteRule ^$ /fr/ [R=301,L]
