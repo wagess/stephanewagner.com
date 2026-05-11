@@ -1,4 +1,6 @@
 ---
+featured: false
+draft: false
 title: "Enriching documentary storytelling through interactive media"
 cover: "/cases/urbania/mtl12-0.webp"
 banner_image: "/cases/urbania/ethnies.webp"
@@ -18,7 +20,6 @@ tags:
   - "Interaction Design"
   - "UX"
   - "Web Art Direction"
-featured: true
 star_summary: "Expanding the audience of a print magazine by adding an interactive dimension to the medium."
 contexte: "URBANIA was a fast-growing magazine with ambitions to offer innovative web experiences while remaining accessible to a wide audience."
 probleme: "Creating rich multimedia content with video and delivering an immersive, unprecedented interactive experience."

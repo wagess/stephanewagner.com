@@ -1,4 +1,6 @@
 ---
+featured: false
+draft: false
 title: "Website redesign for professional pharmacists"
 cover: "/cases/apes/cover.webp"
 banner_image: "/cases/apes/apes-banner.webp"

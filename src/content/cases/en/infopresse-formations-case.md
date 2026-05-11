@@ -1,4 +1,6 @@
 ---
+featured: false
+draft: false
 title: "Designing UX training for Infopresse"
 cover: "/cases/infopresse/cover.webp"
 banner_image: "/cases/infopresse/banner.webp"

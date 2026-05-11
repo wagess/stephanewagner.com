@@ -1,4 +1,6 @@
 ---
+featured: false
+draft: false
 title: "Redefining the citizen experience for guardianship services"
 cover: "/cases/curateur/logo-curateur.webp"
 banner_image: "/cases/curateur/design-system-curateur.webp"
@@ -14,7 +16,6 @@ gallery_styles:
   - null
 year: 2021
 tags: ["EX", "UX", "UI", "Accessibility", "Public Service"]
-featured: false
 star_summary: "Transforming a complex legal process into a humane journey for people in vulnerable situations."
 contexte: "In Québec, the ==assistance measure== (formerly tied to guardianship) allows an adult with diminished capacity to designate a trusted person to help with personal, medical, or financial decisions, ==without losing legal capacity==."
 probleme: "Cognitive and legal accessibility: forms and procedures were perceived as opaque, lengthy, and intimidating — especially for elderly people or those with cognitive disabilities."

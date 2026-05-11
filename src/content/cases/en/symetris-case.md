@@ -1,4 +1,6 @@
 ---
+featured: false
+draft: false
 title: "Strategic repositioning of an agency's UX offering"
 cover: "/cases/symetris/cover.webp"
 banner_image: "/cases/symetris/banner.webp"
@@ -9,7 +11,6 @@ gallery:
   - "/cases/symetris/gallery-4.webp"
 year: 2024
 tags: ["CX", "UX"]
-featured: false
 star_summary: "Acting as an internal strategic advisor to reposition the agency's UX approach."
 contexte: "Symetris needed to enhance its client approach with a vision more oriented toward design thinking and user-centred needs."
 probleme: "Adapting to a heavily technology-driven environment with less focus on product design methodology."

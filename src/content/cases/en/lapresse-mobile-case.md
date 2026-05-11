@@ -1,4 +1,6 @@
 ---
+featured: false
+draft: false
 title: "Enriching the advertising experience of a press media"
 cover: "/cases/lapresse/cover.webp"
 banner_image: "/cases/lapresse/banner.webp"

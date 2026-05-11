@@ -1,4 +1,6 @@
 ---
+featured: false
+draft: false
 title: "An end-to-end product to popularize genomics"
 cover: "/cases/capscience/capscience-mission-2.webp"
 banner_image: "/cases/capscience/banner-capscience.webp"
@@ -21,7 +23,6 @@ tags:
   - "Visual Design"
   - "Animation"
   - "Development"
-featured: true
 star_summary: "Turning a passion project into an accessible and engaging digital science communication product."
 contexte: "As part of an entrepreneurial venture, building the ==CAPSCIENCE== brand gave me the opportunity to approach Génome Québec and propose a pilot project in interactive science outreach."
 probleme: "How do you turn science communication content into an engaging, accessible, scalable, and easily consumable micro-experience?"

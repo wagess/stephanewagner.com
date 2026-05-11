@@ -1,4 +1,6 @@
 ---
+featured: true
+draft: false
 title: "Optimizing user engagement on the EGYM platform"
 cover: "/cases/egym/cover.webp"
 banner_image: "/cases/egym/banner.webp"

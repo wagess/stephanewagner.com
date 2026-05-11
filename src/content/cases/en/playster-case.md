@@ -1,4 +1,6 @@
 ---
+featured: false
+draft: true
 title: "Boosting usability on an entertainment platform"
 cover: "/cases/playster/cover-playster.webp"
 banner_image: "/cases/playster/banner.webp"
@@ -14,8 +16,6 @@ gallery_styles:
   - cover
 year: 2018
 tags: ["B2C"]
-featured: false
-draft: true
 star_summary: "The textbook story of an ambitious project without a strong target audience."
 contexte: "All-in-one subscription streaming platform offering e-books, audiobooks, music, movies, and games"
 probleme: ""

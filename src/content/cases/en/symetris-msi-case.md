@@ -1,4 +1,6 @@
 ---
+featured: true
+draft: false
 title: "Redesigning a nursing care support platform"
 cover: "/cases/msi/msi-cover.webp"
 banner_image: "/cases/msi/msi.webp"
@@ -9,7 +11,6 @@ gallery:
   - "/cases/msi/msi-mobile.webp"
 year: 2022
 tags: ["UX", "UI", "Analysis", "Prototyping", "Prioritization"]
-featured: true
 star_summary: "Improving the readability and accessibility of medical content used daily in the field."
 contexte: "Computerized Care Methods (MSI) primarily serves care staff working daily with patients: nurses, licensed practical nurses, nursing candidates (CEPI), and nursing extern students."
 probleme: "Enabling nursing staff to quickly access technical data sheets and rich, complex theoretical content that is difficult to synthesize in a fieldwork context."

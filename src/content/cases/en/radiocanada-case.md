@@ -1,4 +1,5 @@
 ---
+featured: false
 draft: true
 title: "Boosting Radio-Canada's web audience"
 cover: "/cases/radiocanada/cover-radiocanada.webp"
@@ -15,7 +16,6 @@ gallery_styles:
   - null
 year: 2013
 tags: ["B2C"]
-featured: false
 star_summary: "Web-TV platforms for broadcast shows ensuring continuity with their target audience."
 contexte: ""
 probleme: ""

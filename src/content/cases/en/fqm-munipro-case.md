@@ -1,4 +1,5 @@
 ---
+featured: false
 draft: true
 title: "Modernizing a municipal management application"
 cover: "/cases/fqm/VisuelCoverFQM.webp"
