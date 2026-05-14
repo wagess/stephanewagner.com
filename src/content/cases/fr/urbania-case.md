@@ -1,4 +1,6 @@
 ---
+featured: false
+draft: false
 title: "Enrichir le documentaire par les médias  interactifs"
 cover: "/cases/urbania/mtl12-0.webp"
 banner_image: "/cases/urbania/ethnies.webp"
@@ -18,7 +20,6 @@ tags:
   - "Design d’interaction"
   - "UX"
   - "Direction artistique web"
-featured: true
 star_summary: "Propulser l’audience d’un magazine papier en insufflant une dimension interactive supplémentaire au média."
 contexte: "URBANIA était un magazine en pleine croissance ayant pour ambition de proposer des expériences web innovantes tout en demeurant accessible à une large audience."
 probleme: "Créer un contenu multimédia riche en vidéos et offrir une expérience interactive immersive et inédite."

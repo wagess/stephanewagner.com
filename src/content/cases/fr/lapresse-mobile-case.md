@@ -1,4 +1,6 @@
 ---
+featured: false
+draft: false
 title: "Bonifier l’expérience publicitaire d’un média de presse"
 cover: "/cases/lapresse/cover.webp"
 banner_image: "/cases/lapresse/banner.webp"

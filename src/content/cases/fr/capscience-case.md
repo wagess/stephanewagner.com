@@ -1,4 +1,6 @@
 ---
+featured: false
+draft: false
 title: "Un produit end-to-end pour vulgariser la génomique"
 cover: "/cases/capscience/capscience-mission-2.webp"
 banner_image: "/cases/capscience/banner-capscience.webp"
@@ -21,7 +23,6 @@ tags:
   - "Visual design"
   - "Animation"
   - "Développement"
-featured: true
 star_summary: "Transformer un sujet passion en produit numérique de vulgarisation scientifique accessible et engageant."
 contexte: "Dans le cadre d’un projet entrepreneurial, la création de la marque ==CAPSCIENCE== m’a permis d’approcher Génome Québec afin de proposer un projet pilote de vulgarisation scientifique interactive."
 probleme: "Comment transformer un contenu de vulgarisation scientifique en une micro-expérience engageante, accessible, scalable et facilement consommable ?"

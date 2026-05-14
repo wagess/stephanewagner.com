@@ -1,4 +1,6 @@
 ---
+featured: true
+draft: false
 title: "Refonte d’une plateforme de support aux soins infirmiers"
 cover: "/cases/msi/msi-cover.webp"
 banner_image: "/cases/msi/msi.webp"
@@ -9,7 +11,6 @@ gallery:
   - "/cases/msi/msi-mobile.webp"
 year: 2022
 tags: ["UX", "UI", "Analyse", "Prototypage", "Priorisation"]
-featured: true
 star_summary: "Améliorer la lisibilité et l’accessibilité d’un contenu médical utilisé au quotidien."
 contexte: "Les Méthodes de soins informatisées s’adressent principalement au personnel soignant œuvrant quotidiennement auprès des usagers et usagères : infirmières et infirmiers, infirmières et infirmiers auxiliaires, candidates et candidats à l’exercice de la profession infirmière (CEPI) ainsi qu’aux externes en soins infirmiers."
 probleme: "Permettre au personnel infirmier d’accéder rapidement à des fiches techniques et à des contenus théoriques riches, complexes et difficiles à synthétiser dans un contexte de travail terrain."

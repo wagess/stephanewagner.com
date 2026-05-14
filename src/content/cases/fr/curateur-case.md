@@ -1,4 +1,6 @@
 ---
+featured: false
+draft: false
 title: "Redéfinir une expérience citoyen pour la curatelle"
 cover: "/cases/curateur/logo-curateur.webp"
 banner_image: "/cases/curateur/design-system-curateur.webp"
@@ -14,7 +16,6 @@ gallery_styles:
   - null
 year: 2021
 tags: ["EX", "UX", "UI", "Accessibilité", "Service public"]
-featured: false
 star_summary: "Transformer un processus juridique complexe en une démarche humaine pour des personnes en situation de vulnérabilité."
 contexte: "Au Québec, la ==mesure d’assistance== (anciennement liée à la curatelle) permet à une personne majeure dont les facultés sont altérées de désigner un proche pour l’aider dans ses décisions personnelles, médicales ou financières, ==sans perte de capacité juridique==."
 probleme: "Accessibilité cognitive et juridique: Les formulaires et procédures étaient perçus comme opaques, longs et intimidants, notamment pour les personnes âgées ou en situation de handicap cognitif."

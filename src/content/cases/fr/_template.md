@@ -1,4 +1,6 @@
 ---
+featured: false
+draft: true
 title: ""
 cover: "/cases/[slug]/cover.webp"
 banner_image: "/cases/[slug]/banner.webp"

@@ -1,4 +1,6 @@
 ---
+featured: false
+draft: false
 title: "Refonte web pour les pharmaciens professionnels"
 cover: "/cases/apes/cover.webp"
 banner_image: "/cases/apes/apes-banner.webp"

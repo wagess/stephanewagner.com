@@ -1,4 +1,6 @@
 ---
+featured: false
+draft: true
 title: "Propulser l'utilisabilité d'une plateforme de divertissemnts"
 cover: "/cases/playster/cover-playster.webp"
 banner_image: "/cases/playster/banner.webp"
@@ -14,8 +16,6 @@ gallery_styles:
   - cover
 year: 2018
 tags: ["B2C"]
-featured: false
-draft: true
 star_summary: "C'est l'histoire stéréotype d'un projet ambitieux sans cible forte."
 contexte: "plateforme de streaming par abonnement tout-en-un proposant des livres numériques, des livres audio, de la musique, des films et des jeux"
 probleme: ""

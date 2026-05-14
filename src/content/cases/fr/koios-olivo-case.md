@@ -1,4 +1,6 @@
 ---
+featured: true
+draft: false
 title: "Rendre l’assurance santé intuitive et intelligente"
 cover: "/cases/koios/dialogue.webp"
 banner_image: "/cases/koios/banner-olivo.webp"
@@ -14,7 +16,6 @@ gallery_styles:
   - cover
 year: 2019
 tags: ["IA", "Conversationnel", "Assurances", "B2B", "B2C"]
-featured: true
 star_summary: "Faire du conversationnel avant que la mode de l'IA ne se popularise."
 contexte: "La mission de Koios Intelligence est de renforcer les secteurs de l’assurance, des services financiers et des technologies grâce à une nouvelle génération de plateformes d’IA intelligentes et personnalisées."
 probleme: "Soutenir la startup dans sa démarche. Poser les bases d'un language visuel sur un produit, un service et finalement ... ==une marque==."

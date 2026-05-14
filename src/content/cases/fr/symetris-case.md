@@ -1,4 +1,6 @@
 ---
+featured: false
+draft: false
 title: "Repositionnement stratégique de l’offre UX d’une agence"
 cover: "/cases/symetris/cover.webp"
 banner_image: "/cases/symetris/banner.webp"
@@ -9,7 +11,6 @@ gallery:
   - "/cases/symetris/gallery-4.webp"
 year: 2024
 tags: ["CX", "UX"]
-featured: false
 star_summary: "Agir en tant que conseiller stratégique interne afin de repositionner l’approche UX de l’agence."
 contexte: "L’agence Symetris avait besoin de bonifier son approche client avec une vision davantage orientée design thinking et centrée sur les besoins utilisateurs."
 probleme: "S’adapter à un environnement très orienté technologie et moins axé sur l’approche de design de produit."
