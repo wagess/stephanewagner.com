@@ -17,7 +17,7 @@ const t = useTranslations(lang);
 
 const locale = lang === 'en' ? 'en' : 'fr';
 const allCases = (await getCollection("cases"))
-  .filter(c => c.id.startsWith(`${locale}/`) && !c.id.includes('_template'))
+  .filter(c => c.id.startsWith(`${locale}/`) && !c.id.split('/')[1]?.startsWith('_'))
   .sort((a, b) => b.data.year - a.data.year);
 
 const featuredCases = allCases.filter(c => c.data.featured);

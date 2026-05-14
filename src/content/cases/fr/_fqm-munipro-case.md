@@ -1,4 +1,5 @@
 ---
+featured: false
 draft: true
 title: "Modernisation d'une application de gestion municipale"
 cover: "/cases/fqm/VisuelCoverFQM.webp"
