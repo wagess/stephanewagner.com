@@ -2,7 +2,7 @@
 import { getEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import Hero from '../../components/Hero.astro';
-import Services from '../../components/Services.astro';
+import Pillars from '../../components/Pillars.astro';
 import Cases from '../../components/Cases.astro';
 import VennDiagram from '../../components/VennDiagram.astro';
 import ToolsBanner from '../../components/ToolsBanner.astro';
@@ -24,10 +24,10 @@ const t = home.data;
       pillars={t.hero_pillars}
     />
     {/* <ToolsBanner tools={t.tools} clients={t.clients} /> */}
-    <Services
-      label={t.services_label}
-      title={t.services_title}
-      services={t.services}
+    <Pillars
+      label={t.pillars_label}
+      title={t.pillars_title}
+      pillars={t.pillars}
     />
     <Cases limit={3} label={t.cases_label} title={t.cases_title} />
     <SideProjects

@@ -44,6 +44,10 @@ const home = defineCollection({
     services_label: z.string(),
     services_title: z.string(),
     services: z.array(service),
+    // Capability Pillars
+    pillars_label: z.string(),
+    pillars_title: z.string(),
+    pillars: z.array(pillar),
     // Cases
     cases_label: z.string(),
     cases_title: z.string(),

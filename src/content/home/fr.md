@@ -69,6 +69,23 @@ services:
     count: +20
     href: "/fr/cases/koios-olivo-case"
 
+# ─── Capability Pillars ──────────────────────────────────
+pillars_label: "Piliers"
+pillars_title: "Les piliers de ma pratique"
+pillars:
+  - label: "Pilier 01"
+    title: "Découverte produit & compréhension métier"
+    desc: "Comprendre les utilisateurs, les processus et les besoins."
+  - label: "Pilier 02"
+    title: "Conception fonctionnelle & expérience"
+    desc: "Transformer les besoins en parcours, règles et interfaces."
+  - label: "Pilier 03"
+    title: "Design système & alignement technique"
+    desc: "Structurer les composants et collaborer avec les TI."
+  - label: "Pilier 04"
+    title: "Artisanat visuel & prototypage"
+    desc: "Matérialiser, tester et améliorer les solutions."
+
 # ─── Cases ───────────────────────────────────────────────
 cases_label: "Études de cas"
 cases_title: "Projets sélectionnés"

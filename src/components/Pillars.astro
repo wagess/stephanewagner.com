@@ -1,0 +1,137 @@
+---
+import HeroPillar from './HeroPillar.astro';
+
+interface Pillar { label: string; title: string; desc: string; }
+interface Props {
+  label?: string;
+  title?: string;
+  pillars: Pillar[];
+  showHeader?: boolean;
+}
+const { label, title, pillars, showHeader = true } = Astro.props;
+---
+
+<section class:list={['pillars', { 'pillars--no-header': !showHeader }]} id="pillars">
+  <div class="pillars__container">
+    {showHeader && (
+      <div class="pillars__header" data-animate-pillars>
+        <p class="pillars__label">{label}</p>
+        <h2 class="pillars__title">{title}</h2>
+      </div>
+    )}
+
+    <div class="pillars__list">
+      {pillars.map((pillar, i) => (
+        <div data-animate-pillars style={`transition-delay: ${i * 0.1}s`}>
+          <HeroPillar
+            label={pillar.label}
+            title={pillar.title}
+            desc={pillar.desc}
+            autoHeight
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.pillars [data-animate-pillars]').forEach(el => observer.observe(el));
+</script>
+
+<style>
+  .pillars {
+    padding: var(--section-spacing) var(--spacing-container);
+  }
+
+  .pillars--no-header {
+    padding-top: 0;
+  }
+
+  .pillars__container {
+    margin: 0 auto;
+  }
+
+  [data-animate-pillars] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  [data-animate-pillars].visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .pillars__header {
+    margin-bottom: var(--section-spacing);
+    padding-bottom: var(--gap-block);
+    position: relative;
+    transition-duration: 0.8s;
+  }
+
+  .pillars__header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--color-text-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .pillars__header.visible::after {
+    transform: scaleX(1);
+  }
+
+  .pillars__label {
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 11px;
+    color: var(--color-text-secondary);
+    font-family: var(--font-mono);
+    margin-bottom: var(--gap-sm);
+  }
+
+  .pillars__title {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.2;
+    color: var(--color-text-primary);
+    font-family: var(--font-heading);
+    font-weight: 300;
+  }
+
+  .pillars__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--gap-sm);
+    align-items: stretch;
+  }
+
+  .pillars__list > [data-animate-pillars] {
+    height: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .pillars__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .pillars__list {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+</style>
