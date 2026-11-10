@@ -2,12 +2,14 @@
 import SideProjectCard from './SideProjectCard.astro';
 
 interface Project { title: string; href: string; year: number; }
+interface Link { label: string; href: string; }
 interface Props {
   label: string;
   title: string;
   projects: Project[];
+  links?: Link[];
 }
-const { label, title, projects } = Astro.props;
+const { label, title, projects, links = [] } = Astro.props;
 ---
 
 <section id="side-projects" class="side-projects">
@@ -26,6 +28,15 @@ const { label, title, projects } = Astro.props;
             title={p.title}
             href={p.href}
             year={p.year}
+          />
+        </div>
+      ))}
+      {links.map((l, i) => (
+        <div data-animate-sp style={`transition-delay: ${(projects.length + i) * 0.15}s`}>
+          <SideProjectCard
+            index={projects.length + i + 1}
+            title={l.label}
+            href={l.href}
           />
         </div>
       ))}

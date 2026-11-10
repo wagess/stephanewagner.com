@@ -5,7 +5,7 @@ interface Props {
   index: number;
   title: string;
   href: string;
-  year: number;
+  year?: number;
 }
 
 const { index, title, href, year } = Astro.props;
@@ -17,7 +17,7 @@ const num = String(index).padStart(2, '0');
     <span class="sp-card__number">{num}</span>
     <span class="sp-card__title">{title}</span>
     <div class="sp-card__right">
-      <span class="sp-card__year">{year}</span>
+      {year !== undefined && <span class="sp-card__year">{year}</span>}
       <ArrowButton variant="diagonal" />
     </div>
   </a>

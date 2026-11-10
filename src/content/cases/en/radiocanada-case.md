@@ -1,6 +1,6 @@
 ---
 featured: false
-draft: true
+draft: false
 title: "Boosting Radio-Canada's web audience"
 cover: "/cases/radiocanada/cover-radiocanada.webp"
 banner_image: "/cases/radiocanada/banner.webp"

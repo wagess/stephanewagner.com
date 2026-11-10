@@ -1,6 +1,6 @@
 ---
 featured: false
-draft: true
+draft: false
 title: "Propulser l'utilisabilité d'une plateforme de divertissemnts"
 cover: "/cases/playster/cover-playster.webp"
 banner_image: "/cases/playster/banner.webp"

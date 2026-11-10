@@ -74,8 +74,8 @@ cases_label: "Études de cas"
 cases_title: "Projets sélectionnés"
 
 # ─── Side Projects ───────────────────────────────────────
-side_projects_label: "En parallèle"
-side_projects_title: "Projets personnels qui influencent mon travail"
+side_projects_label: "Autres projets"
+side_projects_title: "Sites web, produits mobiles et plateformes"
 side_projects:
   - title: "Portfolio Photo, Wordpress et architecture éditoriale."
     href: "https://photographie.stephanewagner.com/"
@@ -83,6 +83,23 @@ side_projects:
   - title: "ShopPhoto, Workflow end-to-end de l'édition à la publication."
     href: "https://shop.stephanewagner.com/"
     year: 2025
+side_links:
+  - label: "Capscience.ca - Science ludique"
+    href: "https://www.capscience.ca/"
+  - label: "Bluebird Auto Rental Systems"
+    href: "https://www.barsnet.com/"
+  - label: "MSI — Symétris"
+    href: "https://msi.expertise-sante.com/en/mission"
+  - label: "Point Loma Nazarene University"
+    href: "https://www.pointloma.edu/"
+  - label: "Symétris agence Drupal"
+    href: "https://symetris.com/fr"
+  - label: "EGYM International"
+    href: "https://us.egym.com/en-us"
+  - label: "La Presse + Tablettes"
+    href: "https://info.lapresse.ca/a-propos/nos-produits"
+  - label: "Génome Québec (2012)"
+    href: "https://genomequebec.com/"
 
 # ─── Venn / Approche ─────────────────────────────────────
 venn_label: "Approche"

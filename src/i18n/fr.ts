@@ -8,7 +8,7 @@ export const fr = {
   },
   cases: {
     pageTitle: 'Études de cas',
-    pageSubtitle: 'Histoires de produits et services',
+    pageSubtitle: 'Valeurs produits et services',
     caseLabel: 'Étude de cas',
     viewAll: 'Voir tous les projets',
     backHome: "Retour à l'accueil",

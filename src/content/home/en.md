@@ -82,6 +82,23 @@ side_projects:
   - title: "ShopPhoto — End-to-end workflow from editing to publishing."
     href: "https://shop.stephanewagner.com/"
     year: 2025
+side_links:
+  - label: "Capscience"
+    href: "https://www.capscience.ca/"
+  - label: "Bluebird Auto Rental Systems"
+    href: "https://www.barsnet.com/"
+  - label: "MSI — Symétris"
+    href: "https://msi.expertise-sante.com/en/mission"
+  - label: "Point Loma Nazarene University"
+    href: "https://www.pointloma.edu/"
+  - label: "Symétris"
+    href: "https://symetris.com/fr"
+  - label: "EGYM"
+    href: "https://us.egym.com/en-us"
+  - label: "La Presse"
+    href: "https://info.lapresse.ca/a-propos/nos-produits"
+  - label: "Génome Québec"
+    href: "https://genomequebec.com/"
 
 # ─── Venn / Approach ─────────────────────────────────────
 venn_label: "Approach"

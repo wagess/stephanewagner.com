@@ -31,6 +31,7 @@ const cases = defineCollection({
 const pillar = z.object({ label: z.string(), title: z.string(), desc: z.string(), back_title: z.string().optional(), back_href: z.string().optional() });
 const service = z.object({ number: z.string(), title: z.string(), desc: z.string(), count: z.number(), href: z.string().optional() });
 const sideProject = z.object({ title: z.string(), href: z.string(), year: z.number() });
+const sideLink = z.object({ label: z.string(), href: z.string() });
 
 const home = defineCollection({
   type: "content",
@@ -50,6 +51,7 @@ const home = defineCollection({
     side_projects_label: z.string(),
     side_projects_title: z.string(),
     side_projects: z.array(sideProject),
+    side_links: z.array(sideLink).optional().default([]),
     // Venn
     venn_label: z.string(),
     venn_title: z.string(),

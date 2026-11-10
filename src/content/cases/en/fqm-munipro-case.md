@@ -1,6 +1,6 @@
 ---
 featured: false
-draft: true
+draft: false
 title: "Modernizing a municipal management application"
 cover: "/cases/fqm/VisuelCoverFQM.webp"
 banner_image: "/cases/fqm/Moodboard-Interfaces.webp"
